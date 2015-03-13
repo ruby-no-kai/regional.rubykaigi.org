@@ -1,0 +1,371 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta content='text/xhtml; charset=utf-8' http-equiv='Content-Type' />
+<title>関西Ruby会議04 - Regional RubyKaigi</title>
+<link href="/stylesheets/kansai04.css?1364302246" media="screen" rel="stylesheet" type="text/css" />
+<style type='text/css'><!-- @media print {div#user-bar {display: none}} --></style>
+<script src="/javascripts/jquery.js?1364302246" type="text/javascript"></script>
+<meta content='initial-scale=1.0, user-scalable=no' name='viewport' />
+<!-- GoogleMapsApi -->
+<script src='http://maps.google.com/maps/api/js?sensor=false' type='text/javascript'></script>
+<script type='text/javascript'></script>
+<script type='text/javascript'>
+  //<![CDATA[
+    $(document).ready(function(){
+      var container_height = $("#container")[0].scrollHeight;
+      var main_height = $("#main")[0].scrollHeight;
+      var delta = 192 - (container_height % 192 || 192);
+      $("#container").height(container_height + delta);
+      $("#main").height(main_height + delta);
+      with(google.maps){
+        var pos = new LatLng(34.63827, 135.411279);
+        var map = new Map(document.getElementById("map"), {
+          zoom: 16,
+          center: pos,
+          mapTypeId: MapTypeId.ROADMAP});
+        var marker = new Marker({
+          position: pos,
+          map: map,
+          title: "KansaiRubyKaigi04"});
+        marker.setMap(map);
+      }
+    })
+  //]]>
+</script>
+</head>
+<body>
+<div id='wrapper'>
+
+<div id='top'></div>
+<div id='container'>
+<div id='left'></div>
+<div id='center'>
+<div id='main'>
+<h3>開催概要</h3>
+<p>関西Ruby会議04は終了しました。</p>
+<p>ありがとうございました。関西Ruby会議05でお会いしましょう。</p>
+<ul>
+<li>会期:<ul>
+<li>2011年11月11日(金) 13:00〜18:00</li>
+<li>2011年11月12日(土) 10:00〜18:00</li>
+</ul></li>
+<li>会場: <a href="http://www.atc-co.com/index.php">大阪南港ATC</a> <a href="http://www.atc-co.com/guide/floor.php?tenant_area=23">ITM棟 10F デザインギャラリー・デザインショーケース</a> (受付・展示会場)<ul>
+<li><a href="http://www.atc-co.com/guide/access.php">アクセス</a></li>
+<li><a href="http://k-of.jp/2011/access.html">会場までの道案内</a></li>
+</ul></li>
+<li>参加費: 無料</li>
+<li>事前登録: 不要</li>
+<li>タグ:<ul>
+<li>公式ハッシュタグ <a href="http://twitter.com/search?q=%23kanrk04">#kanrk04</a></li>
+<li>公式タグ kansairubykaigi04</li>
+<li>twitter <a href="http://twitter.com/rubykansai">@rubykansai</a></li>
+</ul></li>
+<li>懇親会: 要事前登録<ul>
+<li>11月11日(金) <a href="http://k-of.jp/2011/party.html">関西オープンソース2011主催 懇親会</a></li>
+<li>11月12日(土) <a href="#party">Ruby関西主催 懇親会</a></li>
+</ul></li>
+<li>主催: 関西Ruby会議04実行委員会</li>
+<li>後援:<ul>
+<li><a href="http://jp.rubyist.net/">日本Rubyの会</a></li>
+<li><a href="http://jp.rubyist.net/?RubyKansai">Ruby関西</a></li>
+<li><a href="http://qwik.jp/minamirb/">Minami.rb</a></li>
+</ul></li>
+<li>同時開催:<ul>
+<li><a href="http://k-of.jp/2011/">関西オープンソース2011</a></li>
+<li><a href="http://k-of.jp/2011/kessen.html">関西コミュニティ大決戦</a></li>
+</ul></li>
+<li>お問い合わせ<ul>
+<li>関西Ruby会議04に関するお問い合わせは、kansai04 _at_ rubykaigi.orgまでメールにてご連絡ください。</li>
+</ul></li>
+</ul>
+<h3>プログラム</h3>
+<h4>11/11(金) days.first</h4>
+<h5>[招待講演] XPによるアジャイル開発事例紹介とRailsによる15分クラウドリリースデモ</h5>
+<ul>
+<li>14:00-14:50</li>
+<li>川端光義 / @agilekawabata (アジャイルウェア)</li>
+<li>大規模金融システムのXPによるアジャイル開発事例の紹介と、15分で最新のRuby on Rails3.1のアプリを作り、Herokuクラウド上にリリースするデモをやります。</li>
+</ul>
+<h5>Rubyイメージソングお披露目会</h5>
+<ul>
+<li>16:00-16:50</li>
+<li>Ruby関西 おうちカフェ部 (Ruby関西／Minami.rb)</li>
+<li>今年の春、株式会社クレオフーガさんの主催でRubyイメージソングコンテストが行われましたので２曲ここでご披露いたします。こじんまりな即席バンドですが、Rubyと音楽のコラボをお楽しみください。</li>
+</ul>
+<h5>[特別公演] クックパッドのものづくりについて</h5>
+<ul>
+<li>17:00-17:50</li>
+<li>高田悟史/佐々木達也 (クックパッド株式会社)</li>
+<li>技術を正しく活用し、本当に世の中の役にたつサービスを目指すクックパッド。月間UU1300万人を超える今、それを支えているのは30人ほどのエンジニアです。今回はその開発の裏側についてお話いたします。</li>
+</ul>
+<h4>11/12(土) days.last</h4>
+<h5>[招待講演] Social Coding with JRuby</h5>
+<ul>
+<li>11:00-11:50</li>
+<li>大場光一郎 (日本JRubyユーザー会 || 伊藤忠テクノソリューションズ株式会社)</li>
+<li>4年ほどJRubyにゆるく関わっている話者が、Javaで動くRubyであるところのJRubyについて最新動向を紹介しながら、オープンソースプロジェクトJRubyへのたのしい関わり方についてお話します。</li>
+</ul>
+<h5>[招待講演] TDDとRubyKaigi運営技術</h5>
+<ul>
+<li>13:00-13:50</li>
+<li>角谷信太郎 (一般社団法人日本Rubyの会 || (株)永和システムマネジメント)</li>
+<li>話者の7年間にわたるテスト駆動開発の実践と、過去6回のRubyKaigiの運営に携わった経験を踏まえて、Rubyコミュニティの一員になるコツをお話しします。</li>
+</ul>
+<h5>Ruby 初級者向けレッスン 出張版</h5>
+<ul>
+<li>14:00-14:50</li>
+<li>15:00-15:50</li>
+<li>ひがきまさる (Ruby関西)</li>
+<li>Rubyプログラミングを体験してみよう! トレーニングルームの PC を使ってRubyの基礎を学びます。</li>
+</ul>
+<h5>[招待講演] 私はいかにしてRubyによるオープンソース活動を楽しくやってきたか</h5>
+<ul>
+<li>16:00-16:50</li>
+<li>河野十行 / @jugyo (mediba)</li>
+<li>大学を中退してフリーターになった後、どのようにしてRubyプログラマーになったのか、いかにしてRubyによるオープンソース活動を楽しくやってきたか、ライブラリ作成のコツ、などについて話します。</li>
+</ul>
+<h5>[招待講演] Rubyから教わったものづくり</h5>
+<ul>
+<li>17:00-17:50</li>
+<li>大和田純 / june29 (Ruby札幌)</li>
+<li>これまで、RubyやRubyのコミュニティ、そこに根付く文化から、たくさんのことを学んできました。その中から「ものづくり」に関することを、アプリケーション開発者という話者の立場からお話したいです。</li>
+</ul>
+
+<div id='goodies'>
+<h3>おまけ</h3>
+<h5>バッジ</h5>
+<p>以下の一覧からお好きなアイコンのバッジをお選びください。</p>
+<table id='badges'>
+<tr>
+<th>一般参加者用</th>
+<th>スピーカー用</th>
+<th>スタッフ用</th>
+</tr>
+<tr>
+<td>
+<img class='badges' src='/images/kansai04/attendee_taiyou.png' />
+<ul class='attendee'>
+<li>
+<a href='/images/kansai04/attendee_kyoto_tower.png'>京都タワー</a>
+</li>
+<li>
+<a href='/images/kansai04/attendee_ise.png'>伊勢</a>
+</li>
+<li>
+<a href='/images/kansai04/attendee_maiko.png'>舞妓</a>
+</li>
+<li>
+<a href='/images/kansai04/attendee_port_tower.png'>ポートタワー</a>
+</li>
+<li>
+<a href='/images/kansai04/attendee_biwako.png'>琵琶湖</a>
+</li>
+<li>
+<a href='/images/kansai04/attendee_panda.png'>パンダ</a>
+</li>
+<li>
+<a href='/images/kansai04/attendee_konamon.png'>粉もん</a>
+</li>
+<li>
+<a href='/images/kansai04/attendee_mikan.png'>みかん</a>
+</li>
+<li>
+<a href='/images/kansai04/attendee_tsutenkaku.png'>通天閣</a>
+</li>
+<li>
+<a href='/images/kansai04/attendee_shika.png'>鹿</a>
+</li>
+<li>
+<a href='/images/kansai04/attendee_taiyou.png'>太陽の塔</a>
+</li>
+<li>
+<a href='/images/kansai04/attendee_daibutsu.png'>大仏</a>
+</li>
+<li>
+<a href='/images/kansai04/attendee_tako.png'>蛸</a>
+</li>
+<li>
+<a href='/images/kansai04/attendee_daimonji.png'>大文字</a>
+</li>
+<li>
+<a href='/images/kansai04/attendee_hikone.png'>彦根</a>
+</li>
+</ul>
+</td>
+<td>
+<img class='badges' src='/images/kansai04/speaker_shika.png' />
+<ul class='speaker'>
+<li>
+<a href='/images/kansai04/speaker_kyoto_tower.png'>京都タワー</a>
+</li>
+<li>
+<a href='/images/kansai04/speaker_ise.png'>伊勢</a>
+</li>
+<li>
+<a href='/images/kansai04/speaker_maiko.png'>舞妓</a>
+</li>
+<li>
+<a href='/images/kansai04/speaker_port_tower.png'>ポートタワー</a>
+</li>
+<li>
+<a href='/images/kansai04/speaker_biwako.png'>琵琶湖</a>
+</li>
+<li>
+<a href='/images/kansai04/speaker_panda.png'>パンダ</a>
+</li>
+<li>
+<a href='/images/kansai04/speaker_konamon.png'>粉もん</a>
+</li>
+<li>
+<a href='/images/kansai04/speaker_mikan.png'>みかん</a>
+</li>
+<li>
+<a href='/images/kansai04/speaker_tsutenkaku.png'>通天閣</a>
+</li>
+<li>
+<a href='/images/kansai04/speaker_shika.png'>鹿</a>
+</li>
+<li>
+<a href='/images/kansai04/speaker_taiyou.png'>太陽の塔</a>
+</li>
+<li>
+<a href='/images/kansai04/speaker_daibutsu.png'>大仏</a>
+</li>
+<li>
+<a href='/images/kansai04/speaker_tako.png'>蛸</a>
+</li>
+<li>
+<a href='/images/kansai04/speaker_daimonji.png'>大文字</a>
+</li>
+<li>
+<a href='/images/kansai04/speaker_hikone.png'>彦根</a>
+</li>
+</ul>
+</td>
+<td>
+<img class='badges' src='/images/kansai04/staff_daibutsu.png' />
+<ul class='staff'>
+<li>
+<a href='/images/kansai04/staff_kyoto_tower.png'>京都タワー</a>
+</li>
+<li>
+<a href='/images/kansai04/staff_ise.png'>伊勢</a>
+</li>
+<li>
+<a href='/images/kansai04/staff_maiko.png'>舞妓</a>
+</li>
+<li>
+<a href='/images/kansai04/staff_port_tower.png'>ポートタワー</a>
+</li>
+<li>
+<a href='/images/kansai04/staff_biwako.png'>琵琶湖</a>
+</li>
+<li>
+<a href='/images/kansai04/staff_panda.png'>パンダ</a>
+</li>
+<li>
+<a href='/images/kansai04/staff_konamon.png'>粉もん</a>
+</li>
+<li>
+<a href='/images/kansai04/staff_mikan.png'>みかん</a>
+</li>
+<li>
+<a href='/images/kansai04/staff_tsutenkaku.png'>通天閣</a>
+</li>
+<li>
+<a href='/images/kansai04/staff_shika.png'>鹿</a>
+</li>
+<li>
+<a href='/images/kansai04/staff_taiyou.png'>太陽の塔</a>
+</li>
+<li>
+<a href='/images/kansai04/staff_daibutsu.png'>大仏</a>
+</li>
+<li>
+<a href='/images/kansai04/staff_tako.png'>蛸</a>
+</li>
+<li>
+<a href='/images/kansai04/staff_daimonji.png'>大文字</a>
+</li>
+<li>
+<a href='/images/kansai04/staff_hikone.png'>彦根</a>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+<div id='font-acknowledgment'>
+バッジの参加者種別の書体は、
+<a href='http://yozvox.web.infoseek.co.jp/96D1954D94C5.html'>Y.OzFont毛筆版</a>
+を使用しています。
+</div>
+</div>
+<div id='party'>
+<h3>懇親会</h3>
+<dl>
+<dt>11月11日(金) 関西オープンソース2011主催 懇親会</dt>
+<dd>
+<a href="http://k-of.jp/2011/party.html">KOF2011：懇親会のご案内</a>
+</dd>
+<dt>11月12日(土) Ruby関西主催 懇親会</dt>
+<dd>
+ATND にて受け付けています。
+<a href="http://atnd.org/events/20917">関西Ruby会議04 懇親会</a>
+</dd>
+</dl>
+</div>
+<div id='access'>
+<h3>Map</h3>
+<div id='map'></div>
+</div>
+<div id='exco'>
+<h3>関西Ruby会議04実行委員会</h3>
+<dl>
+<dt>実行委員長</dt>
+<dd>
+<a href="http://twitter.com/no6v">@no6v</a>
+(Ruby関西)
+</dd>
+<dt>るびまレポート記事担当</dt>
+<dd>
+<a href="http://twitter.com/muryoimpl">@muryoimpl</a>
+(Ruby関西)
+</dd>
+<dd>
+<a href="http://twitter.com/shizuto_a">@shizuto_a</a>
+(無所属)
+</dd>
+<dt>会計</dt>
+<dd>
+<a href="http://twitter.com/spring_aki">@spring_aki</a>
+(Ruby関西)
+</dd>
+<dd>
+<a href="http://twitter.com/ayupanda">@ayupanda</a>
+(Ruby関西)
+</dd>
+<dt>懇親会幹事</dt>
+<dd>
+<a href="http://twitter.com/smantani">@smantani</a>
+(Ruby関西)
+</dd>
+<dt>雑務担当</dt>
+<dd>
+<a href="http://twitter.com/higaki">@higaki</a>
+(Ruby関西)
+</dd>
+</dl>
+</div>
+</div>
+<div id='footer'>
+Copyright (c) 2011 関西Ruby会議04実行委員会
+<br />
+Design by Yuna Design.
+</div>
+</div>
+<div id='right'></div>
+</div>
+</div>
+</body>
+</html>
