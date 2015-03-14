@@ -209,3 +209,7 @@
   title: "神奈川Ruby会議01"
   start_on: '2015-01-17'
   end_on: '2015-01-17'
+- name: hamamatsu01
+  title: "浜松Ruby会議01"
+  start_on: '2015-03-28'
+  end_on: '2015-03-28'
