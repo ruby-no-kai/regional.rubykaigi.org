@@ -217,3 +217,7 @@
   title: "とちぎRuby会議06"
   start_on: '2015-06-20'
   end_on: '2015-06-20'
+- name: kansai06
+  title: "関西Ruby会議06"
+  start_on: 2015-07-11
+  end_on: 2015-07-11
