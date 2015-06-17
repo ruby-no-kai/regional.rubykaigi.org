@@ -35,6 +35,12 @@ layout: default
   {% else %}
     <a href="/{{ event.name }}">{{ event.title }}</a>
   {% endif %}
+
+  {% if event.report_url %}
+    <a href="{{ event.report_url }}">（レポート）</a>
+  {% else %}
+    （レポートはまだありません）
+  {% endif %}
 </li>
 {% endfor %}
 </ul>
