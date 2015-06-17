@@ -103,6 +103,11 @@ div.event_index li span.event_name {
 	font-weight: bold;
 }
 
+div.event_index table {
+	border: 1;
+	margin-left: 2em;
+}
+
 div.epigraph {
 	margin: 1em 3em;
 	padding: 0 4em;
