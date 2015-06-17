@@ -18,9 +18,17 @@ layout: default
 
 <p>未確定情報を含む、今後の開催情報は、日本Ruby会の公式Wikiの<a href="https://github.com/ruby-no-kai/official/wiki/Upcomingregionalrubykaigi">これから開催される地域Ruby会議</a>のページも参照してください。</p>
 
-<ul>
+<table>
+<th>
+  <tr>
+    <th>Date</th>
+    <th>Name</th>
+    <th>Report</th>
+  </tr>
+</th>
 {% for event in site.data.events reversed %}
-<li>
+<tr>
+  <td>
   {{ event.start_on | date: "%Y-%m-%d(%a)" }}
   {% if event.start_on != event.end_on %}
     〜
@@ -30,14 +38,27 @@ layout: default
       {{ event.end_on | date: "%Y-%m-%d(%a)" }}
     {% endif %}
   {% endif %}
+  </td>
+  
+  <td>
   {% if event.external_url %}
     <a href="{{ event.external_url }}">{{ event.title }}</a>
   {% else %}
     <a href="/{{ event.name }}">{{ event.title }}</a>
   {% endif %}
-</li>
+  </td>
+
+  <td>
+  {% if event.report_url %}
+    <a href="{{ event.report_url }}">レポート</a>
+  {% else %}
+    レポートはまだありません
+  {% endif %}
+  </td>
+</tr>
+
 {% endfor %}
-</ul>
+</table>
 
 <h2>地域Ruby会議を開催するには</h2>
 <div>

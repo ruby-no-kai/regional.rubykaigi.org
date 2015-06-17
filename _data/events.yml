@@ -1,129 +1,160 @@
----
+﻿---
 - name: tokyo01
   title: "東京Ruby会議01"
   start_on: 2008-08-21
   end_on: 2008-08-21
+  report_url: http://magazine.rubyist.net/?0024-TokyoRubyKaigi01Report
 - name: sapporo01
   title: "札幌Ruby会議01"
   start_on: 2008-10-25
   end_on: 2008-10-25
+  report_url: http://magazine.rubyist.net/?0025-SapporoRubyKaigi01Report
 - name: kansai01
   title: "関西Ruby会議01"
   start_on: 2008-11-07
   end_on: 2008-11-08
+  report_url: http://magazine.rubyist.net/?0025-KansaiRubyKaigi01Report
 - name: kyushu01
   title: "九州Ruby会議01"
   start_on: 2008-12-14
   end_on: 2008-12-14
+  report_url: http://magazine.rubyist.net/?0043-KyushuRubyKaigi02Report
 - name: sendai01
   title: "仙台Ruby会議01"
   start_on: 2009-01-24
   end_on: 2009-01-24
+  report_url: http://magazine.rubyist.net/?0026-SendaiRubyKaigi01Report
 - name: matsue01
   title: "松江Ruby会議01"
   start_on: 2009-02-02
   end_on: 2009-02-02
+  report_url: http://magazine.rubyist.net/?0026-MatsueRubyKaigi01Report
 - name: tochigi01
   title: "とちぎRuby会議01"
   start_on: 2009-02-21
   end_on: 2009-02-21
+  report_url: http://magazine.rubyist.net/?0026-TochigiRubyKaigi01Report
 - name: hiroshima01
   title: "広島Ruby会議01"
   start_on: 2009-03-11
   end_on: 2009-03-11
+  report_url: http://magazine.rubyist.net/?0026-HiroshimaRubyKaigi01Report
 - name: nagoya01
   title: "名古屋Ruby会議01"
   start_on: 2009-10-10
   end_on: 2009-10-10
+  report_url: http://magazine.rubyist.net/?0028-NagoyaRubyKaigi01Report
 - name: tochigi02
   title: "とちぎRuby会議02"
   start_on: 2009-10-24
   end_on: 2009-10-24
+  report_url: http://magazine.rubyist.net/?0029-TochigiRubyKaigi02Report
 - name: kansai02
   title: "関西Ruby会議02"
   start_on: 2009-11-06
   end_on: 2009-11-07
+  report_url: http://magazine.rubyist.net/?0029-KansaiRubyKaigi02Report
 - name: tokyu01
   title: TokyuRuby会議01
   start_on: 2009-11-29
   end_on: 2009-11-29
+  report_url: http://magazine.rubyist.net/?0029-TokyuRubyKaigi01Report
 - name: sapporo02
   title: "札幌Ruby会議02"
   start_on: 2009-12-05
   end_on: 2009-12-05
+  report_url: http://magazine.rubyist.net/?0030-SapporoRubyKaigi02Report
 - name: matsue02
   title: "松江Ruby会議02"
   start_on: 2010-02-13
   end_on: 2010-02-13
+  report_url: http://magazine.rubyist.net/?0034-MatsueRubyKaigi02Report
 - name: tokyo03
   title: "東京Ruby会議03"
   start_on: 2010-02-28
   end_on: 2010-02-28
+  report_url: http://magazine.rubyist.net/?0030-TokyoRubyKaigi03Report
 - name: sendai02
   title: "仙台Ruby会議02"
   start_on: 2010-03-20
   end_on: 2010-03-20
+  report_url: http://magazine.rubyist.net/?0030-SendaiRubyKaigi02Report
 - name: tokyu02
   title: TokyuRuby会議02
   start_on: 2010-05-29
   end_on: 2010-05-29
+  report_url: http://magazine.rubyist.net/?0032-TokyuRubyKaigi02Report
 - name: kansai03
   title: "関西Ruby会議03"
   start_on: 2010-11-05
   end_on: 2010-11-06
+  report_url: http://magazine.rubyist.net/?0034-KansaiRubyKaigi03Report
 - name: sapporo03
   title: "札幌Ruby会議03"
   start_on: 2010-12-04
   end_on: 2010-12-04
+  report_url: http://magazine.rubyist.net/?0033-SapporoRubyKaigi03Report
 - name: tokyo05
   title: "東京Ruby会議05"
   start_on: 2011-02-04
   end_on: 2011-02-04
+  report_url: http://magazine.rubyist.net/?0033-TokyoRubyKaigi05Report
 - name: nagoya02
   title: "名古屋Ruby会議02"
   start_on: 2011-02-26
   end_on: 2011-02-26
+  report_url: http://magazine.rubyist.net/?0033-NagoyaRubyKaigi02Report
 - name: tochigi03
   title: "とちぎRuby会議03"
   start_on: 2011-02-26
   end_on: 2011-02-26
+  report_url: http://magazine.rubyist.net/?0033-TochigiRubyKaigi03Report
 - name: oedo01
   title: "大江戸Ruby会議01"
   start_on: 2011-04-10
   end_on: 2011-04-10
+  report_url: http://magazine.rubyist.net/?0034-OoedoRubyKaigi01Report
 - name: tokyu03
   title: TokyuRuby会議03
   start_on: 2011-05-29
   end_on: 2011-05-29
+  report_url: http://magazine.rubyist.net/?0036-TokyuRubyKaigi03Report
 - name: matsue03
   title: "松江Ruby会議03"
   start_on: 2011-07-03
   end_on: 2011-07-03
+  report_url: http://magazine.rubyist.net/?0035-MatsueRubyKaigi03Report
 - name: tokyu04
   title: TokyuRuby会議04
   start_on: 2011-10-29
   end_on: 2011-10-29
+  report_url: http://magazine.rubyist.net/?0037-TokyuRubyKaigi04Report
 - name: kansai04
   title: "関西Ruby会議04"
   start_on: 2011-11-11
   end_on: 2011-11-12
+  report_url: http://magazine.rubyist.net/?0038-KansaiRubyKaigi04Report
 - name: tochigi04
   title: "とちぎRuby会議04"
   start_on: 2011-12-03
   end_on: 2011-12-03
+  report_url: http://magazine.rubyist.net/?0037-TochigiRubyKaigi04Report
 - name: oedo02
   title: "大江戸Ruby会議02"
   start_on: 2012-02-21
   end_on: 2012-02-21
   external_url: http://jp.rubyist.net/magazine/?0039-MetPragdaveAtAsakusarb
+  report_url: http://jp.rubyist.net/magazine/?0039-MetPragdaveAtAsakusarb
 - name: minato01
   title: "みなとRuby会議01"
   start_on: 2012-06-02
   end_on: 2012-06-02
+  report_url: http://magazine.rubyist.net/?0039-MinatoRubyKaigi01Report
 - name: okayama01
   title: "岡山Ruby会議01"
   start_on: 2012-07-07
   end_on: 2012-07-07
+  report_url: http://magazine.rubyist.net/?0040-OkayamaRubyKaigi01Report
 - name: tokyu05
   title: TokyuRuby会議05
   start_on: 2012-07-29
@@ -132,58 +163,71 @@
   title: "松江Ruby会議04"
   start_on: 2012-09-01
   end_on: 2012-09-01
+  report_url: http://magazine.rubyist.net/?0040-MatsueRubyKaigi04Report
 - name: sapporo2012
   title: "札幌Ruby会議2012"
   start_on: 2012-09-14
   end_on: 2012-09-16
   external_url: http://sapporo.rubykaigi.org/2012
+  report_url: http://magazine.rubyist.net/?0040-SapporoRubyKaigi2012Report
 - name: fukuoka01
   title: "福岡Ruby会議01"
   start_on: 2012-12-01
   end_on: 2012-12-01
   external_url: http://fukuokarb.doorkeeper.jp/events/2049
+  report_url: http://magazine.rubyist.net/?0042-FukuokaRubyKaigi01Report
 - name: tokyo10
   title: "東京Ruby会議10"
   start_on: 2013-01-13
   end_on: 2013-01-14
   external_url: http://tokyo10.rubykaigi.info/
+  report_url: http://magazine.rubyist.net/?0041-TokyoRubyKaigi10Report_1st
 - name: gunma01
   title: "ぐんまRuby会議01"
   start_on: 2013-03-09
   end_on: 2013-03-09
+  report_url: http://magazine.rubyist.net/?0042-GunmaRubyKaigi01Report
 - name: oedo03
   title: "大江戸Ruby会議03"
   start_on: 2013-03-16
   end_on: 2013-03-16
+  report_url: http://magazine.rubyist.net/?0042-OoedoRubyKaigi03Report
 - name: kyushu02
   title: "九州Ruby会議02"
   start_on: 2013-04-14
   end_on: 2013-04-14
   external_url: http://rubyist-kyushu.doorkeeper.jp/events/3342
+  report_url: http://magazine.rubyist.net/?0043-KyushuRubyKaigi02Report
 - name: tokyu06
   title: TokyuRuby会議06
   start_on: 2013-06-29
   end_on: 2013-06-29
+  report_url: http://magazine.rubyist.net/?0044-TokyuRubyKaigi06Report
 - name: okayama02
   title: "岡山Ruby会議02"
   start_on: 2013-07-06
   end_on: 2013-07-06
+  report_url: http://magazine.rubyist.net/?0044-OkayamaRubyKaigi02Report
 - name: kansai05
   title: "関西Ruby会議05"
   start_on: 2013-08-31
   end_on: 2013-08-31
+  report_url: http://magazine.rubyist.net/?0045-KansaiRubyKaigi05Report
 - name: tochigi05
   title: "とちぎRuby会議05"
   start_on: 2013-09-21
   end_on: 2013-09-21
+  report_url: http://magazine.rubyist.net/?0045-TochigiRubyKaigi05Report
 - name: chuork01
   title: "札幌市中央区Ruby会議01"
   start_on: 2014-02-08
   end_on: 2014-02-08
+  report_url: http://magazine.rubyist.net/?0047-SapporoChuorkRubyKaigi0Report
 - name: okrk01
   title: "沖縄Ruby会議01"
   start_on: 2014-03-01
   end_on: 2014-03-01
+  report_url: http://magazine.rubyist.net/?0047-OkinawaRubyKaigi01Report
 - name: matsue05
   title: "松江Ruby会議05"
   start_on: 2014-03-15
@@ -193,14 +237,17 @@
   title: TokyuRuby会議07
   start_on: 2014-03-29
   end_on: 2014-03-29
+  report_url: http://magazine.rubyist.net/?0050-TokyuRubyKaigi07Report
 - name: oedo04
   title: "大江戸Ruby会議04"
   start_on: 2014-04-19
   end_on: 2014-04-19
+  report_url: http://magazine.rubyist.net/?0049-OoedoRubyKaigi04Report
 - name: shibuya01
   title: "渋谷Ruby会議01"
   start_on: 2014-11-01
   end_on: 2014-11-01
+  report_url: http://magazine.rubyist.net/?0050-ShibuyaRubyKaigi01Report
 - name: tokyu08
   title: TokyuRuby会議08
   start_on: 2014-11-29
@@ -209,6 +256,7 @@
   title: "神奈川Ruby会議01"
   start_on: '2015-01-17'
   end_on: '2015-01-17'
+  report_url: http://magazine.rubyist.net/?0050-KanagawaRubyKaigi01Report
 - name: hamamatsu01
   title: "浜松Ruby会議01"
   start_on: '2015-03-28'
