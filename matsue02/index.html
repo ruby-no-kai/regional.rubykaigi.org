@@ -156,13 +156,13 @@ next_piece = context.candidates.first</pre>
 <p><em>left_sec</em>: ゲーム全体の残り時間。単位は秒。</p>
 <hr>
 <pre>使用例</pre>
-<pre>if context.left_sec &amp;lt; 15
+<pre>if context.left_sec &lt; 15
   # 残りが15秒なので自分の駒が最大となる手を打つ
 end</pre>
 <p><em>next_time</em>: 持ち時間（次の手を打つまでの時間）</p>
 <hr>
 <pre>使用例</pre>
-<pre>if context.next_time &amp;gt; Time.now
+<pre>if context.next_time &gt; Time.now
   # 次の手を打った後に、時間が余っていれば先を読む。
 end</pre>
 <p>また、次に打つ手もcontextに設定します。</p>
