@@ -253,6 +253,11 @@
   title: TokyuRuby会議08
   start_on: 2014-11-29
   end_on: 2014-11-29
+- name: matsue06
+  title: "松江Ruby会議05"
+  start_on: 2014-12-20
+  end_on: 2014-12-20
+  external_url: http://matsue.rubyist.net/matrk06/
 - name: kana01
   title: "神奈川Ruby会議01"
   start_on: '2015-01-17'
