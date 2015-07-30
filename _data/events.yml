@@ -279,3 +279,8 @@
   title: "TokyuRuby会議09"
   start_on: 2015-08-29
   end_on: 2015-08-29
+- name: matsue07
+  title: "松江Ruby会議07"
+  start_on: 2015-09-26
+  end_on: 2015-09-26
+  external_url: http://matsue.rubyist.net/matrk07/
