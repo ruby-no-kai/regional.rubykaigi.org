@@ -284,3 +284,7 @@
   start_on: 2015-09-26
   end_on: 2015-09-26
   external_url: http://matsue.rubyist.net/matrk07/
+- name: oedo05
+  title: "大江戸Ruby会議05"
+  start_on: 2015-11-08
+  end_on: 2015-11-08
