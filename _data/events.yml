@@ -253,11 +253,13 @@
   title: TokyuRuby会議08
   start_on: 2014-11-29
   end_on: 2014-11-29
+  report_url: http://magazine.rubyist.net/?0051-TokyuRubyKaigi08Report
 - name: matsue06
   title: "松江Ruby会議06"
   start_on: 2014-12-20
   end_on: 2014-12-20
   external_url: http://matsue.rubyist.net/matrk06/
+  report_url: http://magazine.rubyist.net/?0051-MatsueRubyKaigi06Report
 - name: kana01
   title: "神奈川Ruby会議01"
   start_on: '2015-01-17'
@@ -267,14 +269,17 @@
   title: "浜松Ruby会議01"
   start_on: '2015-03-28'
   end_on: '2015-03-28'
+  report_url: http://magazine.rubyist.net/?0051-HamamatsuRubyKaigi01Report
 - name: tochigi06
   title: "とちぎRuby会議06"
   start_on: '2015-06-20'
   end_on: '2015-06-20'
+  report_url: http://magazine.rubyist.net/?0051-TochigiRubyKaigi06Report
 - name: kansai06
   title: "関西Ruby会議06"
   start_on: 2015-07-11
   end_on: 2015-07-11
+  report_url: http://magazine.rubyist.net/?0051-KansaiRubyKaigi06Report
 - name: tokyu09
   title: "TokyuRuby会議09"
   start_on: 2015-08-29
