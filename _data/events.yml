@@ -284,6 +284,7 @@
   title: "TokyuRuby会議09"
   start_on: 2015-08-29
   end_on: 2015-08-29
+  report_url: http://magazine.rubyist.net/?0053-TokyuRubyKaigi09Report
 - name: matsue07
   title: "松江Ruby会議07"
   start_on: 2015-09-26
@@ -294,6 +295,7 @@
   title: "大江戸Ruby会議05"
   start_on: 2015-11-08
   end_on: 2015-11-08
+  report_url: http://magazine.rubyist.net/?0053-OoedoRubyKaigi05Report
 - name: tokyo11
   title: "東京Ruby会議11"
   start_on: 2016-05-28
