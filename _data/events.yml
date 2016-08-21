@@ -300,10 +300,12 @@
   title: "東京Ruby会議11"
   start_on: 2016-05-28
   end_on: 2016-05-28
+  report_url: http://magazine.rubyist.net/?0054-TokyoRubyKaigi11Report
 - name: tokyu10
   title: "TokyuRuby会議10"
   start_on: 2016-05-29
   end_on: 2016-05-29
+  report_url: http://magazine.rubyist.net/?0054-TokyuRubyKaigi10Report
 - name: kwsk01
   title: "川崎Ruby会議01"
   start_on: 2016-08-20
