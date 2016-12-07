@@ -310,6 +310,11 @@
   title: "川崎Ruby会議01"
   start_on: 2016-08-20
   end_on: 2016-08-20
+- name: matsue08
+  title: "松江Ruby会議08"
+  start_on: 2016-12-17
+  end_on: 2016-12-17
+  external_url: http://matsue.rubyist.net/matrk08/
 - name: nagoya03
   title: "名古屋Ruby会議03"
   start_on: 2017-02-11
