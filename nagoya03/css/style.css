@@ -296,6 +296,32 @@ table td{
 	margin: 0 auto;
 	margin-bottom: 80px;
 }
+
+section .invited-speaker__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+section .invited-speaker__list-item {
+  width: 50%;
+}
+
+section .invited-speaker__avatar {
+  margin: 8px 4px;
+}
+
+section .invited-speaker__avatar .invited-speaker__avatar-img {
+  background: #fff;
+  border-radius: 4px;
+  margin: auto;
+  width: 50%;
+}
+
+section .invited-speaker__avatar .invited-speaker__description {
+  font-size: 0.2vw;
+  margin-right: 12px;
+}
+
 iframe{
 	height: 400px;
 }
