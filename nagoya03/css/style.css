@@ -306,6 +306,14 @@ section .invited-speaker__list-item {
   width: 50%;
 }
 
+.invited-speaker-content .invited-speaker-content__list {
+  display: flex;
+}
+
+.invited-speaker-content .invited-speaker-content__list .invited-speaker-content__list-item {
+  margin: 0 4px 4px 0;
+}
+
 section .invited-speaker__avatar {
   margin: 8px 4px;
 }
@@ -318,9 +326,10 @@ section .invited-speaker__avatar .invited-speaker__avatar-img {
 }
 
 section .invited-speaker__avatar .invited-speaker__description {
-  font-size: 0.2vw;
+  font-size: 10pt;
   margin-right: 12px;
 }
+
 
 iframe{
 	height: 400px;
