@@ -330,6 +330,20 @@ section .invited-speaker__avatar .invited-speaker__description {
   margin-right: 12px;
 }
 
+.sponsor-list {
+}
+
+.sponsor-list .sponsor-list__item {
+  margin-top: 6px;
+}
+
+.sponsor-list .sponsor-list__item .sponsor-list__logo {
+  width: 180px;
+}
+
+.sponsor-list .sponsor-list__item .sponsor-list__logo-image {
+  height: auto;
+}
 
 iframe{
 	height: 400px;
