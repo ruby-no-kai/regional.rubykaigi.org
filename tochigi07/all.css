@@ -109,7 +109,7 @@ img {
 }
 
 a {
-  text-decoration: none;
+/*  text-decoration: none;*/
 }
 
 a:visited:not(.ext) {
@@ -1125,4 +1125,3 @@ ul.praise {
   margin-top:  0.5em;
   text-align: right;
 }
-
