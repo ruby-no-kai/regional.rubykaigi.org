@@ -349,6 +349,24 @@ dl.bibliography dd em {
 
 }
 
+.schedule table, td, th {
+  border-collapse: collapse;
+}
+
+.schedule table {
+  # width: 60%;
+  margin: 0 auto;
+}
+
+.schedule tr:nth-child(odd) {
+  background: #dfdfdf;
+}
+
+.schedule td {
+  padding-left: 2em;
+  padding-right: 2em;
+  text-align: center;
+}
 
 
 .nav-foot .nav-large {
