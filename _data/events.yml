@@ -332,6 +332,11 @@
   title: "TokyuRuby会議11"
   start_on: 2017-07-29
   end_on: 2017-07-29
+- name: ginza01
+  title: "ぎんざRuby会議01"
+  start_on: 2017-08-05
+  end_on: 2017-08-05
+  external_url: https://ginzarb.github.io//kaigi01/
 - name: tochigi07
   title: "とちぎRuby会議07"
   start_on: 2017-08-26
