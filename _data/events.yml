@@ -328,6 +328,10 @@
   title: "関西Ruby会議2017"
   start_on: 2017-05-27
   end_on: 2017-05-27
+- name: tokyu11
+  title: "TokyuRuby会議11"
+  start_on: 2017-07-29
+  end_on: 2017-07-29
 - name: tochigi07
   title: "とちぎRuby会議07"
   start_on: 2017-08-26
