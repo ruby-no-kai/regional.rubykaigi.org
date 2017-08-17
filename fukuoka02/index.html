@@ -3,21 +3,22 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>福岡Ruby会議02</title>
+  <title>福岡Ruby会議02 by Fukuoka.rb & Engineer Lab. Fukuoka</title>
   <meta name="description" content="「もう一度、Rubyと出会う」をテーマに、大名小跡地Fukuoka growth nextで行う地域Ruby会議です。2017.11.25(Sat) 開催予定" />
   <meta name="HandheldFriendly" content="True" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta property="og:title" content="福岡Ruby会議02" />
+  <meta property="og:title" content="福岡Ruby会議02 by Fukuoka.rb & Engineer Lab. Fukuoka" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="http://regional.rubykaigi.org/fukuoka02/" />
   <meta property="og:image" content="http://regional.rubykaigi.org/fukuoka02/assets/images/ogp.png" />
-  <meta property="og:site_name" content="福岡Ruby会議02" />
+  <meta property="og:site_name" content="福岡Ruby会議02 by Fukuoka.rb & Engineer Lab. Fukuoka" />
   <meta property="og:description" content="「もう一度、Rubyと出会う」をテーマに、大名小跡地Fukuoka growth nextで行う地域Ruby会議です。2017.11.25(Sat) 開催予定" />
   
   <link rel="stylesheet" type="text/css" href="assets/css/normalize.css" />
   <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="assets/js/index.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="assets/tools/font-awesome/css/font-awesome.min.css">
 </head>
 <body>
   <div>
@@ -26,16 +27,19 @@
     <h1 class="header__brand">
       <a href="/fukuoka02/" class="header__logo"><img src="./assets/images/logo-mark.svg" alt="Fukuoka RubyKaigi 02" /></a>
     </h1>
-    <nav class="header__nav">
+    <div class="header__nav">
+      <nav>
   <ul class="header__items">
-    
-      <li class="header__item"><a href="#about">About</a></li>
-      <li class="header__item"><a href="#tickets">Tickets</a></li>
-      <li class="header__item"><a href="./coc.html">CoC</a></li>
-    
+    <li class="header__item"><a href="./timetable.html">Time Table</a></li>
+    <li class="header__item"><a href="./staff.html">Staff</a></li>
+    <li class="header__item"><a href="./coc.html">CoC</a></li>
+    <!-- 予約時に表示
+      <li class="drawer__item"><a href="#">チケットを予約する</a></li>
+    -->
   </ul>
 </nav>
 
+    </div>
   </div>
 </header>
 
@@ -43,7 +47,7 @@
       <div class="hero">
   <h2 class="hero__logo"><img src="./assets/images/logo-hero.svg" alt="Fukuoka RubyKaigi 02" /></h2>
   <p class="hero__date">2017.11.25 10:00-17:30</p>
-  <p class="hero__place">大名小学校跡地 FUKUOKA growth next</p>
+  <p class="hero__by">主催: Fukuoka.rb / Engineer Lab. Fukuoka</p>
   <!-- 予約時に表示
     <a href="#" class="button button__primary">チケットを予約する</a>
   -->
@@ -71,6 +75,50 @@
   </div>
 </section>
 
+<section id="guest" class="default-section">
+  <div class="default-section__inner">
+    <h1 class="default-section__headline">Guest Speakers</h1>
+    <div class="default-section__card-wrap">
+      <div class="default-section__card default-section__card--guest">
+        <img class="default-section__img default-section__img--guest" src="./assets/images/guestspeaker-ko1.jpg" alt="笹田 耕一">
+        <h2 class="default-section__title">笹田 耕一 <a href="https://github.com/ko1" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></h2>
+        <p class="default-section__body">
+          クックパッド株式会社<br>
+          <span class="default-section__caption">
+            大学在学時からRuby向け仮想マシンYARVを開発し、2007年に「Ruby 1.9」に採用される。以降、Rubyコミッターとして、言語処理系の高速化に従事し、仮想マシンやガーベージコレクションの性能改善などを行なう。<br>
+            東京大学大学院情報理工学系研究科助手、助教、講師（2006～2012）。
+            株式会社セールスフォース・ドットコム、Heroku, Inc.（2012～2017）。
+            現在はクックパッド株式会社にてRubyインタプリタ開発に従事（2017～）。
+            Rubyアソシエーション理事 （2012?現任）。博士（情報理工学）。未踏ユーススーパークリエータ（2004）、情報処理学会山下記念研究賞（2015）。他、受賞多数（詳細）。
+          </span>
+        </p>
+      </div>
+      <div class="default-section__card default-section__card--guest">
+        <img class="default-section__img default-section__img--guest" src="./assets/images/guestspeaker-amatsuda.jpg" alt="松田 明">
+        <h2 class="default-section__title">松田 明 <a href="https://github.com/amatsuda" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></h2>
+        <p class="default-section__body">
+          Asakusa.rb<br>
+          <span class="default-section__caption">
+            Rubyコミッター。Railsコミッター。Hamlのメンテナー。kaminari, action_args, active_decorator, stateful_enum, gem_src等のライブラリ作者。Asakusa.rbの発起人。RubyKaigiの主催者。Ruby Hero。
+          </span>
+        </p>
+      </div>
+    </div>
+    <a class="default-section__button" href="./timetable.html">タイムテーブルを見る</a>
+  </div>
+</section>
+
+<section id="sponsors" class="default-section default-section--gray">
+  <div class="default-section__inner">
+    <h1 class="default-section__headline">Sponsors</h1>
+    <h2 class="default-section__title">Call for Sponsors will open at 2017/08/21 12:00(JST)</h2>
+    <p class="default-section__body">
+      近日募集を開始いたします。<br>
+      <a href="http://fukuokarb.github.io/kaigi/call4sponsors-fukurk02.pdf" target="_blank">概要はこちら</a>。
+    </p>
+  </div>
+</section>
+
 <div class="default-section default-section--map">
   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.2990641503225!2d130.39288827752213!3d33.590358400421316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x354191860efba4d3%3A0xd33287b5f6832abf!2z44CSODEwLTAwNDEg56aP5bKh55yM56aP5bKh5biC5Lit5aSu5Yy65aSn5ZCN77yS5LiB55uu77yW4oiS77yR77yR!5e0!3m2!1sja!2sjp!4v1492671285902" frameborder="0" allowfullscreen></iframe>
 </div>
@@ -78,7 +126,7 @@
     </div>
   </div>
   <footer class="footer">
-    <section class="footer__copyright">Created by Fukuoka.rb</a> &copy; 2017</section>
+    <section class="footer__copyright">Created by Fukuoka.rb & Engineer Lab. Fukuoka</a> &copy; 2017</section>
 </footer>
 
   <script type="text/javascript" src="assets/js/index.js"></script>
