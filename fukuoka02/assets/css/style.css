@@ -199,7 +199,7 @@ button {
           align-items: center;
 }
 .header__brand {
-  width: 60px;
+  width: 50px;
 }
 .header__logo {
   cursor: pointer;
@@ -222,7 +222,7 @@ button {
           align-items: center;
 }
 .header__item {
-  margin: 0 0 0 18px;
+  margin: 0 0 0 15px;
 }
 .header__item a {
   cursor: pointer;
@@ -295,6 +295,87 @@ button {
   margin: 0 auto 10px;
   color: #999;
 }
+.default-section__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+.default-section__img--guest,
+.default-section__img--staff {
+  max-width: 200px;
+  margin: 0 auto 20px;
+}
+.default-section__caption {
+  font-size: 1.3rem;
+  display: inline-block;
+  text-align: left;
+  margin: 5px 0;
+}
+.default-section__card-wrap {
+  display: flex;
+  -webkit-justify-content: space-around; /* Safari */
+  justify-content:         space-around;
+  flex-wrap: wrap;
+}
+.default-section__card-wrap--staff {
+  -webkit-justify-content: flex-start; /* Safari */
+  justify-content:         flex-start;
+}
+.default-section__card {
+  padding: 20px;
+  box-sizing: border-box;
+}
+.default-section__card--staff {
+  width: 50%;
+}
+.default-section__button {
+  position: relative;
+  display: block;
+  font-weight: bold;
+  padding: 1rem 1rem;
+  max-width: 280px;
+  text-decoration: none;
+  color: #FFF;
+  text-align: center;
+  background: #F85032;
+  transition: color 0.3s ease;
+  margin: 0 auto;
+  font-size: 2rem;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+.default-section__button:hover {
+  background: #CB2D3E;
+  color: #FFF;
+}
+.default-section__table-wrap {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 800px;
+}
+.default-section__table {
+  margin: 0 0 40px;
+  width: 100%;
+  display: table;
+}
+.default-section__table__row {
+  padding: 10px 0;
+  background: #F6F6F6;
+  display: table-row;
+}
+.default-section__table__row:nth-of-type(even) {
+  background: #FFF;
+}
+.default-section__table__header {
+  font-weight: bold;
+  color: #FFF;
+  background: #F85032;
+}
+.default-section__table__cell {
+  padding: 5px 10px;
+  display: table-cell;
+}
 
 /* post */
 
@@ -343,12 +424,24 @@ button {
 /* メディアクエリ */
 
 @media only screen and (min-width: 768px) {
+  .header__brand {
+    width: 60px;
+  }
   .hero__logo {
     max-width: 260px;
+  }
+  .header__item {
+    margin: 0 0 0 20px;
   }
   .hero__date,
   .hero__place {
     font-size: 2.4rem;
+  }
+  .default-section__card--guest {
+    width: 50%;
+  }
+  .default-section__card--staff {
+    width: 25%;
   }
   .hidden-mb {
     display: inherit;
