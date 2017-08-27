@@ -316,10 +316,12 @@
   start_on: 2016-12-17
   end_on: 2016-12-17
   external_url: http://matsue.rubyist.net/matrk08/
+  report_url: http://magazine.rubyist.net/?0056-MatsueRubyKaigi08Report
 - name: nagoya03
   title: "名古屋Ruby会議03"
   start_on: 2017-02-11
   end_on: 2017-02-11
+  report_url: http://magazine.rubyist.net/?0056-NagoyaRubyKaigi03Report
 - name: oedo06
   title: "大江戸Ruby会議06"
   start_on: 2017-03-20
@@ -328,6 +330,7 @@
   title: "関西Ruby会議2017"
   start_on: 2017-05-27
   end_on: 2017-05-27
+  report_url: http://magazine.rubyist.net/?0056-KansaiRubyKaigi2017Report
 - name: tokyu11
   title: "TokyuRuby会議11"
   start_on: 2017-07-29
