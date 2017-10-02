@@ -16,9 +16,23 @@
   
   <link rel="stylesheet" type="text/css" href="assets/css/normalize.css" />
   <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/tooltipster.bundle.min.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/tooltipster-sideTip-light.min.css" />
+
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="assets/js/tooltipster.bundle.min.js"></script>
   <script src="assets/js/index.js" charset="utf-8"></script>
   <link rel="stylesheet" href="assets/tools/font-awesome/css/font-awesome.min.css">
+
+  <script>
+    $(document).ready(function() {
+      $('.tooltip').tooltipster({
+        theme: 'tooltipster-light',
+        // trigger: 'click',
+        maxWidth: 600,
+      });
+    });
+  </script>
 </head>
 <body>
   <div>
