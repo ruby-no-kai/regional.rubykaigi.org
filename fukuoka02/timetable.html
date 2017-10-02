@@ -16,9 +16,23 @@
   
   <link rel="stylesheet" type="text/css" href="assets/css/normalize.css" />
   <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/tooltipster.bundle.min.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/tooltipster-sideTip-light.min.css" />
+
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="assets/js/tooltipster.bundle.min.js"></script>
   <script src="assets/js/index.js" charset="utf-8"></script>
   <link rel="stylesheet" href="assets/tools/font-awesome/css/font-awesome.min.css">
+
+  <script>
+    $(document).ready(function() {
+      $('.tooltip').tooltipster({
+        theme: 'tooltipster-light',
+        // trigger: 'click',
+        maxWidth: 600,
+      });
+    });
+  </script>
 </head>
 <body>
   <div>
@@ -82,11 +96,10 @@
 <section id="about" class="default-section">
   <div class="default-section__inner">
     <h1 class="default-section__headline">CFP</h1>
-    <h2 class="default-section__title">2017.08.21 12:00 - 2017.09.30 23:59</h2>
+    <h2 class="default-section__title">ただいま審査中</h2>
     <p class="default-section__body">
-      CFP方式で登壇者を公募しております。どなたでも奮ってご応募ください。
+      2017.09.30をもって募集を締め切りました。たくさんのご応募ありがとうございました。
     </p>
-    <a class="default-section__button" href="https://docs.google.com/forms/d/e/1FAIpQLSdPZVYhQCjiMVnn65YSiJAXX-3w8HXSA7ZrqxEkHE7l35IcfA/viewform" target="_blank">CFPフォームから応募する</a>
   </div>
 </section>
 

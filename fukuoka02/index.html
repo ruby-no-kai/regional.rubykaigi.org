@@ -16,9 +16,23 @@
   
   <link rel="stylesheet" type="text/css" href="assets/css/normalize.css" />
   <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/tooltipster.bundle.min.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/tooltipster-sideTip-light.min.css" />
+
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="assets/js/tooltipster.bundle.min.js"></script>
   <script src="assets/js/index.js" charset="utf-8"></script>
   <link rel="stylesheet" href="assets/tools/font-awesome/css/font-awesome.min.css">
+
+  <script>
+    $(document).ready(function() {
+      $('.tooltip').tooltipster({
+        theme: 'tooltipster-light',
+        // trigger: 'click',
+        maxWidth: 600,
+      });
+    });
+  </script>
 </head>
 <body>
   <div>
@@ -106,20 +120,116 @@
       </div>
     </div>
     <a class="default-section__button" href="./timetable.html">タイムテーブルを見る</a>
-    <p class="default-section__body">
-      登壇希望の方は<a href="https://docs.google.com/forms/d/e/1FAIpQLSdPZVYhQCjiMVnn65YSiJAXX-3w8HXSA7ZrqxEkHE7l35IcfA/viewform" target="_blank">CFPフォーム</a>からご応募ください。      
-    </p>
   </div>
 </section>
 
 <section id="sponsors" class="default-section default-section--gray">
   <div class="default-section__inner">
     <h1 class="default-section__headline">Sponsors</h1>
-    <h2 class="default-section__title">2017.08.21 12:00 - 2017.09.30 23:59</h2>
+    <h2 class="default-section__title">めんたいスポンサー</h2>
+    <div class="default-section__card-wrap">
+      <div class="default-section__card default-section__card--sponsor">
+        <img class="default-section__img default-section__img--sponsor tooltip" src="./assets/images/logo-moneyforward.png" alt="株式会社マネーフォワード"
+             title="マネーフォワードは、2012年5月の設立以来、「お金を前へ。人生をもっと前へ。」というミッションを掲げ、個人や法人のお金に関するすべての課題解決を目指すFintech企業です。現在、個人向け自動家計簿・資産管理サービス『マネーフォワード』およびビジネス向けクラウドサービス『MFクラウドシリーズ』を提供しており、『マネーフォワード』は利用者数500万を突破、『MFクラウドシリーズ』は50万以上のユーザーに利用されています。">
+        <p class="default-section__body">
+          株式会社マネーフォワード <a href="https://corp.moneyforward.com/" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i></a>
+        </p>
+      </div>
+      <div class="default-section__card default-section__card--sponsor">
+        <img class="default-section__img default-section__img--sponsor tooltip" src="./assets/images/logo-fusic.png" alt="株式会社Fusic"
+             title="株式会社Fusicは福岡を拠点に、テクノロジーコンサルティングやWebシステムの開発を中心に事業を展開しています。100%自社開発にこだわり、他にはない自由な発想・提案で、お客様の事業の成長に貢献しています。
+Rubyを利用した開発実績も多数あり、4月にリリースしたIoT開発者向けの仮想デバイス(mock)作成サービス「mockmock」もその1つです。mockmockでは、Ruby/mrubyにより大量の疑似データの生成・送信を実現しています。">
+        <p class="default-section__body">
+          株式会社Fusic <a href="https://fusic.co.jp/" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i></a>
+        </p>
+      </div>
+      <div class="default-section__card default-section__card--sponsor">
+        <img class="default-section__img default-section__img--sponsor tooltip" src="./assets/images/logo-medpeer.png" alt="メドピア株式会社"
+             title="メドピア株式会社は、現役医師が経営するヘルステックカンパニーとして、国内医師の3人に1人が参加する国内有数のドクタープラットフォーム「MedPeer」や、遠隔医療サービスなどを運営しています。
+「パーフェクト Ruby onRails」著者の前島氏らも迎えて一新したRubyの開発環境で、プラットフォームに集積する医師10万人の「集合知」とテクノロジーで“医療を再発明”することを目指しています。">
+        <p class="default-section__body">
+          メドピア株式会社 <a href="https://medpeer.co.jp/" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i></a>
+        </p>
+      </div>
+    </div>
+    <h2 class="default-section__title">飛び梅スポンサー</h2>
     <p class="default-section__body">
-      概要は<a href="http://fukuokarb.github.io/kaigi/call4sponsors-fukurk02.pdf" target="_blank">スポンサー概要PDF</a>をご覧ください。      
+      笹田氏の福岡ご招待に関する費用をご支援いただきました！
     </p>
-    <a class="default-section__button" href="https://docs.google.com/forms/d/e/1FAIpQLScDyn4GsZrMnOzGpG9LujTOAjmtvmPA_Vxep72d2a4HZQ0oxQ/viewform" target="_blank">スポンサーに応募する</a>
+    <div class="default-section__card-wrap">
+      <div class="default-section__card default-section__card--sponsor">
+        <img class="default-section__img default-section__img--sponsor tooltip" src="./assets/images/logo-cookpad.png" alt="クックパッド株式会社"
+             title="クックパッドは「毎日の料理を楽しみにする」というミッションのもと、日本をはじめ世界各国で料理レシピの投稿・検索サービスを提供しています。より価値のあるサービスを届けるため、クックパッドでは一人一人のエンジニアがリーダーシップを持ち、ユーザーの日々の料理に関する課題の発見・解決に向けて取り組んでいます。">
+        <p class="default-section__body">
+          クックパッド株式会社 <a href="https://cookpad.com/" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i></a>
+        </p>
+      </div>
+    </div>
+    <h2 class="default-section__title">とんこつスポンサー</h2>
+    <div class="default-section__card-wrap default-section__card-wrap--sponsor-small">
+      <div class="default-section__card default-section__card--sponsor-small">
+        <img class="default-section__img default-section__img--sponsor-small tooltip" src="./assets/images/logo-pixiv.png" alt="ピクシブ株式会社"
+             title="イラストコミュニケーションサービスpixivをはじめ、「創作活動をもっと楽しくする」を理念に様々なサービスを作っています。2017年に立ち上げた福岡オフィスでもRubyを採用。">
+        <p class="default-section__body">
+          ピクシブ株式会社 <a href="https://www.pixiv.co.jp/" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i></a>
+        </p>
+      </div>
+      <div class="default-section__card default-section__card--sponsor-small">
+        <img class="default-section__img default-section__img--sponsor-small tooltip" src="./assets/images/logo-pepabo.png" alt="GMOペパボ株式会社"
+             title="GMOペパボ株式会社は、ホスティング・EC支援・ハンドメイドなど、様々な領域でWebサービスを運営している会社です。
+近年特に力を入れているRubyについては、単にユーザーとして使うだけでなく、CRubyのコミッタやngx_mrubyの開発者などのスターエンジニアが多数在籍しており、コミュニティへの貢献も積極的に行っています。
+「いるだけで成長できる環境」を標榜し、エンジニアが楽しく開発できるWebサービス企業を目指しています。">
+        <p class="default-section__body">
+          GMOペパボ株式会社 <a href="https://pepabo.com/" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i></a>
+        </p>
+      </div>
+      <div class="default-section__card default-section__card--sponsor-small">
+        <img class="default-section__img default-section__img--sponsor-small tooltip" src="./assets/images/logo-members.png" alt="株式会社メンバーズ"
+             title="Webエンジニア・デジタルクリエイターの幸せを追求しているデジタルマーケティング支援企業です。技術とクリエイティブの力でマーケティングのあり方を変え、心豊かな社会の実現を目指します。">
+        <p class="default-section__body">
+          株式会社メンバーズ <a href="http://www.members.co.jp/" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i></a>
+        </p>
+      </div>
+      <div class="default-section__card default-section__card--sponsor-small">
+        <img class="default-section__img default-section__img--sponsor-small tooltip" src="./assets/images/logo-freude.png" alt="フロイデ株式会社"
+             title="「無職フリーターを1000人エンジニアにする」をミッションのもと、東京・福岡・北九州を拠点にシステム開発・構築を専門とするラボ型IT企業です。本サービスで、Rails, PHP, Python, モバイルアプリ開発等の最新技術を活かして、様々な業態の企業のITを全力で支援します！">
+        <p class="default-section__body">
+          フロイデ株式会社 <a href="https://froide.co.jp/" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i></a>
+        </p>
+      </div>
+      <div class="default-section__card default-section__card--sponsor-small">
+        <img class="default-section__img default-section__img--sponsor-small tooltip" src="./assets/images/logo-toranoana.png" alt="株式会社虎の穴"
+             title="天神に福岡店がある同人誌でおなじみのコミック虎の穴です。虎の穴では、新規事業室でFantia、とらのあなクラフト、とら(の)あな KEEPERといったサービスを次々とリリースしています。モットーは「ガチ速」。ガチ速でサービスをリリースするために、Ruby及びRailsを積極活用しています。虎の穴はRubyの普及、発展に寄与したいと思っております。また福岡のRubyエンジニアを積極的に募集しておりますので当日弊社エンジニアへお声がけください。
+">
+        <p class="default-section__body">
+          株式会社虎の穴 <a href="https://yumenosora.co.jp/" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i></a>
+        </p>
+      </div>
+    </div>
+    <h2 class="default-section__title">どんたくスポンサー</h2>
+    <p class="default-section__body">
+      前夜祭をお願いしました！
+    </p>
+    <div class="default-section__card-wrap">
+      <div class="default-section__card default-section__card--sponsor-small">
+        <img class="default-section__img default-section__img--sponsor-small" src="./assets/images/logo-pixiv.png" alt="ピクシブ株式会社">
+        <p class="default-section__body">
+          ピクシブ株式会社 <a href="https://www.pixiv.co.jp/" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i></a>
+        </p>
+      </div>
+    </div>
+    <h2 id="oohori" class="default-section__title">大濠花火スポンサー</i></h2>
+    <p class="default-section__body">
+      懇親会をお願いしました！
+    </p>
+    <div class="default-section__card-wrap">
+      <div class="default-section__card default-section__card--sponsor-small">
+        <img class="default-section__img default-section__img--sponsor-small tooltip" src="./assets/images/logo-pepabo.png" alt="GMOペパボ株式会社">
+        <p class="default-section__body">
+          GMOペパボ株式会社 <a href="https://pepabo.com/" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i></a>
+        </p>
+      </div>
+    </div>
   </div>
 </section>
 

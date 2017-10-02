@@ -303,8 +303,13 @@ button {
   border-radius: 20px;
 }
 .default-section__img--guest,
+.default-section__img--sponsor,
 .default-section__img--staff {
   max-width: 200px;
+  margin: 0 auto 20px;
+}
+.default-section__img--sponsor-small {
+  max-width: 100px;
   margin: 0 auto 20px;
 }
 .default-section__caption {
@@ -319,6 +324,7 @@ button {
   justify-content:         space-around;
   flex-wrap: wrap;
 }
+.default-section__card-wrap--sponsor-small,
 .default-section__card-wrap--staff {
   -webkit-justify-content: flex-start; /* Safari */
   justify-content:         flex-start;
@@ -327,6 +333,7 @@ button {
   padding: 20px;
   box-sizing: border-box;
 }
+.default-section__card--sponsor-small,
 .default-section__card--staff {
   width: 50%;
 }
@@ -441,6 +448,12 @@ button {
   }
   .default-section__card--guest {
     width: 50%;
+  }
+  .default-section__card--sponsor {
+    width: 33.3%;
+  }
+  .default-section__card--sponsor-small {
+    width: 20%;
   }
   .default-section__card--staff {
     width: 25%;
