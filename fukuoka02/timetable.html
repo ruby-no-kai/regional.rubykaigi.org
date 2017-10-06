@@ -66,42 +66,282 @@
         <h1 class="post__title">Time Table</h1>
       </header>
       <section class="post__body">
-        <div class="default-section__table-wrap">
+        <div class="default-section__card-wrap">
+  <p>※ 時間帯等について、調整の可能性があります。ご了承ください。</p>
+</div>
+
+<hr>
+
+<div class="default-section__card-wrap">
+  <p> </p>
+</div>
+
+<div class="default-section__table-wrap">
   <div class="default-section__table">
     <div class="default-section__table__row default-section__table__header">
-      <div class="default-section__table__cell">
+      <div class="default-section__table__cell cell0">
         時刻
       </div>
-      <div class="default-section__table__cell">
-        Aトラック
+      <div class="default-section__table__cell cell1">
+        トラック1
       </div>
-      <div class="default-section__table__cell">
-        Bトラック
+      <div class="default-section__table__cell cell2">
+        トラック2
       </div>
     </div>
     <div class="default-section__table__row">
       <div class="default-section__table__cell">
-        準備中
+        09:45
       </div>
       <div class="default-section__table__cell">
-        準備中
+        <h3>開場</h3>
       </div>
       <div class="default-section__table__cell">
-        準備中
+        (準備)
       </div>
     </div>
-  </div>
-</div>
+    <div class="default-section__table__row">
+      <div class="default-section__table__cell">
+        10:10 ~
+      </div>
+      <div class="default-section__table__cell">
+        <h3>Opening by udzura</h3>
+      </div>
+      <div class="default-section__table__cell">
+        (準備)
+      </div>
+    </div>
+    <div class="default-section__table__row">
+      <div class="default-section__table__cell">
+        10:20 ~
+      </div>
+      <div class="default-section__table__cell">
+        <h2 style="padding-bottom: 1.45em;">A Ruby Programming Episode</h2>
+        <p>
+          ぼくにとって、「Rubyと出会う」瞬間はプログラミングしているときに訪れます。<br />
+このメソッドはこんなときのためにあったんだ。このメソッドはこんな風にも動くんだ。そうそう、こう書きたかったんだ。プログラミングの中でそんな発見をするたびに、ぼくはRubyと出会えた感覚を覚えて嬉しくなります。<br />
+本セッションでは、プログラミングの中でRubyと出会うそうした瞬間をみなさんと共有できればと考えています。
+        </p>
+        <h4>Speaker</h4>
+        <a href="./speakers.html#snoozer05">島田浩二</a>
+      </div>
+      <div class="default-section__table__cell">
+        <h2>Rubyで書くParser</h2>
+        <h3>(自力かライブラリか、それが問題だ）</h3>
+        <p>
+          Rubyで構文解析パーサーを書いたことはありますか？ このセッションでは、気軽にスクラッチから書くパーサーがいかにバギーで、落とし穴が多く、しかし楽しいかをお話しします。併せて、treetop という既存のパーサー用のgem との比較についてもお話しします。
+        </p>
+        <h4>Speaker</h4>
+        <a href="./speakers.html#yotii23">鳥井雪</a>
+      </div>
+    </div>
+    <div class="default-section__table__row">
+      <div class="default-section__table__cell">
+        11:00 ~
+      </div>
+      <div class="default-section__table__cell">
+        <h3>企業LTその1 (15分)</h3>
+      </div>
+      <div class="default-section__table__cell">
+      </div>
+    </div>
+    <div class="default-section__table__row">
+      <div class="default-section__table__cell">
+        11:15 ~
+      </div>
+      <div class="default-section__table__cell">
+        <h2>Keynote</h2>
+        <p>
+          TBD
+        </p>
+        <h4>Speaker</h4>
+        <a href="./index.html#keynotes">松田明</a>
+      </div>
+      <div class="default-section__table__cell">
+      </div>
+    </div>
+    <div class="default-section__table__row">
+      <div class="default-section__table__cell">
+        12:10 ~
+        13:10
+      </div>
+      <div class="default-section__table__cell">
+        <h3>ランチタイム</h3>
+      </div>
+      <div class="default-section__table__cell">
+      </div>
+    </div>
 
-<section id="about" class="default-section">
-  <div class="default-section__inner">
-    <h1 class="default-section__headline">CFP</h1>
-    <h2 class="default-section__title">ただいま審査中</h2>
-    <p class="default-section__body">
-      2017.09.30をもって募集を締め切りました。たくさんのご応募ありがとうございました。
-    </p>
+    <div class="default-section__table__row">
+      <div class="default-section__table__cell">
+        13:15 ~
+      </div>
+      <div class="default-section__table__cell">
+        <h3>企業LTその2 (15分)</h3>
+      </div>
+      <div class="default-section__table__cell">
+      </div>
+    </div>
+
+    <div class="default-section__table__row">
+      <div class="default-section__table__cell">
+        13:30 ~
+      </div>
+      <div class="default-section__table__cell">
+        <h2>Rustで書いたライブラリをRuby/mrubyから呼び出す実践的な方法</h2>
+        <p>
+          現在開発中のlibspecinfraというプロジェクトをベースに、Rustで書いたライブラリをRubyやmrubyから呼び出すための方法について解説します。インターネット上ではサンプルレベルのコードの書き方はすぐ見つかるものの、実際のプロダクト開発で参考になるコード例がなかなか見つからず苦労しました。同様のことをしたい人が苦労せずに済むよう、得られた知見についてお話します。
+        </p>
+        <h4>Speaker</h4>
+        <a href="./speakers.html#mizzy">宮下剛輔</a>
+      </div>
+      <div class="default-section__table__cell">
+        <h2 style="padding-bottom: 1.8em;">Railsチュートリアルを支える継続的組版技術</h2>
+        <p>
+          Railsチュートリアルでは、Web版で全てのコンテンツを無償で公開しつつ、電子書籍や解説動画などを有償で提供しております。<br>
+          電子書籍: <a href="https://gumroad.com/l/railstutorialjp_ebook">https://gumroad.com/l/railstutorialjp_ebook</a><br>
+          Railsチュートリアルを継続的に更新し続けるため、ビジネスとして様々な取り組みを行なっておりますが、本発表ではその中でもRubyを使った継続的組版技術についてお話します。
+        </p>
+        <h4>Speaker</h4>
+        <a href="./speakers.html#yasulab">安川要平</a>
+      </div>
+    </div>
+
+    <div class="default-section__table__row">
+      <div class="default-section__table__cell">
+        14:20 ~
+      </div>
+      <div class="default-section__table__cell">
+        <h3>企業LTその3 (15分)</h3>
+      </div>
+      <div class="default-section__table__cell">
+      </div>
+    </div>
+
+    <div class="default-section__table__row">
+      <div class="default-section__table__cell">
+        14:35 ~
+      </div>
+      <div class="default-section__table__cell">
+        <h2>スポンサーLT大会</h2>
+        <h3>「とんこつスタジアム」（仮題）</h3>
+        <p>
+          「とんこつスポンサー」に名乗り出ていただいた5社様に、5分一本勝負のLTをお願いします！<br>
+          発表予定のスポンサーは以下の皆様となります。
+        </p>
+        <h4>Speakers</h4>
+        <ul>
+          <li>ピクシブ</li>
+          <li>GMOペパボ</li>
+          <li>メンバーズ</li>
+          <li>フロイデ</li>
+          <li>虎の穴</li>
+        </ul>
+      </div>
+      <div class="default-section__table__cell">
+        <h2 style="padding-bottom: 1.35em;">コンパイル時計算への招待</h2>
+        <p>
+          コンパイラ最適化の限界を越えられる（かもしれない）コンパイル時計算の世界についてです。コンパイラの専門家でもないので、たまにC++などで使っていた側としてゆるふわに語ります。
+        </p>
+        <h4>Speaker</h4>
+        <a href="./speakers.html#take-cheeze">take-cheeze</a>
+      </div>
+    </div>
+
+    <div class="default-section__table__row">
+      <div class="default-section__table__cell">
+        15:05 ~
+        15:30
+      </div>
+      <div class="default-section__table__cell">
+        <h3>休憩</h3>
+      </div>
+      <div class="default-section__table__cell">
+      </div>
+    </div>
+
+    <div class="default-section__table__row">
+      <div class="default-section__table__cell">
+        15:30 ~
+      </div>
+      <div class="default-section__table__cell">
+        <h2>200万ドメインのHTTPS化を見据えたmrubyによる大規模証明書管理アーキテクチャ</h2>
+        <h3>サーバ台数を100分の1にする技術</h3>
+        <p>
+          常時HTTPS化が進む中で，高集積マルチテナント方式のWebサーバで管理している大量のホストもHTTPS化を進めていく必要がある．そこで，事前にサーバプロセスに証明書を読み込まず，TLSハンドシェイク時に動的に証明書を読み込み，メモリ使用量を低減させる手法を提案する．実装には，ngx_mrubyを採用し，GMOペパボ株式会社のホスティングサービスにおいて本手法を導入して，実運用上の評価を行った
+        </p>
+        <h4>Speaker</h4>
+        <a href="./speakers.html#matsumotory">松本亮介</a>
+      </div>
+      <div class="default-section__table__cell">
+        <h2 style="padding-bottom: 3.2em;">なぜRubyだったのか？Rubyで成長したOSS</h2>
+        <p>
+          発表者は、PHPのエンジニアでありながらRuby製のツールとしてawspecというツールを作成しメンテナンスしています。<br>
+その中で、なぜRubyを採用したのか、そのツールがRubyのコミュニティでどのように成長したのか、様々な問題をRubyの世界でどのように解決したのか、どんな解決するようなPRがあったのかを話します。
+本発表で1つのRubyのOSSの成長を紹介できると思います。
+        </p>
+        <h4>Speaker</h4>
+        <a href="./speakers.html#k1low">小山健一郎</a>
+      </div>
+    </div>
+    
+    <div class="default-section__table__row">
+      <div class="default-section__table__cell">
+        16:20 ~
+      </div>
+      <div class="default-section__table__cell">
+        <h3>企業LTその4 (15分)</h3>
+      </div>
+      <div class="default-section__table__cell">
+      </div>
+    </div>
+
+    <div class="default-section__table__row">
+      <div class="default-section__table__cell">
+        16:35 ~
+      </div>
+      <div class="default-section__table__cell">
+        <h2>Keynote</h2>
+        <p>
+          TBD
+        </p>
+        <h4>Speaker</h4>
+        <a href="./index.html#keynotes">笹田耕一</a>
+      </div>
+      <div class="default-section__table__cell">
+      </div>
+    </div>
+
+    <div class="default-section__table__row">
+      <div class="default-section__table__cell">
+        17:30 ~
+      </div>
+      <div class="default-section__table__cell">
+        <h3>Closing talk by udzura</h3>
+        <p>
+          ??????
+        </p>
+      </div>
+      <div class="default-section__table__cell">
+      </div>
+    </div>
+
+    <div class="default-section__table__row">
+      <div class="default-section__table__cell">
+        18:00 ~
+        18:30
+      </div>
+      <div class="default-section__table__cell">
+        <h3>退場（18:30完全撤収）</h3>
+      </div>
+      <div class="default-section__table__cell">
+        <h3>ご協力をお願いします。</h3>
+      </div>
+    </div>
+
   </div>
-</section>
+
+</div>
 
       </section>
     </div>
