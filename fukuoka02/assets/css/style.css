@@ -325,7 +325,8 @@ button {
   flex-wrap: wrap;
 }
 .default-section__card-wrap--sponsor-small,
-.default-section__card-wrap--staff {
+.default-section__card-wrap--staff,
+.default-section__card-wrap--speakers {
   -webkit-justify-content: flex-start; /* Safari */
   justify-content:         flex-start;
 }
@@ -385,6 +386,15 @@ button {
   display: table-cell;
 }
 
+.cell0 {
+  width: 4%
+}
+.cell1 {
+  width: 47%
+}
+.cell2 {
+  width: 49%
+}
 /* post */
 
 .post {
@@ -457,6 +467,9 @@ button {
   }
   .default-section__card--staff {
     width: 25%;
+  }
+  .default-section__card--speakers {
+    width: 50%;
   }
   .hidden-mb {
     display: inherit;

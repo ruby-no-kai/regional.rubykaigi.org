@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>福岡Ruby会議02 by Fukuoka.rb & Engineer Lab. Fukuoka</title>
+  <meta name="description" content="「もう一度、Rubyと出会う」をテーマに、大名小跡地Fukuoka growth nextで行う地域Ruby会議です。2017.11.25(Sat) 開催予定" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:title" content="福岡Ruby会議02 by Fukuoka.rb & Engineer Lab. Fukuoka" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://regional.rubykaigi.org/fukuoka02/speakers" />
+  <meta property="og:image" content="http://regional.rubykaigi.org/fukuoka02/assets/images/ogp.png" />
+  <meta property="og:site_name" content="福岡Ruby会議02 by Fukuoka.rb & Engineer Lab. Fukuoka" />
+  <meta property="og:description" content="「もう一度、Rubyと出会う」をテーマに、大名小跡地Fukuoka growth nextで行う地域Ruby会議です。2017.11.25(Sat) 開催予定" />
+  
+  <link rel="stylesheet" type="text/css" href="assets/css/normalize.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/tooltipster.bundle.min.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/tooltipster-sideTip-light.min.css" />
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="assets/js/tooltipster.bundle.min.js"></script>
+  <script src="assets/js/index.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="assets/tools/font-awesome/css/font-awesome.min.css">
+
+  <script>
+    $(document).ready(function() {
+      $('.tooltip').tooltipster({
+        theme: 'tooltipster-light',
+        // trigger: 'click',
+        maxWidth: 600,
+      });
+    });
+  </script>
+</head>
+<body>
+  <div>
+    <header class="header header--post">
+  <div class="header__inner">
+    <h1 class="header__brand">
+      <a href="/fukuoka02/" class="header__logo"><img src="./assets/images/logo-mark.svg" alt="Fukuoka RubyKaigi 02" /></a>
+    </h1>
+    <div class="header__nav">
+      <nav>
+  <ul class="header__items">
+    <li class="header__item"><a href="./timetable.html">Time Table</a></li>
+    <li class="header__item"><a href="./staff.html">Staff</a></li>
+    <li class="header__item"><a href="./coc.html">CoC</a></li>
+    <li class="header__item"><a href="https://twitter.com/Fukuoka_RK" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></a></i></li>
+    <!-- 予約時に表示
+      <li class="drawer__item"><a href="#">チケットを予約する</a></li>
+    -->
+  </ul>
+</nav>
+
+    </div>
+  </div>
+</header>
+
+    <main class="wrapper" role="main">
+      <main role="main">
+  <article class="post">
+    <div class="post__inner">
+      <header class="post__header">
+        <h1 class="post__title">Speakers</h1>
+      </header>
+      <section class="post__body">
+        <div class="default-section__card-wrap default-section__card-wrap--speakers">
+  <div id="snoozer05" class="default-section__card default-section__card--speakers">
+    <h2 class="default-section__title">島田浩二 <a href="https://twitter.com/snoozer05" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></h2>
+    <h3 class="default-section__body">「A Ruby Programming Episode」</h2>
+    <p class="default-section__caption">
+      ぼくにとって、「Rubyと出会う」瞬間はプログラミングしているときに訪れます。<br>
+このメソッドはこんなときのためにあったんだ。このメソッドはこんな風にも動くんだ。そうそう、こう書きたかったんだ。プログラミングの中でそんな発見をするたびに、ぼくはRubyと出会えた感覚を覚えて嬉しくなります。<br>
+本セッションでは、プログラミングの中でRubyと出会うそうした瞬間をみなさんと共有できればと考えています。
+    </p>
+    <hr>
+    <h4 class="default-section__body">Speaker Profile</h2>
+    <p class="default-section__caption">
+      @snoozer05。株式会社えにしテック代表取締役。2007年よりRuby札幌を主宰し、2011年からは一般社団法人日本Rubyの会の理事も務めている。<br>
+Ruby関連の書籍では『Rubyのしくみ』（オーム社）や『なるほどUnixプロセス』（達人出版会）、『Ruby 逆引きレシピ』（翔泳社）などの翻訳や執筆に関わっている。近著に『エラスティックリーダーシップ』（翻訳、オライリージャパン）がある。
+    </p>
+  </div>
+  <div id="mizzy" class="default-section__card default-section__card--speakers">
+    <h2 class="default-section__title">宮下剛輔 <a href="https://github.com/mizzy" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></h2>
+    <h3 class="default-section__body">「Rustで書いたライブラリをRuby/mrubyから呼び出す実践的な方法」</h2>
+    <p class="default-section__caption">
+      現在開発中のlibspecinfraというプロジェクトをベースに、Rustで書いたライブラリをRubyやmrubyから呼び出すための方法について解説します。インターネット上ではサンプルレベルのコードの書き方はすぐ見つかるものの、実際のプロダクト開発で参考になるコード例がなかなか見つからず苦労しました。同様のことをしたい人が苦労せずに済むよう、得られた知見についてお話します。
+    </p>
+    <hr>
+    <h4 class="default-section__body">Speaker Profile</h2>
+    <p class="default-section__caption">
+      合同会社Serverspec Operations 代表。ソフトウェアエンジニア。
+http://mizzy.org/ https://github.com/mizzy
+    </p>
+  </div>
+  <div id="matsuotory" class="default-section__card default-section__card--speakers">
+    <h2 class="default-section__title">松本亮介 <a href="https://github.com/matsumotory" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></h2>
+    <h3 class="default-section__body">「200万ドメインのHTTPS化を見据えたmrubyによる大規模証明書管理アーキテクチャ - サーバ台数を100分の1にする技術」</h2>
+    <p class="default-section__caption">
+      常時HTTPS化が進む中で，高集積マルチテナント方式のWebサーバで管理している大量のホストもHTTPS化を進めていく必要がある．そこで，事前にサーバプロセスに証明書を読み込まず，TLSハンドシェイク時に動的に証明書を読み込み，メモリ使用量を低減させる手法を提案する．実装には，ngx_mrubyを採用し，GMOペパボ株式会社のホスティングサービスにおいて本手法を導入して，実運用上の評価を行った
+    </p>
+    <hr>
+    <h4 class="default-section__body">Speaker Profile</h2>
+    <p class="default-section__caption">
+      京都大学博士（情報学）。インターネット基盤技術の研究に取り組み、mod_mrubyやngx_mruby などのOSSを始めとした多数のOSSへの貢献や学術的成果を修める。2015年よりGMOペパボ株式会社にて、OSやミドルウェアなど に関する研究開発を行っている。第9回OSS奨励賞の受賞や情報処理学会IPSJ-ONEにおいて時流に乗る日本の若手トップ研究者19名に選出される。
+    </p>
+  </div>
+  <div id="yotii23" class="default-section__card default-section__card--speakers">
+    <h2 class="default-section__title">鳥井雪 <a href="https://twitter.com/yotii23" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    <a href="https://github.com/yakitorii" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></h2>
+    <h3 class="default-section__body">「Rubyで書くParser(自力かライブラリか、それが問題だ）」</h2>
+    <p class="default-section__caption">
+      Rubyで構文解析パーサーを書いたことはありますか？ このセッションでは、気軽にスクラッチから書くパーサーがいかにバギーで、落とし穴が多く、しかし楽しいかをお話しします。併せて、treetop という既存のパーサー用のgem との比較についてもお話しします。
+    </p>
+    <hr>
+    <h4 class="default-section__body">Speaker Profile</h2>
+    <p class="default-section__caption">
+      Railsアプリケーション開発者。訳書に『ルビィのぼうけん』シリーズ、『プログラミングElixir』（笹田耕一と共訳）。twitter: yotii23 Github:yakitorii 
+    </p>
+  </div>
+  <div id="yasulab" class="default-section__card default-section__card--speakers">
+    <h2 class="default-section__title">安川要平 <a href="https://twitter.com/yasulab" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></h2>
+    <h3 class="default-section__body">「Railsチュートリアルを支える継続的組版技術」</h2>
+    <p class="default-section__caption">
+      Railsチュートリアルでは、Web版で全てのコンテンツを無償で公開しつつ、電子書籍や解説動画などを有償で提供しております。<br>
+電子書籍: <a href="https://gumroad.com/l/railstutorialjp_ebook">https://gumroad.com/l/railstutorialjp_ebook</a><br>
+<br>
+Railsチュートリアルを継続的に更新し続けるため、ビジネスとして様々な取り組みを行なっておりますが、本発表ではその中でもRubyを使った継続的組版技術についてお話します。
+    </p>
+    <hr>
+    <h4 class="default-section__body">Speaker Profile</h2>
+    <p class="default-section__caption">
+      YassLab 代表。早稲田大学情報理工学修士。IPA認定未踏スーパークリエータ、TEDxRyukyuスピーカー。RailsチュートリアルとRailsガイドの共同発起人。全国１００ヶ所以上に点在する子どものためのプログラミング道場 CoderDojo Japanの代表理事や、U-17の未踏事業「未踏ジュニア」のPMも務める。GitHub/Twitter/Facebookでは@yasulabで登録。
+    </p>
+  </div>
+  <div id="take-cheeze" class="default-section__card default-section__card--speakers">
+    <h2 class="default-section__title">take-cheeze <a href="https://github.com/take-cheeze" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></h2>
+    <h3 class="default-section__body">「コンパイル時計算への招待」</h2>
+    <p class="default-section__caption">
+      コンパイラ最適化の限界を越えられる（かもしれない）コンパイル時計算の世界についてです。コンパイラの専門家でもないので、たまにC++などで使っていた側としてゆるふわに語ります。<br>
+      うっかりチューリング完全から始まったテクニックが言語機能で強力にサポートされていく過程やその問題点について語ります。<br>
+      ふわっと語りたいだけなので、Rubyもこうだったらなという願望がいっぱい入るかと思います。RubyにJIT/GCなどによる最適化以外の最適化の世界を提示できたらなと。
+    </p>
+    <hr>
+    <h4 class="default-section__body">Speaker Profile</h2>
+    <p class="default-section__caption">
+      mruby contributer四天王最弱くらい<br>
+github: @take-cheeze( https://github.com/take-cheeze )
+    </p>
+  </div>
+  <div id="k1low" class="default-section__card default-section__card--speakers">
+    <h2 class="default-section__title">小山健一郎 <a href="https://github.com/k1LoW" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></h2>
+    <h3 class="default-section__body">「なぜRubyだったのか？Rubyで成長したOSS」</h2>
+    <p class="default-section__caption">
+      発表者は、PHPのエンジニアでありながらRuby製のツールとしてawspecというツールを作成しメンテナンスしています。<br>
+その中で、なぜRubyを採用したのか、そのツールがRubyのコミュニティでどのように成長したのか、様々な問題をRubyの世界でどのように解決したのか、どんな解決するようなPRがあったのかを話します。
+本発表で1つのRubyのOSSの成長を紹介できると思います。
+    </p>
+    <hr>
+    <h4 class="default-section__body">Speaker Profile</h2>
+    <p class="default-section__caption">
+      株式会社Fusic / 基盤ユニット所属エンジニア。テックリード。AWSをRubyで操作するPHPer。
+    </p>
+  </div>
+</div>
+
+      </section>
+    </div>
+  </article>
+</main>
+
+    </div>
+  </div>
+  <footer class="footer">
+    <section class="footer__copyright">Created by Fukuoka.rb & Engineer Lab. Fukuoka</a> &copy; 2017</section>
+</footer>
+
+  <script type="text/javascript" src="assets/js/index.js"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78209611-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
