@@ -348,3 +348,8 @@
   title: "福岡Ruby会議02"
   start_on: 2017-11-25
   end_on: 2017-11-25
+- name: okrk02
+  title: "沖縄Ruby会議02"
+  start_on: 2018-03-10
+  end_on: 2018-03-10
+  external_url: http://ruby.okinawa/okrk02/
