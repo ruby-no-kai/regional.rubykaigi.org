@@ -150,10 +150,12 @@
         11:15 ~
       </div>
       <div class="default-section__table__cell">
-        <h2>Keynote</h2>
-        <p>
-          TBD
-        </p>
+        <h2>Keynote:<br />Finding Ruby Again</h2>
+        <p>TBD...</p>
+        <ul>
+          <li>コードの話</li>
+          <li><a href="http://rubykaigi.org/2018">RubyKaigi 2018</a> に行きたくなる、そんな話</li>
+        </ul>
         <h4>Speaker</h4>
         <a href="./index.html#keynotes">松田明</a>
       </div>
@@ -277,7 +279,7 @@
         <h2 style="padding-bottom: 3.2em;">なぜRubyだったのか？Rubyで成長したOSS</h2>
         <p>
           発表者は、PHPのエンジニアでありながらRuby製のツールとしてawspecというツールを作成しメンテナンスしています。<br>
-その中で、なぜRubyを採用したのか、そのツールがRubyのコミュニティでどのように成長したのか、様々な問題をRubyの世界でどのように解決したのか、どんな解決するようなPRがあったのかを話します。
+その中で、なぜRubyを採用したのか、そのツールがRubyのコミュニティでどのように成長したのか、様々な問題をRubyの世界でどのように解決したのか、どのようなPull Requestがあったのかを話します。
 本発表で1つのRubyのOSSの成長を紹介できると思います。
         </p>
         <h4>Speaker</h4>
@@ -301,9 +303,10 @@
         16:35 ~
       </div>
       <div class="default-section__table__cell">
-        <h2>Keynote</h2>
+        <h2>Keynote: Rubyにおける<br />トレース機構の刷新</h2>
         <p>
-          TBD
+          プログラムの挙動を追跡するのは、性能解析や挙動解析などを行うために重要である。Ruby (MRI) にはそのための仕組みとして、VM の trace 命令と、それを用いた TracePoint を用意している。しかし、現在の仕組みでは、非トレース時の実行時負荷が若干（最大で1割ほど）生じ、また任意の点に追跡点を仕込むことができず、柔軟な追跡が困難という問題がある。そこで、本発表ではこれらの問題点を解決する新しい追跡機構について紹介する。新しい機構では、`trace` 命令を用いるのではなく、各命令に付加的な情報を持たせ、命令書き換えを利用して実現する。発表では、本機構の設計と実装、そして実装と評価について紹介する。さらに、本機構によって可能になる言語機能のアイディアについても議論する。<br />
+          別題: 「気になるアイツの【新】追跡術」 
         </p>
         <h4>Speaker</h4>
         <a href="./index.html#keynotes">笹田耕一</a>

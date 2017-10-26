@@ -67,9 +67,26 @@
       </header>
       <section class="post__body">
         <div class="default-section__card-wrap default-section__card-wrap--speakers">
+  <div id="a_matsuda" class="default-section__card default-section__card--speakers">
+    <h2 class="default-section__title"><a href="/fukuoka02/index.html#keynotes">松田明</a> <a href="https://github.com/amatsuda" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></h2>
+    <h3 class="default-section__body">「Keynote: Finding Ruby Again」</h3>
+    <ul class="default-section__caption">
+      <li>TBD:</li>
+      <li>コードの話</li>
+      <li><a href="http://rubykaigi.org/2018">RubyKaigi 2018</a> に行きたくなる、そんな話</li>
+    </ul>
+  </div>
+  <div id="ko1" class="default-section__card default-section__card--speakers">
+    <h2 class="default-section__title"><a href="/fukuoka02/index.html#keynotes">笹田耕一</a> <a href="https://github.com/ko1" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></h2>
+    <h3 class="default-section__body">「Keynote: Rubyにおけるトレース機構の刷新」</h3>
+    <p class="default-section__caption">
+      プログラムの挙動を追跡するのは、性能解析や挙動解析などを行うために重要である。Ruby (MRI) にはそのための仕組みとして、VM の trace 命令と、それを用いた TracePoint を用意している。しかし、現在の仕組みでは、非トレース時の実行時負荷が若干（最大で1割ほど）生じ、また任意の点に追跡点を仕込むことができず、柔軟な追跡が困難という問題がある。そこで、本発表ではこれらの問題点を解決する新しい追跡機構について紹介する。新しい機構では、`trace` 命令を用いるのではなく、各命令に付加的な情報を持たせ、命令書き換えを利用して実現する。発表では、本機構の設計と実装、そして実装と評価について紹介する。さらに、本機構によって可能になる言語機能のアイディアについても議論する。<br />
+      別題: 「気になるアイツの【新】追跡術」
+    </p>
+  </div>
   <div id="snoozer05" class="default-section__card default-section__card--speakers">
     <h2 class="default-section__title">島田浩二 <a href="https://twitter.com/snoozer05" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></h2>
-    <h3 class="default-section__body">「A Ruby Programming Episode」</h2>
+    <h3 class="default-section__body">「A Ruby Programming Episode」</h3>
     <p class="default-section__caption">
       ぼくにとって、「Rubyと出会う」瞬間はプログラミングしているときに訪れます。<br>
 このメソッドはこんなときのためにあったんだ。このメソッドはこんな風にも動くんだ。そうそう、こう書きたかったんだ。プログラミングの中でそんな発見をするたびに、ぼくはRubyと出会えた感覚を覚えて嬉しくなります。<br>
@@ -84,7 +101,7 @@ Ruby関連の書籍では『Rubyのしくみ』（オーム社）や『なるほ
   </div>
   <div id="mizzy" class="default-section__card default-section__card--speakers">
     <h2 class="default-section__title">宮下剛輔 <a href="https://github.com/mizzy" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></h2>
-    <h3 class="default-section__body">「Rustで書いたライブラリをRuby/mrubyから呼び出す実践的な方法」</h2>
+    <h3 class="default-section__body">「Rustで書いたライブラリをRuby/mrubyから呼び出す実践的な方法」</h3>
     <p class="default-section__caption">
       現在開発中のlibspecinfraというプロジェクトをベースに、Rustで書いたライブラリをRubyやmrubyから呼び出すための方法について解説します。インターネット上ではサンプルレベルのコードの書き方はすぐ見つかるものの、実際のプロダクト開発で参考になるコード例がなかなか見つからず苦労しました。同様のことをしたい人が苦労せずに済むよう、得られた知見についてお話します。
     </p>
@@ -155,7 +172,7 @@ github: @take-cheeze( https://github.com/take-cheeze )
     <h3 class="default-section__body">「なぜRubyだったのか？Rubyで成長したOSS」</h2>
     <p class="default-section__caption">
       発表者は、PHPのエンジニアでありながらRuby製のツールとしてawspecというツールを作成しメンテナンスしています。<br>
-その中で、なぜRubyを採用したのか、そのツールがRubyのコミュニティでどのように成長したのか、様々な問題をRubyの世界でどのように解決したのか、どんな解決するようなPRがあったのかを話します。
+その中で、なぜRubyを採用したのか、そのツールがRubyのコミュニティでどのように成長したのか、様々な問題をRubyの世界でどのように解決したのか、どのようなPull Requestがあったのかを話します。
 本発表で1つのRubyのOSSの成長を紹介できると思います。
     </p>
     <hr>
