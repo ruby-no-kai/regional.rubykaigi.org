@@ -354,8 +354,27 @@ button {
   border-radius: 5px;
   transition: background 0.3s ease;
 }
+.default-section__button--disabled {
+  position: relative;
+  display: block;
+  font-weight: bold;
+  padding: 1rem 1rem;
+  max-width: 280px;
+  text-decoration: none;
+  color: #FFF;
+  text-align: center;
+  background: #999999;
+  transition: color 0.3s ease;
+  margin: 0 auto;
+  font-size: 2rem;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
 .default-section__button:hover {
   background: #CB2D3E;
+  color: #FFF;
+}
+.default-section__button--disabled:hover {
   color: #FFF;
 }
 .default-section__table-wrap {
