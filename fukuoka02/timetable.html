@@ -21,7 +21,6 @@
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="assets/js/tooltipster.bundle.min.js"></script>
-  <script src="assets/js/index.js" charset="utf-8"></script>
   <link rel="stylesheet" href="assets/tools/font-awesome/css/font-awesome.min.css">
 
   <script>
@@ -41,16 +40,30 @@
     <h1 class="header__brand">
       <a href="/fukuoka02/" class="header__logo"><img src="./assets/images/logo-mark.svg" alt="Fukuoka RubyKaigi 02" /></a>
     </h1>
-    <div class="header__nav">
-      <nav>
-  <ul class="header__items">
-    <li class="header__item"><a href="./timetable.html">Time Table</a></li>
-    <li class="header__item"><a href="./staff.html">Staff</a></li>
-    <li class="header__item"><a href="./coc.html">CoC</a></li>
-    <li class="header__item"><a href="https://twitter.com/Fukuoka_RK" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></a></i></li>
-    <!-- 予約時に表示
-      <li class="drawer__item"><a href="#">チケットを予約する</a></li>
-    -->
+    <div>
+      <!-- hamburger navigation switch-->
+<div class="header__switchs">
+  <button class="header__switch header__switch--hamburger js-hamburger"><i class="fa fa-bars" aria-hidden="true"></i></button>
+  <button class="header__switch header__switch--cross js-close"><i class="fa fa-close" aria-hidden="true"></i></button>
+</div>
+
+<!-- navigation for pc browser sizes -->
+<nav class="header__nav">
+  <ul class="header__nav__items">
+    <li class="header__nav__item"><a href="./timetable.html">Time Table</a></li>
+    <li class="header__nav__item"><a href="./staff.html">Staff</a></li>
+    <li class="header__nav__item"><a href="./coc.html">CoC</a></li>
+    <li class="header__nav__item"><a href="https://twitter.com/Fukuoka_RK" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+  </ul>
+</nav>
+
+<!-- navigation for mobile browser sizes -->
+<nav class="header__hamburger-nav js-nav">
+  <ul class="header__hamburger-nav__items">
+    <li class="header__hamburger-nav__item"><a href="./timetable.html">Time Table</a></li>
+    <li class="header__hamburger-nav__item"><a href="./staff.html">Staff</a></li>
+    <li class="header__hamburger-nav__item"><a href="./coc.html">CoC</a></li>
+    <li class="header__hamburger-nav__item"><a href="https://twitter.com/Fukuoka_RK" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
   </ul>
 </nav>
 
@@ -66,323 +79,377 @@
         <h1 class="post__title">Time Table</h1>
       </header>
       <section class="post__body">
-        <div class="default-section__card-wrap">
-  <p>※ 時間帯等について、調整の可能性があります。ご了承ください。</p>
-</div>
-
-<hr>
-
-<div class="default-section__card-wrap">
-  <p> </p>
-</div>
-
-<div class="default-section__table-wrap">
+        <div class="default-section__table-wrap">
   <div class="default-section__table">
     <div class="default-section__table__row default-section__table__header">
-      <div class="default-section__table__cell cell0">
+      <div class="default-section__table__cell default-section__table__column--time">
         時刻
       </div>
-      <div class="default-section__table__cell cell1">
+      <div class="default-section__table__cell default-section__table__column--track1">
         トラック1
       </div>
-      <div class="default-section__table__cell cell2">
+      <div class="default-section__table__cell default-section__table__column--track2">
         トラック2
       </div>
     </div>
+
     <div class="default-section__table__row">
-      <div class="default-section__table__cell">
+      <div class="default-section__table__cell default-section__table__cell--time">
         09:45
       </div>
       <div class="default-section__table__cell">
-        <h3>開場</h3>
-      </div>
-      <div class="default-section__table__cell">
-        (準備)
+        <h2 class="default-section__table__title">開場</h2>
       </div>
     </div>
     <div class="default-section__table__row">
-      <div class="default-section__table__cell">
-        10:10 ~
+      <div class="default-section__table__cell default-section__table__cell--time">
+        10:10
       </div>
       <div class="default-section__table__cell">
-        <h3>Opening Talk</h3>
+        <div class="default-section__table__label">トラック 1</div>
+        <h2 class="default-section__table__title">Opening Talk</h2>
         <p>簡単な注意事項などがあります</p>
       </div>
       <div class="default-section__table__cell">
-        (準備)
+        <div class="default-section__table__label">トラック 2</div>
+        準備
       </div>
     </div>
+
     <div class="default-section__table__row">
-      <div class="default-section__table__cell">
-        10:20 ~
+      <div class="default-section__table__cell default-section__table__cell--time">
+        10:20
       </div>
       <div class="default-section__table__cell">
-        <h2 style="padding-bottom: 1.45em;">A Ruby Programming Episode</h2>
+        <div class="default-section__table__label">トラック 1</div>
+        <h2 class="default-section__table__title">A Ruby Programming Episode</h2>
         <p>
-          ぼくにとって、「Rubyと出会う」瞬間はプログラミングしているときに訪れます。<br />
-このメソッドはこんなときのためにあったんだ。このメソッドはこんな風にも動くんだ。そうそう、こう書きたかったんだ。プログラミングの中でそんな発見をするたびに、ぼくはRubyと出会えた感覚を覚えて嬉しくなります。<br />
-本セッションでは、プログラミングの中でRubyと出会うそうした瞬間をみなさんと共有できればと考えています。
+          ぼくにとって、「Rubyと出会う」瞬間はプログラミングしているときに訪れます。<br>
+          このメソッドはこんなときのためにあったんだ。このメソッドはこんな風にも動くんだ。そうそう、こう書きたかったんだ。プログラミングの中でそんな発見をするたびに、ぼくはRubyと出会えた感覚を覚えて嬉しくなります。<br>
+          本セッションでは、プログラミングの中でRubyと出会うそうした瞬間をみなさんと共有できればと考えています。
         </p>
-        <h4>Speaker</h4>
-        <a href="./speakers.html#snoozer05">島田浩二</a>
+        <div>
+          <strong>Speaker</strong><br>
+          <a href="./speakers.html#snoozer05">島田浩二</a>
+        </div>
       </div>
       <div class="default-section__table__cell">
-        <h2>Rubyで書くParser</h2>
-        <h3>(自力かライブラリか、それが問題だ）</h3>
+        <div class="default-section__table__label">トラック 2</div>
+        <h2 class="default-section__table__title">Rubyで書くParser</h2>
+        <h3 class="default-section__table__subtitle">(自力かライブラリか、それが問題だ）</h3>
         <p>
           Rubyで構文解析パーサーを書いたことはありますか？ このセッションでは、気軽にスクラッチから書くパーサーがいかにバギーで、落とし穴が多く、しかし楽しいかをお話しします。併せて、treetop という既存のパーサー用のgem との比較についてもお話しします。
         </p>
-        <h4>Speaker</h4>
-        <a href="./speakers.html#yotii23">鳥井雪</a>
+        <div>
+          <strong>Speaker</strong><br>
+          <a href="./speakers.html#yotii23">鳥井雪</a>
+        </div>
       </div>
     </div>
+
     <div class="default-section__table__row">
-      <div class="default-section__table__cell">
-        11:00 ~
+      <div class="default-section__table__cell default-section__table__cell--time">
+        11:00
       </div>
       <div class="default-section__table__cell">
-        <h4>めんたいトーク #1:</h4>
-        <h3>メドピアの全力Rails化取り組み晒します</h3>
+        <div class="default-section__table__label">トラック 1</div>
+        <h2 class="default-section__table__title">めんたいトーク #1:</h2>
+        <h3 class="default-section__table__subtitle">メドピアの全力Rails化取り組み晒します</h3>
         <p>
           PHPからRubyに移行すると決めてから1年、メドピアがRubyと出会い、そこから取り組んできた施策などをご紹介！<br />
           開発スピードが上がり、施策実現の数が増え、サイトが活性化するという好循環が生まれてきた話をします。
         </p>
-        <h4>Speaker</h4>
-        福村彰展（<a href="https://medpeer.co.jp/">メドピア株式会社</a> 執行役員 CTO）
+        <div>
+          <strong>Speaker</strong><br>
+          福村彰展（<a href="https://medpeer.co.jp/">メドピア株式会社</a> 執行役員 CTO）
+        </div>
       </div>
       <div class="default-section__table__cell">
-      </div>
-    </div>
-    <div class="default-section__table__row">
-      <div class="default-section__table__cell">
-        11:15 ~
-      </div>
-      <div class="default-section__table__cell">
-        <h2>Keynote:<br />Finding Ruby Again</h2>
-        <p>TBD...</p>
-        <ul>
-          <li>コードの話</li>
-          <li><a href="http://rubykaigi.org/2018">RubyKaigi 2018</a> に行きたくなる、そんな話</li>
-        </ul>
-        <h4>Speaker</h4>
-        <a href="./index.html#keynotes">松田明</a>
-      </div>
-      <div class="default-section__table__cell">
+        <div class="default-section__table__label">トラック 2</div>
+        準備
       </div>
     </div>
+
     <div class="default-section__table__row">
-      <div class="default-section__table__cell">
-        12:10 ~
-        13:10
+      <div class="default-section__table__cell default-section__table__cell--time">
+        11:15
       </div>
       <div class="default-section__table__cell">
-        <h3>ランチタイム</h3>
+        <div class="default-section__table__label">トラック 1</div>
+        <h2 class="default-section__table__title">Keynote: Finding Ruby Again</h2>
+        <p>
+          TBD...<br>
+          ・コードの話<br>
+          ・<a href="http://rubykaigi.org/2018">RubyKaigi 2018</a> に行きたくなる、そんな話<br>
+        </p>
+        <div>
+          <strong>Speaker</strong><br>
+          <a href="./index.html#keynotes">松田明</a>
+        </div>
+      </div>
+      <div class="default-section__table__cell">
+        <div class="default-section__table__label">トラック 2</div>
+        準備
+      </div>
+    </div>
+
+    <div class="default-section__table__row">
+      <div class="default-section__table__cell default-section__table__cell--time">
+        12:10
+      </div>
+      <div class="default-section__table__cell">
+        <h2 class="default-section__table__title">ランチタイム</h2>
       </div>
       <div class="default-section__table__cell">
       </div>
     </div>
 
     <div class="default-section__table__row">
-      <div class="default-section__table__cell">
-        13:15 ~
+      <div class="default-section__table__cell default-section__table__cell--time">
+        13:15
       </div>
       <div class="default-section__table__cell">
-        <h4>めんたいトーク #2:</h4>
-        <h3>マネーフォワードにおけるRubyエコシステム事例の紹介と、CTOより福岡の皆様へご挨拶</h3>
+        <div class="default-section__table__label">トラック 1</div>
+        <h2 class="default-section__table__title">めんたいトーク #2:</h2>
+        <h3 class="default-section__table__subtitle">マネーフォワードにおけるRubyエコシステム事例の紹介と、CTOより福岡の皆様へご挨拶</h3>
         <p>
           CTOの中出より挨拶をさせていただき、その後フルタイムRubyコミッターの卜部よりマネーフォワードで取り組みつつあるビルドパイプラインや、Rubyをどのように使うことで生産性を上げているか等、日々の生活の様子をご紹介します。
         </p>
-        <h4>Speaker</h4>
-        中出匠哉（<a href="https://corp.moneyforward.com/">株式会社マネーフォワード</a> CTO）<br />
-        卜部昌平（同 フルタイムRubyコミッター）
+        <div>
+          <strong>Speaker</strong><br>
+          中出匠哉（<a href="https://corp.moneyforward.com/">株式会社マネーフォワード</a> CTO） 卜部昌平（同 フルタイムRubyコミッター）
+        </div>
       </div>
       <div class="default-section__table__cell">
+        <div class="default-section__table__label">トラック 2</div>
+        準備
       </div>
     </div>
 
     <div class="default-section__table__row">
-      <div class="default-section__table__cell">
-        13:30 ~
+      <div class="default-section__table__cell default-section__table__cell--time">
+        13:30
       </div>
       <div class="default-section__table__cell">
-        <h2>Rustで書いたライブラリをRuby/mrubyから呼び出す実践的な方法</h2>
+        <div class="default-section__table__label">トラック 1</div>
+        <h2 class="default-section__table__title">Rustで書いたライブラリをRuby/mrubyから呼び出す実践的な方法</h2>
         <p>
           現在開発中のlibspecinfraというプロジェクトをベースに、Rustで書いたライブラリをRubyやmrubyから呼び出すための方法について解説します。インターネット上ではサンプルレベルのコードの書き方はすぐ見つかるものの、実際のプロダクト開発で参考になるコード例がなかなか見つからず苦労しました。同様のことをしたい人が苦労せずに済むよう、得られた知見についてお話します。
         </p>
-        <h4>Speaker</h4>
-        <a href="./speakers.html#mizzy">宮下剛輔</a>
+        <div>
+          <strong>Speaker</strong><br>
+          <a href="./speakers.html#mizzy">宮下剛輔</a>
+        </div>
       </div>
       <div class="default-section__table__cell">
-        <h2 style="padding-bottom: 1.8em;">Railsチュートリアルを支える継続的組版技術</h2>
+        <div class="default-section__table__label">トラック 2</div>
+        <h2 class="default-section__table__title">Railsチュートリアルを支える継続的組版技術</h2>
         <p>
           Railsチュートリアルでは、Web版で全てのコンテンツを無償で公開しつつ、電子書籍や解説動画などを有償で提供しております。<br>
           電子書籍: <a href="https://gumroad.com/l/railstutorialjp_ebook">https://gumroad.com/l/railstutorialjp_ebook</a><br>
           Railsチュートリアルを継続的に更新し続けるため、ビジネスとして様々な取り組みを行なっておりますが、本発表ではその中でもRubyを使った継続的組版技術についてお話します。
         </p>
-        <h4>Speaker</h4>
-        <a href="./speakers.html#yasulab">安川要平</a>
+        <div>
+          <strong>Speaker</strong><br>
+          <a href="./speakers.html#yasulab">安川要平</a>
+        </div>
       </div>
     </div>
 
     <div class="default-section__table__row">
-      <div class="default-section__table__cell">
-        14:20 ~
+      <div class="default-section__table__cell default-section__table__cell--time">
+        14:20
       </div>
       <div class="default-section__table__cell">
-        <h4>めんたいトーク #3:</h4>
-        <h3>mockmockを支える技術</h3>
+        <div class="default-section__table__label">トラック 1</div>
+        <h2 class="default-section__table__title">めんたいトーク #3:</h2>
+        <h3 class="default-section__table__subtitle">mockmockを支える技術</h3>
         <p>
           IoT開発者向けテスト支援サービスである mockmock の舞台裏をお見せいたします。<br />「mockmock って、どんなことができるの？」というところから、サービスのアーキテクチャや技術的課題まで、自社サービスの開発に携わるエンジニアが日常的に感じているおもしろさや、向き合っている困難をみなさんと共有できればと思います。
         </p>
-        <h4>Speaker</h4>
-        毛利啓太（<a href="https://fusic.co.jp/">株式会社Fusic</a> 技術開発部門 mockmock開発チーム）<br />
-        高瀬昭弘（同 mockmock開発チーム）
+        <div>
+          <strong>Speaker</strong><br>
+          毛利啓太（<a href="https://fusic.co.jp/">株式会社Fusic</a> 技術開発部門 mockmock開発チーム） 高瀬昭弘（同 mockmock開発チーム）
+        </div>
       </div>
       <div class="default-section__table__cell">
+        <div class="default-section__table__label">トラック 2</div>
+        準備
       </div>
     </div>
 
     <div class="default-section__table__row">
-      <div class="default-section__table__cell">
-        14:35 ~
+      <div class="default-section__table__cell default-section__table__cell--time">
+        14:35
       </div>
       <div class="default-section__table__cell">
-        <h2>スポンサーLT大会</h2>
-        <h3>「とんこつスタジアム」（仮題）</h3>
+        <div class="default-section__table__label">トラック 1</div>
+        <h2 class="default-section__table__title">スポンサーLT大会</h2>
+        <h3 class="default-section__table__subtitle">「とんこつスタジアム」（仮題）</h3>
         <p>
           「とんこつスポンサー」に名乗り出ていただいた5社様に、5分一本勝負のLTをお願いします！<br>
           発表予定のスポンサーは以下の皆様です。
         </p>
-        <h4>Speakers</h4>
-        <ol>
-          <li><strong style="color: #59585B;">「サービス展開を支えるRubyの活用と組織的スケーリングの勝利の鍵」</strong>
-            <a class="tooltip" title="ピクシブでは「創作活動がもっと楽しくなる場所を作ること」をミッションとして、イラストコミュニケーションサービス「pixiv」をはじめとした様々なサービスを営んでいます。今日では https://www.pixiv.co.jp/service/ の大多数がRubyで動いており、サービスを支える礎となっています。このトークでは具体的な活用方法と、今のような利用状況に至るまでの議論、経緯、意思決定を述べ、事業会社としてのRubyの活用の現状について将来像を明確にします。"><i class="fa fa-info-circle"></i></a><br>
-          小芝敏明（<a href="https://www.pixiv.co.jp/">ピクシブ株式会社</a>） </li>
-          <li><strong style="color: #59585B;">「フロイデのご紹介（仮）」</strong>
-            <a class="tooltip" title="「無職フリーターを1000人エンジニアにする」をミッションに掲げるフロイデのご紹介を致します！"><i class="fa fa-info-circle"></i></a><br>
-          熊谷悦史（<a href="https://froide.co.jp/">フロイデ株式会社</a> 開発事業部） </li>
-          <li><strong style="color: #59585B;">「日本一エンジニアが心豊かに働ける会社をつくる」</strong>
-            <a class="tooltip" title="場所にとらわれない新しい働き方を実現することを通じて、エンジニアとして一生手を動かせて輝き続けられるような企業を目指す株式会社メンバーズエッジ（2017年にメンバーズより独立）のチャレンジについてお話させていただきます。"><i class="fa fa-info-circle"></i></a><br>
-          川井健史（<a href="http://www.members.co.jp/">株式会社メンバーズ</a>） </li>
-          <li><strong style="color: #59585B;">「俺たちとペパボとロリポの“やっていき”の話」</strong>
-            <a class="tooltip" title="懇親会スポンサーでもあるGMOペパボについてのご紹介と、現在福岡支社のメンバーで力を入れていて開発しており、Ruby on Railsの利用もサポートしているプラットフォーム「ロリポップ！マネージドクラウド」のお話をします。"><i class="fa fa-info-circle"></i></a><br>
-          鳴海弘輝（<a href="https://pepabo.com/">GMOペパボ株式会社</a>） </li>
-          <li><strong style="color: #59585B;">「虎の穴とRuby」</strong>
-            <a class="tooltip" title="虎の穴のサービスのどの部分でRubyやRailsを活用しているか発表します。"><i class="fa fa-info-circle"></i></a><br>
-          野田純一（<a href="https://yumenosora.co.jp/">株式会社虎の穴</a> 開発室 課長） </li>
-        </ol>
+        <p>
+          <ol>
+            <li>
+              <strong>「サービス展開を支えるRubyの活用と組織的スケーリングの勝利の鍵」</strong>
+              <a class="tooltip" title="ピクシブでは「創作活動がもっと楽しくなる場所を作ること」をミッションとして、イラストコミュニケーションサービス「pixiv」をはじめとした様々なサービスを営んでいます。今日では https://www.pixiv.co.jp/service/ の大多数がRubyで動いており、サービスを支える礎となっています。このトークでは具体的な活用方法と、今のような利用状況に至るまでの議論、経緯、意思決定を述べ、事業会社としてのRubyの活用の現状について将来像を明確にします。"><i class="fa fa-info-circle"></i></a><br>
+              小芝敏明（<a href="https://www.pixiv.co.jp/">ピクシブ株式会社</a>）
+            </li>
+            <li>
+              <strong>「フロイデのご紹介（仮）」</strong>
+              <a class="tooltip" title="「無職フリーターを1000人エンジニアにする」をミッションに掲げるフロイデのご紹介を致します！"><i class="fa fa-info-circle"></i></a><br>
+              熊谷悦史（<a href="https://froide.co.jp/">フロイデ株式会社</a> 開発事業部）
+            </li>
+            <li>
+              <strong>「日本一エンジニアが心豊かに働ける会社をつくる」</strong>
+              <a class="tooltip" title="場所にとらわれない新しい働き方を実現することを通じて、エンジニアとして一生手を動かせて輝き続けられるような企業を目指す株式会社メンバーズエッジ（2017年にメンバーズより独立）のチャレンジについてお話させていただきます。"><i class="fa fa-info-circle"></i></a><br>
+              川井健史（<a href="http://www.members.co.jp/">株式会社メンバーズ</a>）
+            </li>
+            <li>
+              <strong>「俺たちとペパボとロリポの“やっていき”の話」</strong>
+              <a class="tooltip" title="懇親会スポンサーでもあるGMOペパボについてのご紹介と、現在福岡支社のメンバーで力を入れていて開発しており、Ruby on Railsの利用もサポートしているプラットフォーム「ロリポップ！マネージドクラウド」のお話をします。"><i class="fa fa-info-circle"></i></a><br>
+              鳴海弘輝（<a href="https://pepabo.com/">GMOペパボ株式会社</a>）
+            </li>
+            <li>
+              <strong>「虎の穴とRuby」</strong>
+              <a class="tooltip" title="虎の穴のサービスのどの部分でRubyやRailsを活用しているか発表します。"><i class="fa fa-info-circle"></i></a><br>
+              野田純一（<a href="https://yumenosora.co.jp/">株式会社虎の穴</a> 開発室 課長）
+            </li>
+          </ol>
+        </p>
       </div>
       <div class="default-section__table__cell">
-        <h2 style="padding-bottom: 1.35em;">コンパイル時計算への招待</h2>
+        <div class="default-section__table__label">トラック 2</div>
+        <h2 class="default-section__table__title">コンパイル時計算への招待</h2>
         <p>
           コンパイラ最適化の限界を越えられる（かもしれない）コンパイル時計算の世界についてです。コンパイラの専門家でもないので、たまにC++などで使っていた側としてゆるふわに語ります。
         </p>
-        <h4>Speaker</h4>
-        <a href="./speakers.html#take-cheeze">take-cheeze</a>
+        <div>
+          <strong>Speaker</strong><br>
+          <a href="./speakers.html#take-cheeze">take-cheeze</a>
+        </div>
       </div>
     </div>
 
     <div class="default-section__table__row">
+      <div class="default-section__table__cell default-section__table__cell--time">
+        15:05
+      </div>
       <div class="default-section__table__cell">
-        15:05 ~
+        <h2 class="default-section__table__title">休憩</h2>
+      </div>
+      <div class="default-section__table__cell">
+      </div>
+    </div>
+
+    <div class="default-section__table__row">
+      <div class="default-section__table__cell default-section__table__cell--time">
         15:30
       </div>
       <div class="default-section__table__cell">
-        <h3>休憩</h3>
-      </div>
-      <div class="default-section__table__cell">
-      </div>
-    </div>
-
-    <div class="default-section__table__row">
-      <div class="default-section__table__cell">
-        15:30 ~
-      </div>
-      <div class="default-section__table__cell">
-        <h2>200万ドメインのHTTPS化を見据えたmrubyによる大規模証明書管理アーキテクチャ</h2>
-        <h3>サーバ台数を100分の1にする技術</h3>
+        <div class="default-section__table__label">トラック 1</div>
+        <h2 class="default-section__table__title">200万ドメインのHTTPS化を見据えたmrubyによる大規模証明書管理アーキテクチャ</h2>
+        <h3 class="default-section__table__subtitle">サーバ台数を100分の1にする技術</h3>
         <p>
           常時HTTPS化が進む中で，高集積マルチテナント方式のWebサーバで管理している大量のホストもHTTPS化を進めていく必要がある．そこで，事前にサーバプロセスに証明書を読み込まず，TLSハンドシェイク時に動的に証明書を読み込み，メモリ使用量を低減させる手法を提案する．実装には，ngx_mrubyを採用し，GMOペパボ株式会社のホスティングサービスにおいて本手法を導入して，実運用上の評価を行った
         </p>
-        <h4>Speaker</h4>
-        <a href="./speakers.html#matsumotory">松本亮介</a>
+        <div>
+          <strong>Speaker</strong><br>
+          <a href="./speakers.html#matsumotory">松本亮介</a>
+        </div>
       </div>
       <div class="default-section__table__cell">
-        <h2 style="padding-bottom: 3.2em;">なぜRubyだったのか？Rubyで成長したOSS</h2>
+        <div class="default-section__table__label">トラック 2</div>
+        <h2 class="default-section__table__title">なぜRubyだったのか？Rubyで成長したOSS</h2>
         <p>
           発表者は、PHPのエンジニアでありながらRuby製のツールとしてawspecというツールを作成しメンテナンスしています。<br>
-その中で、なぜRubyを採用したのか、そのツールがRubyのコミュニティでどのように成長したのか、様々な問題をRubyの世界でどのように解決したのか、どのようなPull Requestがあったのかを話します。
-本発表で1つのRubyのOSSの成長を紹介できると思います。
+          その中で、なぜRubyを採用したのか、そのツールがRubyのコミュニティでどのように成長したのか、様々な問題をRubyの世界でどのように解決したのか、どのようなPull Requestがあったのかを話します。
+          本発表で1つのRubyのOSSの成長を紹介できると思います。
         </p>
-        <h4>Speaker</h4>
-        <a href="./speakers.html#k1low">小山健一郎</a>
+        <div>
+          <strong>Speaker</strong><br>
+          <a href="./speakers.html#k1low">小山健一郎</a>
+        </div>
       </div>
     </div>
-    
+
     <div class="default-section__table__row">
-      <div class="default-section__table__cell">
-        16:20 ~
+      <div class="default-section__table__cell default-section__table__cell--time">
+        16:20
       </div>
       <div class="default-section__table__cell">
-        <h4>飛び梅トーク:</h4>
-        <h3>Cookpad と Ruby</h3>
+        <div class="default-section__table__label">トラック 1</div>
+        <h2 class="default-section__table__title">飛び梅トーク:</h2>
+        <h3 class="default-section__table__subtitle">Cookpad と Ruby</h3>
         <p>
           Cookpad の取り組みと Ruby でどのような事をやっているかを説明します。
         </p>
-        <h4>Speaker</h4>
-        庄司嘉織（<a href="https://cookpad.com/">クックパッド株式会社</a> 技術部部長/エンジニア統括マネージャ）
+        <div>
+          <strong>Speaker</strong><br>
+          庄司嘉織（<a href="https://cookpad.com/">クックパッド株式会社</a> 技術部部長/エンジニア統括マネージャ）
+        </div>
       </div>
       <div class="default-section__table__cell">
+        <div class="default-section__table__label">トラック 2</div>
+        準備
       </div>
     </div>
 
     <div class="default-section__table__row">
-      <div class="default-section__table__cell">
-        16:35 ~
+      <div class="default-section__table__cell default-section__table__cell--time">
+        16:35
       </div>
       <div class="default-section__table__cell">
-        <h2>Keynote: Rubyにおける<br />トレース機構の刷新</h2>
+        <div class="default-section__table__label">トラック 1</div>
+        <h2 class="default-section__table__title">Keynote: Rubyにおけるトレース機構の刷新</h2>
         <p>
           プログラムの挙動を追跡するのは、性能解析や挙動解析などを行うために重要である。Ruby (MRI) にはそのための仕組みとして、VM の <code>trace</code> 命令と、それを用いた TracePoint を用意している。しかし、現在の仕組みでは、非トレース時の実行時負荷が若干（最大で1割ほど）生じ、また任意の点に追跡点を仕込むことができず、柔軟な追跡が困難という問題がある。そこで、本発表ではこれらの問題点を解決する新しい追跡機構について紹介する。新しい機構では、 <code>trace</code> 命令を用いるのではなく、各命令に付加的な情報を持たせ、命令書き換えを利用して実現する。発表では、本機構の設計と実装、そして実装と評価について紹介する。さらに、本機構によって可能になる言語機能のアイディアについても議論する。
         </p>
-        <h4>Speaker</h4>
-        <a href="./index.html#keynotes">笹田耕一</a>
+        <div>
+          <strong>Speaker</strong><br>
+          <a href="./index.html#keynotes">笹田耕一</a>
+        </div>
       </div>
       <div class="default-section__table__cell">
+        <div class="default-section__table__label">トラック 2</div>
+        準備
       </div>
     </div>
 
     <div class="default-section__table__row">
-      <div class="default-section__table__cell">
-        17:30 ~
+      <div class="default-section__table__cell default-section__table__cell--time">
+        17:30
       </div>
       <div class="default-section__table__cell">
-        <h3>Closing Talk</h3>
+        <div class="default-section__table__label">トラック 1</div>
+        <h2 class="default-section__table__title">Closing Talk</h2>
         <p>
           ??????
         </p>
-        <h4>Speaker</h4>
-        近藤うちお（実行委員長）
+        <div>
+          <strong>Speaker</strong><br>
+          近藤うちお（実行委員長）
+        </div>
       </div>
       <div class="default-section__table__cell">
       </div>
     </div>
 
     <div class="default-section__table__row">
-      <div class="default-section__table__cell">
-        18:00 ~
-        18:30
+      <div class="default-section__table__cell default-section__table__cell--time">
+        18:00
       </div>
       <div class="default-section__table__cell">
-        <h3>退場（18:30完全撤収）</h3>
+        <h2 class="default-section__table__title">退場（18:30 完全撤収）</h2>
+        <p>ご協力をお願いします。</p>
       </div>
       <div class="default-section__table__cell">
-        <h3>ご協力をお願いします。</h3>
       </div>
     </div>
-
   </div>
-
+  <p>※時間帯等について、調整の可能性があります。ご了承ください。</p>
 </div>
 
       </section>
