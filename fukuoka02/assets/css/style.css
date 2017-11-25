@@ -345,6 +345,11 @@ button {
   margin: 0 auto 10px;
   color: #999;
 }
+.default-section__body--notice {
+  text-align: center;
+  margin: 0 auto 30px;
+  color: #999;
+}
 .default-section__img {
   display: block;
   width: 100%;
