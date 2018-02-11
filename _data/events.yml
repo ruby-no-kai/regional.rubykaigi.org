@@ -335,19 +335,23 @@
   title: "TokyuRuby会議11"
   start_on: 2017-07-29
   end_on: 2017-07-29
+  report_url: http://magazine.rubyist.net/?0057-TokyuRubyKaigi11Report
 - name: ginza01
   title: "ぎんざRuby会議01"
   start_on: 2017-08-05
   end_on: 2017-08-05
   external_url: https://ginzarb.github.io//kaigi01/
+  report_url: http://magazine.rubyist.net/?0057-GinzaRubyKaigi01Report
 - name: tochigi07
   title: "とちぎRuby会議07"
   start_on: 2017-08-26
   end_on: 2017-08-26
+  report_url: http://magazine.rubyist.net/?0057-TochigiRubyKaigi07Report
 - name: fukuoka02
   title: "福岡Ruby会議02"
   start_on: 2017-11-25
   end_on: 2017-11-25
+  report_url: http://magazine.rubyist.net/?0057-FukuokaRubyKaigi02Report
 - name: okrk02
   title: "沖縄Ruby会議02"
   start_on: 2018-03-10
