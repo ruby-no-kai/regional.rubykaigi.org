@@ -362,10 +362,12 @@
   start_on: 2018-06-30
   end_on: 2018-06-30
   external_url: https://matsue.rubyist.net/matrk09/
+  report_url: https://magazine.rubyist.net/articles/0058/0058-MatsueRubyKaigi09Report.html
 - name: osaka01
   title: "大阪Ruby会議01"
   start_on: 2018-07-21
   end_on: 2018-07-21
+  report_url: https://magazine.rubyist.net/articles/0058/0058-OsakaRubyKaigi01Report.html
 - name: tokyu12
   title: "TokyuRuby会議12"
   start_on: 2018-07-29
