@@ -357,6 +357,7 @@
   start_on: 2018-03-10
   end_on: 2018-03-10
   external_url: http://ruby.okinawa/okrk02/
+  report_url: https://magazine.rubyist.net/articles/0059/0059-OkinawaRubyKaigi02Report.html
 - name: matsue09
   title: "松江Ruby会議09"
   start_on: 2018-06-30
@@ -372,7 +373,9 @@
   title: "TokyuRuby会議12"
   start_on: 2018-07-29
   end_on: 2018-07-29
+  report_url: https://magazine.rubyist.net/articles/0059/0059-TokyuRubyKaigi12Report.html
 - name: oedo07
   title: "大江戸Ruby会議07"
   start_on: 2018-09-15
   end_on: 2018-09-15
+  report_url: https://magazine.rubyist.net/articles/0059/0059-OedoRubyKaigi07Report.html
