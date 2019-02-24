@@ -1,0 +1,1148 @@
+
+html, body {
+    font-size: 14pt;
+    transition: 300ms;
+    /* fixme */
+    background-color: rgb(137, 215, 103); 
+    /* color: rgb(244, 244, 244) */
+}
+
+body {
+  font-family: Optima,Segoe,Segoe UI,Candara,Calibri,Helvetica Neue,Helvetica,Arial,sans-serif; 
+  margin: 4em 10em 4em 10em;
+  padding: 0pt;
+  font-weight: normal;
+  font-style: normal;
+  position: relative;
+  cursor: auto
+}
+
+@media screen and ( max-width:479px )
+{
+	body
+	{
+		margin: 2em 2em 2em 2em;
+    font-size: 9pt;
+	}
+}
+
+tt, code, kbd, samp {
+  font-size: 90%;
+}
+
+h1.part-title {
+  text-align: center;
+    color:     #777;
+
+}
+
+h1.part-title .part-number{
+  font-size: 80%;
+}
+
+.partintro {
+    border-top: 3px solid #aaaadd;
+    border-bottom: 3px solid #aaaadd;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-top:  2em;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-style: italic;
+}
+
+h1.chapter-title {
+  margin-top:   2em;
+  text-align: right;
+
+}
+
+h1.chapter-title .chapter-number {
+  color:     #999999;
+  font-weight: bold; 
+  display: block;
+  font-size: 90%;
+}
+
+h1.chapter-title .chapter-name {
+  display: block;
+  color:     #555555;
+  background: url(images/h1-underline.gif) repeat-x bottom;
+  font-size: 120%;
+  font-weight: bold; 
+  margin-bottom: 1ex;
+}
+
+h2 {
+ font-size: 140%;
+ font-weight:  bold;
+ text-align: left !important;
+ color:     #445;
+ margin-top:  1em;
+ margin-bottom: 1ex !important;
+}
+
+h3 {
+ font-size: 110%;
+ font-weight:  bold;
+ color:     #225555;
+ clear:  both;
+ margin-top:  1em;
+ margin-bottom: 1ex;
+}
+
+h4 {
+ font-size: 100%;
+ font-weight:  bold;
+ color:     #225555;
+ clear:  both;
+ margin-top:  0.8em;
+ margin-bottom: 0.8ex;
+}
+
+p {
+  line-height: 135%;
+  margin-top: 0pt;
+  text-align: justify;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+/*  text-decoration: none;*/
+}
+
+a:visited:not(.ext) {
+  color: #246;
+}
+
+a:hover:not(.ext) {
+  color: #246;
+}
+
+a:link:not(.ext) {
+  color: #246;
+}
+
+a:active:not(.ext) {
+  color: #246;
+}
+
+
+.table-of-contents a.right-toc-curr {
+  color: #7A182C;
+  background-color: #EAC2CA; 
+  -webkit-border-top-left-radius: 2px;
+  -webkit-border-top-right-radius: 2px;
+  -moz-border-radius-topleft: 2px;
+  -moz-border-radius-topright: 2px;
+  -webkit-border-bottom-right-radius: 2px;
+  -webkit-border-bottom-left-radius: 2px;
+  -moz-border-radius-bottomright: 2px;
+  -moz-border-radius-bottomleft: 2px;
+  -webkit-transition: 0.4s ease-in-out;
+}
+
+.table-of-contents a.right-toc-curr:link {
+  color: #7A182C;
+}
+
+.table-of-contents a.right-toc-curr:visited {
+  color: #7A182C;
+}
+.table-of-contents a.right-toc-curr:hover {
+  color: #7A182C;
+}
+.table-of-contents a.right-toc-curr:active {
+  color: #7A182C;
+}
+
+
+.table-of-contents li {
+  margin-top:  0.4em;
+  text-decoration: none;
+}
+
+.table-of-contents li a {
+  text-decoration: none;
+}
+
+.table-of-contents li a:link {
+  color: #666;
+}
+
+.table-of-contents li a:visited {
+  color: #666;
+}
+
+.table-of-contents li a:hover {
+  color: #666;
+}
+
+.table-of-contents li a:active {
+  color: #666;
+}
+
+.main-body {
+  overflow: hidden;
+}
+
+.right-toc {
+  min-width: 275px;
+  float: right;
+  width:20%;
+}
+
+.right-toc .table-of-contents ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.right-toc .table-of-contents li {
+  list-style-type: none;
+  font-size: small;
+  text-decoration: none;
+  padding: 0.4em 0 0 0em;
+
+}
+
+.right-toc .table-of-contents li.part {
+padding: 1.5em 0 0em 0;
+}
+
+.right-toc .table-of-contents li ul li{
+  text-align: left;
+  padding: 0em 0 0 0em;    
+  text-indent: -0.8em;
+  padding-left: 0.8em;
+}
+.right-toc .table-of-contents a {
+  text-decoration: none;
+}
+
+
+.contribution { 
+  font-size: smaller;
+  color:     #888;
+  padding-left: 10%;
+  padding-right: 10%;                
+}
+
+.acronym {
+  font-weight:  bold;
+  font-variant: small-caps;
+  color:        #333333;
+}
+	     
+
+.author {
+  margin-top:  1em;
+  margin-bottom:  1em;
+  text-align:  right
+}
+
+.authorname {
+
+}
+
+.authoraffiliation {
+  font-style:  italic;
+}
+
+.authors {
+  margin-top:   3em;
+  font-size:   18pt;
+  color:       #666666;
+}
+
+/* authorq is the author asking the beta-book reader */
+div.authorq { 
+  margin: 1em 0;
+  padding: 1em;
+  background: #dddddd;
+  font-size: smaller;              
+}
+
+div.authorq .the-author-asks { 
+  font-weight: bold;
+  display: inline;
+}
+
+.b { 
+  font-weight: bold;
+}
+
+.bad-xref { 
+  color: red;
+}
+
+dl.bibliography  {
+  margin-left: 0pt;
+}
+
+dl.bibliography dt {
+    float: left;
+    clear: left;
+    width: 4.5em;
+    text-align: left;
+    font-size: 90%;
+    font-weight: bold;
+}
+
+dl.bibliography dd {
+    margin-bottom: 8px;
+    margin-left: 4em;
+    padding: 0 0 0 0;
+  }
+
+dl.bibliography dd em {
+  color: #223388;
+  font-weight: bold;
+}
+
+.unused-bookinfo {
+  margin-top:       2em;
+  margin-bottom:    4em;
+  padding:          3em;
+  border-width: 8px;
+  border-style: dotted;
+  border-color: #dddddd;	      
+}
+
+.nav-head {
+  margin-top: 0.1em;
+  margin-bottom: 1em;
+  font-size: 80%;
+  color: #7A182C;
+}
+
+.nav-head a {
+  text-decoration: none;
+}
+
+.nav-head a:link {
+  color: #7A182C;
+}
+
+.nav-head a:visited {
+  color: #7A182C;
+}
+
+.nav-head a:hover {
+  color: #7A182C;
+}
+
+.nav-head a:active {
+  color: #7A182C;
+}
+
+.nav-foot {
+  margin-top: 1em;
+  margin-bottom: 1em;
+
+  margin-left: 10%;
+  margin-right: 10%;
+  font-size: 120%;
+  text-align: center;  
+  color: #7A182C;
+
+}
+
+.schedule table, td, th {
+  border-collapse: collapse;
+}
+
+.schedule table {
+  # width: 60%;
+  margin: 0 auto;
+}
+
+.schedule tr:nth-child(odd) {
+  background: #dfdfdf;
+}
+
+.schedule td {
+  padding-left: 2em;
+  padding-right: 2em;
+  text-align: center;
+}
+
+
+.nav-foot .nav-large {
+  background-color: #EAC2CA;
+    -webkit-border-top-left-radius: 4px;
+    -webkit-border-top-right-radius: 4px;
+    -moz-border-radius-topleft: 4px;
+    -moz-border-radius-topright: 4px;
+    -webkit-border-bottom-right-radius: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    -moz-border-radius-bottomright: 4px;
+    -moz-border-radius-bottomleft: 4px;
+      padding: 2px;
+  -webkit-transition: 0.4s ease-in-out;
+
+}
+
+.nav-foot a {
+    padding: 2px;
+  text-decoration: none;
+}
+
+.nav-foot a:link {
+  color: #7A182C;
+}
+
+.nav-foot a:visited {
+  color: #7A182C;
+}
+
+.nav-foot a:hover {
+  color: #7A182C;
+}
+
+.nav-foot a:active {
+  color: #7A182C;
+}
+
+/*
+.nav-foot a.nav-large {
+  color: #fff;
+}
+
+.nav-foot a:link.nav-large {
+  color: #fff;
+}
+
+.nav-foot a:visited.nav-large {
+  color: #fff;
+}
+
+.nav-foot a:hover.nav-large {
+  color: #fff;
+}
+
+.nav-foot a:active {
+  color: #fff;
+}
+*/
+
+.titlepage 
+{ 
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: center;
+}
+
+.tp-title {
+  display: block;
+  margin-top: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color:        #999;
+  font-size: 250%;
+  font-weight: 700;
+  border-width: 3px;
+  border-style: solid none;
+  border-color: #aaa;	    
+}
+
+.tp-subtitle {
+  display: block;
+  margin-top: 10px;
+  font-size: 160%;
+  color:        #777;
+}
+
+.tp-authors 
+{ 
+  display: block;
+    font-size: 120%;
+
+  color: #777;
+  margin-top: 20px;
+}
+
+.right-toc .tp-title {
+  margin: 0 0px 30px 40px;
+  display: block;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color:        #999;
+  font-size: 100%;
+  font-weight: 700;
+  border-width: 2px;
+  border-style: solid none;
+  border-color: #aaa;     
+}
+
+.right-toc .tp-title a {
+  color: #999;
+}
+
+.tp-copyright 
+{ 
+  margin-top: 45px;
+  margin-left: 20%;
+  margin-right: 20%;
+  font-size: x-small;
+  border-top: 1px solid #aaa;
+  color: #444;
+}
+
+.ohm-copyright p {
+  margin-top: 25px;
+  text-align: left;
+  width: 300px;
+  display: inline-block;
+}
+
+.tp-extracted-from {
+  font-size: 70%;
+  color:     #9999bb;
+}
+
+
+div.tp-extract-explanation {
+  margin-top: 72pt;
+}
+
+div.tp-extract-explanation p {
+  font-size: 70%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.copyright-body {
+  font-family: sans-serif;
+  font-size: 70%;
+}
+
+.tp-docinfo
+{ 
+  margin-top: 30px;
+  font-size: small;
+  color: #777;
+    text-align: center;
+
+}
+
+.booksectname {
+  font-style: italic;
+}
+
+/* these are inline code. We make them all include the cf class   font-weight: bold;  */
+
+.cf {
+  color: #228;
+  /* font-family: "sans-serif"; */
+  /*
+  font-family: Georgia,Times,Times New Roman,serif; 
+  */
+  font-family: AvenirNextCondensed-Medium,Arial Narrow,Gill Sans,Arial,sans-serif;
+  font-size: 105%;
+}
+
+.classname,
+.commandname,
+.commandoption,
+.constant,
+.dirname,
+.fileextension,
+.filename,
+.inlinecode,
+.keystroke,
+.keyword,
+.methodname,
+.parametername,
+.sqlcolumn,
+.sqltable,
+.string,
+.variablename,
+.xmlattrval {
+}
+
+.stringinfile {
+  font-style:  italic;
+}
+	     
+/*
+ ** end of cf stuff 
+ */
+
+	     
+.emph {
+  font-style: italic;
+}
+
+.epigraph {
+  width:         60%;
+  position:     relative;
+  left:         30%;
+  padding-top:   0px;
+  padding-top:   0px;
+  padding-left:  8px;
+  padding-right: 8px;
+  border-style:  solid;
+  text-align:    left;
+  border-width:  6px;
+  border-color:  #dddddd;
+  font-size:    small;
+  font-style:    italic;
+  margin-bottom: 0.7em;
+}
+
+.episign {
+  padding:       2px;
+  border-style:  solid;
+  text-align:    right;
+  border-width:  2px 0px 0px 0px;
+  border-color:  #dddddd;
+  font-size:    small;
+}
+
+.episignname {
+}
+.episigntitle {
+  font-style:    italic;
+}
+.episigndate {
+}
+
+.figure {
+  padding:       7px;
+  border-style:  dotted;
+  text-align:    center;
+  border-width:  3px;
+  border-color:  #dddddd;
+  margin-top:    1em;
+  margin-bottom: 1em;
+}
+
+.figurecaption {
+  font-weight:   bold;
+  text-align:    center
+}
+
+.firstuseinline {
+  font-style:italic;
+}
+
+.firstusemargin {
+  position: absolute;
+  top:auto;
+  left:       1em;
+  font-style:italic;
+  font-size: x-small;
+  float:     left;
+  width:     1in;
+  text-align: right;
+}
+
+.flag { 
+  color:    red;
+}
+
+.flagadvanced {
+  float: left;
+  margin-right: 1em;                
+}
+
+.footnotes {
+  margin-top:   2em;
+  border-width: 2px 0 0 0;
+  border-style: solid none none none;
+  border-color: #888888;	      
+  font-size: smaller;
+}
+
+.footnotes td.footnote-number {
+  white-space: nowrap;
+  width: 1.5em;
+}
+
+div.highlight { 
+  border-top: 3px solid #acc;             
+  border-bottom: 3px solid #acc;             
+  width: 20%;
+  float: left;               
+  margin-right: 2em;
+}
+
+div.highlight p { 
+  margin-bottom: 0.2em;
+}
+
+.initials {
+  font-weight:  bold;
+  font-variant: small-caps;
+  color:        #333333;
+}
+	     
+
+.example {
+ border: 2px solid #88d;
+ background: #ccf;
+ padding-left: 1em;
+ padding-rightt: 1em;
+ margin-left: 0pt;
+ border-radius: 15px;
+ -moz-border-radius: 15px;
+
+}
+
+.marginnote {
+  position: absolute;
+  top:auto;
+  left:       1em;
+  font-weight: bold;
+  font-size: x-small;
+  float:     left;
+  width:     1in;
+  text-align: right;
+  line-height: 100%;
+}
+
+.nohyphen {
+  -webkit-hyphens:none; 
+}
+     
+.missing {
+  position: absolute;
+  top:auto;
+  left:       1em;
+  font-weight: bold;
+  font-size: x-small;
+  float:     left;
+  width:     1in;
+  text-align: right;
+  line-height: 100%;
+}
+
+.prefacesignoff a {
+  font-weight: bold;
+ }
+
+.prefacesignoffemail {
+  font-family: courier, fixed, monospace, serif;
+  font-size: small;
+}
+
+.prefacesignoffdate {
+  font-size: small;
+}
+
+span.shade-fg-white {
+  color: white;
+}
+span.shade-fg-black {
+  color: black;
+}
+span.shade-fg-red {
+  color: red;
+}
+span.shade-fg-green {
+  color: green;
+}
+span.shade-fg-yellow {
+  color: yellow;
+}
+span.shade-fg-blue {
+  color: blue;
+}
+span.shade-fg-magenta {
+  color: magenta;
+}
+span.shade-fg-cyan {
+  color: cyan;
+}
+
+span.shade-fg-light {
+  color: rgb(220,220,180);
+}
+span.shade-fg-dark {
+  color: rgb(50,50,100);
+}
+
+span.shade-bg-white {
+  background-color: white;
+}
+span.shade-bg-black {
+  background-color: black;
+}
+span.shade-bg-red {
+  background-color: red;
+}
+span.shade-bg-green {
+  background-color: green;
+}
+span.shade-bg-yellow {
+  background-color: yellow;
+}
+span.shade-bg-blue {
+  background-color: blue;
+}
+span.shade-bg-magenta {
+  background-color: magenta;
+}
+span.shade-bg-cyan {
+  background-color: cyan;
+}
+span.shade-bg-light {
+  background-color: rgb(220,220,180);
+}
+span.shade-bg-dark {
+  background-color: rgb(50,50,100);
+}
+
+table.processedcode { 
+  margin: 0.7em 0px;
+}
+
+.processedcode tr {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+
+.processedcode tr td {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+
+.codeprefix { 
+  font-family: Consolas,monaco,monospace, serif;
+  font-weight: bold;
+  font-size: 90%;
+}
+
+.codeline {
+  font-family: Consolas,monaco,monospace, serif;
+  line-height: 1.2;
+  font-size: 100%;
+}
+
+.codeline code {
+  font-family: Consolas,monaco,monospace, serif;
+}
+
+.codeline pre {
+  font-family: Consolas,monaco,monospace, serif;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: bold;
+}
+
+
+.codecalloutnumber { 
+  font-size:  80%;
+}
+
+tr.livecodelozenge { 
+}                  
+
+tr.livecodelozenge td a { 
+ 
+}                  
+
+tr.livecodelozenge td { 
+  font-size: 90%;
+  padding-left: 0.2em;
+  padding-top: 0.2em;
+  padding-bottom: 0.4em;
+  text-decoration:underline;
+}
+
+span.callout-number { 
+  font-size: 80%;
+  color: green;                      
+}
+
+/*
+dl {
+}
+
+dl dt.force-newline {
+  clear: left;
+  width: 100%;                      
+  display: block;
+}
+
+dl dt {
+  float: left;
+  clear: left;
+  width: 3em;
+  display: block;
+}
+
+dl dd {
+  margin-left: 3.5em;
+  padding-left: 5px;
+  margin-bottom: 5px;
+}
+*/
+
+
+dl.calloutlist  {
+  margin-left: 0pt;
+}
+
+dl.calloutlist dt {
+    float: left;
+    clear: left;
+    width: 1em;
+    text-align: left;
+    font-size: 70%;
+}
+
+dl.calloutlist dd {
+    margin: 0 0 0 1.5em;
+    padding: 0 0 0 0;
+  }
+
+.simpletable {
+  margin-top:    1em;
+  margin-bottom:  2em;
+  border-collapse: collapse;
+}
+
+table.outerlines, table.hlines {
+  padding: 2px;
+  border: 2px solid #aaaadd;
+}
+
+th.outerlines, th.hlines {
+  border-bottom: 2px solid #aaaadd;
+  background: #ddddff;
+}
+
+.simpletable td, .simpletable th {
+  text-align: left;
+  vertical-align:      top;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+
+.simpletable p.last-para-in-cell {
+  margin-bottom: 0pt;
+}
+
+.simpletable tr.zebra {
+  background: #ddffdd;
+}
+
+.simpletable tr.line-on-top td {
+  border-top: 1px solid #aaaadd;
+}
+
+.standin {
+   font-style:  italic;
+   font-weight: bold;
+   color:       #444444;
+}
+
+table.arr-recipe 
+{ 
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border: 6px solid #6aa;
+  width: 100%;
+  padding: 0px;
+}
+
+table.arr-recipe td.arr-recipe-number
+{ 
+  font-size: smaller;
+  font-weight: bold;
+  text-align: center;
+  width: 15%;
+  background: #6aa;
+  padding: 0;
+  margin: 0;
+  color: white;
+}
+
+table.arr-recipe .arr-recipe-name
+{ 
+  font-size: larger;
+  padding-top: 1ex;
+  padding-left: 1em;
+  padding-bottom: 1ex;
+}
+
+.tabletitle {
+  font-weight: bold;	
+  padding:      2px;
+  border-width: 0px 0 2px 0;
+  border-style: none none solid none;
+  border-color: #888888;	      
+}
+
+table.pg-task  {
+ font-size: 140%;
+ font-weight:  bold;
+ text-align: left !important;
+ color:     #445;
+ margin-top:  1em;
+ margin-bottom: 1ex !important;
+}
+
+
+td.pg-what-to-do  {
+ font-size: 110%;
+ font-weight:  bold;
+ color:     #445;
+ padding:      2px;
+ text-align:    center;
+ border-style:  dotted;
+ border-width:  3px;
+ border-color:  #008000;
+ margin-top:    1em;
+ margin-bottom: 1em;}
+
+
+
+.xmltag {
+  /*font-weight: bold;	
+   color:       #444444;*/
+}
+
+.comment {
+  color:   #115511;
+  font-style: italic;  
+}
+
+.kw {
+  color:  #111199;
+  font-weight: bold;
+}
+
+.prompt {
+  color:  rgb(144, 17, 125);
+  font-weight: bold;
+}
+
+.string {
+  color:   #555511;
+  font-style: italic;  
+}
+
+
+.sidebar { 
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding: 1em;
+  font-size: 90%;
+  font-family: sans;
+  border: 3px solid #aaa;           
+}
+
+.sidebar .sidebar-title { 
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 1px solid #aaa
+}
+
+.underline { 
+  text-decoration: underline;
+}
+
+div.webresources .title { 
+  font-weight: bold;
+  margin-bottom: 0pt;                        
+}
+
+div.webresources .url { 
+  font-weight: bold;
+  margin-top: 0pt;                        
+  margin-bottom: 0pt;                        
+}
+
+div.webresources .desc { 
+  margin-top: 0px;
+  margin-left: 2em;
+}
+
+div.webresources .desc p { 
+  margin-top: 0px;
+}
+
+.xref-title { 
+  font-style: italic;              
+}
+
+div.xxxsays { 
+  font-size: small;
+  margin: 1em 0;
+  padding: 1em;
+  border:  2px #aaaaaa solid;
+}
+
+div.xxxsays .heading { 
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+  border-bottom:  2px #aaaaaa solid;
+}
+
+div.xxxsays .heading  .persons-picture { 
+  float: left;
+  margin-right: 2em
+}
+
+div.xxxsays .heading  .label { 
+  font-weight: bold;
+  color:       #999999;
+  margin-bottom: 0.2em;                               
+}
+
+div.xxxsays .heading  .title { 
+  font-weight: bold;
+  font-size: larger;
+  color:       #555555;                               
+}
+
+.copyright { 
+   font-size: x-small;
+   color:       #335555;
+   margin-top:  3em;
+   padding-top:  3px;
+   padding-bottom:  3px;
+   border-top:   1px #335555 solid;
+}
+
+div.backmatter-cover {
+    float: left;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+hr.backmatter-end {
+    clear: both;
+}
+
+table.praise {
+  margin-bottom: 2.5em;
+}
+
+ul.praise {
+  list-style: none;
+}
+
+.praisename {
+    font-weight: bold;
+}
+
+.dedication-text {
+  margin-top:  3em;
+  font-style: italic;  
+  text-align: center;
+}
+
+.dedication-name {
+  margin-top:  0.5em;
+  text-align: right;
+}
