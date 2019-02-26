@@ -2,9 +2,6 @@
 html, body {
     font-size: 14pt;
     transition: 300ms;
-    /* fixme */
-    background-color: rgb(137, 215, 103); 
-    /* color: rgb(244, 244, 244) */
 }
 
 body {
