@@ -1143,3 +1143,24 @@ ul.praise {
   margin-top:  0.5em;
   text-align: right;
 }
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.location-info {
+  width: 35%
+}
+
+p.location-info {
+  padding: 12px 10px;
+}
+
+.location-map {
+  width:60%;
+}
+
+iframe {
+  width: 100%;
+}
