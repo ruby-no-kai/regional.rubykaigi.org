@@ -379,6 +379,10 @@
   start_on: 2018-09-15
   end_on: 2018-09-15
   report_url: https://magazine.rubyist.net/articles/0059/0059-OedoRubyKaigi07Report.html
+- name: nagoya04
+  title: "名古屋Ruby会議04"
+  start_on: 2019-06-08
+  end_on: 2019-06-08
 - name: tochigi08
   title: "とちぎRuby会議08"
   start_on: 2019-06-29
