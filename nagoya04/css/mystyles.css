@@ -6954,6 +6954,9 @@ body, code {
   left: 0;
   content: ' '; }
 
+div#hero_text {
+  -webkit-text-size-adjust: 80%; }
+
 span#Event-Logo > img {
   width: 250px; }
 
