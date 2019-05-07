@@ -6960,13 +6960,18 @@ div#hero_text {
 span#Event-Logo > img {
   width: 250px; }
 
-.hero-body {
+.hero-body, .hero-foot {
   /* フォント部分のみ上側に出るように指定 */
   position: relative; }
 
 div.hero-body > div > * {
   /* フォント部分の基礎色付け */
   color: #FFFFFF; }
+
+div.hero-foot > * {
+  color: #FFFFFF;
+  margin-top: -1.5rem;
+  margin-bottom: 1.5rem; }
 
 #Top_Title {
   /* ヘッダーの一番上の間隔、大きさの指定 */
@@ -7003,7 +7008,7 @@ h1.with-SectionBar {
   padding-top: 10px;
   padding-left: 10px; }
 
-h1#Access {
+h1#Venue {
   /* アクセス段落のh1 */
   padding-bottom: 10px; }
 
@@ -7028,12 +7033,18 @@ div.message-body {
   background-color: #FEFEFE; }
 
 div.message-body > h1 {
-  color: #82AE46; }
+  color: #82AE46;
+  margin-bottom: 20px; }
 
 div.message-body > h2 {
   margin-top: 20px;
-  margin-bottom: 20px;
-  text-align: center; }
+  margin-bottom: 20px; }
+
+div.message-body > h2.subtitle > strong {
+  /*color: #4dd000;*/ }
+
+div.message-body.is-LT > h2 {
+  font-size: 1rem; }
 
 div.message-body > hr {
   background-color: #82AE46; }
@@ -7053,13 +7064,16 @@ img.sponsors {
 
 /* ここから下各企業ごとの専用クラス */
 img.is-pepabo {
-  margin-top: 10px; }
+  margin-top: 20px; }
 
 img.is-stmn {
   margin-top: 10px; }
 
 h1.title.is-sansan {
   margin-bottom: 7px; }
+
+h1.title.is-caster {
+  margin-bottom: 0; }
 
 /* ここまで */
 #space {
