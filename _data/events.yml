@@ -391,3 +391,8 @@
   title: "TokyuRuby会議13"
   start_on: 2019-06-29
   end_on: 2019-06-29
+- name: tama01
+  title: "TamaRuby会議01"
+  start_on: 2019-07-06
+  end_on: 2019-07-06
+  external_url: https://tama-rb.github.io/tamarubykaigi01/
