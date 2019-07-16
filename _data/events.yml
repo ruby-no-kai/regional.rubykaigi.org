@@ -396,3 +396,7 @@
   start_on: 2019-07-06
   end_on: 2019-07-06
   external_url: https://tama-rb.github.io/tamarubykaigi01/
+- name: osaka02
+  title: "大阪Ruby会議02"
+  start_on: 2019-09-15
+  end_on: 2019-09-15
