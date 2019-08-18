@@ -383,19 +383,23 @@
   title: "名古屋Ruby会議04"
   start_on: 2019-06-08
   end_on: 2019-06-08
+  report_url: https://magazine.rubyist.net/articles/0060/0060-NagoyaRubyKaigi04Report.html
 - name: tochigi08
   title: "とちぎRuby会議08"
   start_on: 2019-06-29
   end_on: 2019-06-29
+  report_url: https://magazine.rubyist.net/articles/0060/0060-tochigiRubyKaigi08Report.html
 - name: tokyu13
   title: "TokyuRuby会議13"
   start_on: 2019-06-29
   end_on: 2019-06-29
+  report_url: https://magazine.rubyist.net/articles/0060/0060-TokyuRubyKaigi13Report.html
 - name: tama01
   title: "TamaRuby会議01"
   start_on: 2019-07-06
   end_on: 2019-07-06
   external_url: https://tama-rb.github.io/tamarubykaigi01/
+  report_url: https://magazine.rubyist.net/articles/0060/0060-TamaRubyKaigi01Report.html
 - name: osaka02
   title: "大阪Ruby会議02"
   start_on: 2019-09-15
