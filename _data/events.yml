@@ -409,3 +409,7 @@
   start_on: 2019-11-03
   end_on: 2019-11-03
   external_url: https://toyamarb.github.io/toyama-rubykaigi01/
+- name: kagoshima01
+  title: "鹿児島Ruby会議01"
+  start_on: 2019-11-30
+  end_on: 2019-11-30
