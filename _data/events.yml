@@ -414,3 +414,8 @@
   start_on: 2019-11-30
   end_on: 2019-11-30
   external_url: https://k-ruby.github.io/kagoshima-rubykaigi01/
+- name: heisei01
+  title: "平成島Ruby会議01"
+  start_on: 2019-12-14
+  end_on: 2019-12-14
+  external_url: https://heiseirb.github.io/kaigi01/
