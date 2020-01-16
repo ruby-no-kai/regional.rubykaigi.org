@@ -419,6 +419,10 @@
   start_on: 2019-12-14
   end_on: 2019-12-14
   external_url: https://heiseirb.github.io/kaigi01/
+- name: oedo08
+  title: "大江戸Ruby会議08"
+  start_on: 2020-02-11
+  end_on: 2020-02-11
 - name: matsue10
   title: "松江Ruby会議10"
   start_on: 2020-06-06
