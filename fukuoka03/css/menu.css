@@ -1,0 +1,155 @@
+@media screen and (min-width: 768px) {
+/* 共通用のスタイル記述 */
+
+.overlayMenuBtn  {
+  display: none;
+}
+.overlayMenu {
+  display: none;
+}
+
+
+}
+
+
+
+/* ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+ここから下、スマホ用
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ */
+
+
+
+@media screen and (max-width: 767px) {
+/* スマホ用のスタイル記述 */
+.overlayMenuBtn  {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 9997;
+  background-color: transparent;
+  padding: 18px 20px 0px;
+}
+.overlayMenuBtn span {
+  position: relative;
+  display: block;
+  width: 28px;
+  border-top: 1px solid #fff;
+  transition: .5s;
+}
+.overlayMenuBtn span:nth-child(1) { top: 0px; }
+.overlayMenuBtn span:nth-child(2) { top: 10px; }
+.overlayMenuBtn span:nth-child(3) { top: 20px; }
+.overlayMenuBtn p {
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  color:#fff;
+  margin:0 0;
+  padding:12px 0 0 0;
+  text-align: center;
+}
+
+.overlayMenu {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  margin: 0px 0 0 0;
+  padding: 0 0 0px 0px;
+  overflow: scroll;
+  background-color: #701227 !important;
+  z-index: 9996;
+}
+.overlayMenuInner {
+  padding: 0px 0px;
+}
+
+.overlayMenuItem{
+  margin-top: 52px;
+}
+
+.overlayMenuHeader {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  color: #fff;
+  font-size: 24px;
+  margin: 20px 0 0 0;
+}
+.overlayMenuItem ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.overlayMenuItem ul li a {
+  display: block;
+  margin: 0 0;
+  width: calc(100% - 80px);
+  padding: 15px 40px;
+  color: #ffffff;
+  font-size: 16px;
+  text-decoration: none;
+  transition: .5s;
+}
+.overlayMenuItem ul li a:hover {
+  opacity: 0.5
+}
+
+.overlayMenuItem ul li a:hover { background-color: rgba(0,0,0,0.2); }
+.overlayMenuItem ul li a:hover { color: #fff; }
+
+.overlayMenuItem ul li a img{
+  height:24px;
+  width: auto;
+}
+
+.menu_info{
+  position: relative;
+  width: calc(100% - 80px);
+  margin:20px 0px 0px;
+  padding: 0px 40px;
+  z-index: 2;
+}
+.menu_info a{
+  display: inline-block;
+  width: 30px;
+  margin:0 0 0 0;
+  transition: 0.5s;
+}
+.menu_info a:hover{
+  opacity: 0.5;
+}
+.menu_info img{
+  width: 100%;
+  height: auto;
+}
+.menu_english{
+  position: absolute;
+  right: 32px;
+  z-index: 3;
+  margin:-36px 0px 40px;
+  padding: 0px;
+}
+.menu_english a {
+  display: block;
+  margin: 0 0;
+  color: #ffffff;
+  font-size: 18px;
+  text-decoration: none;
+  text-align: right;
+  transition: .5s;
+}
+.menu_english a:hover {
+  opacity: 0.5
+}
+
+}

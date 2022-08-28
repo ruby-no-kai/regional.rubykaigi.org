@@ -1,0 +1,394 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@400;700&family=Zen+Maru+Gothic:wght@400;700&display=swap');
+
+body {
+/* ★★★ 背景白は解除background-color:#ffffff;★★★ */
+    font-family: 'Zen Maru Gothic',sans-serif;
+}
+.clear{clear:both;}
+img{line-height:0; }
+a {outline:none;}
+a img {outline:none;}
+a:visited{outline:none;}
+.clearfix::after {content: "";display: block;clear: both;}
+
+ /*  *{outline: solid 1px red;}   */
+
+@media screen and (min-width: 0px) {
+/* 共通用のスタイル記述 */
+body {
+/* ★★★　背景白は解除background-color:#ffffff;★★★ */
+    position: relative;
+    color:#fff;
+    font-size:15px;
+    line-height:2em;
+    background-color: #7C142B;
+    z-index: 0;
+}
+body::after {
+    position: absolute;
+    top: 0;
+    content: '　';
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-image: url(../images/bg/back_top_pc.svg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 1920px;
+    z-index: 0;
+}
+body.page::after {
+    background-image: url(../images/bg/back_page_pc.svg);
+}
+
+.br-sp{display:none;}
+.br-pc{display:block;}
+.pc{display: inline-block;}
+.sp{display: none;}
+
+hr{
+    margin: 20px 0;
+    display: inline-block;
+    width: 120px;
+}
+
+/* ★★★★★★★★★★ ページ用テンプレート ★★★★★★★★★★ */
+#wrapper {
+    position: relative;
+    width:100%;
+	margin:0 auto 0;
+	padding:60px 0px 0px ;
+    z-index: 1;
+}
+
+
+
+.page_logo{
+    position: absolute;
+    top: 18px;
+    left: 15px;
+    width: 120px;
+    z-index: 2;
+}
+.page_logo img{
+    width: 100%;
+    height: auto;
+}
+
+
+
+a.text_link{
+    display: inline-block;
+    margin: 0 0 0 15px;
+    text-decoration: underline;
+}
+a.text_link:hover{
+    text-decoration: none;
+}
+
+/* ★★★★★★★★★★ TOP_冒頭ビジュアル ★★★★★★★★★★ */
+.top_contents_wrap{
+    position: relative;
+    width: 1080px;
+    margin: 0px auto 0;
+    padding: 180px 0 120px;
+}
+
+/* ★★★★★★★★★★ コンテンツ ★★★★★★★★★★ */
+.contents_wrap{
+    position: relative;
+    width: calc(100% - 100px);
+    max-width: 800px;
+    margin: 0 auto 0px;
+    padding: 100px 0 50px;
+    color: #fff;
+}
+.contents_wrap a{
+    text-decoration: underline;
+    word-break: break-all;
+}
+.contents_wrap a:hover{
+    text-decoration: none;
+}
+
+h2.contents_title{
+    display: inline-block;
+    margin: 0em 0 1.5em;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1.3em;
+}
+h2.contents_title span{
+    display: block;
+    font-size: 16px;
+}
+.contents_title::before {
+    content: '';
+    display: block;
+    width: 160px;
+    padding: 10px 0 0px;
+    border-top: solid 1px rgba(255,255,255,0.2);
+}
+
+.contents_title::after {
+    position: absolute;
+    top: 100px;
+    left: -105px;
+    display: block;
+    font-family: 'Dongle', sans-serif;
+    font-size: 120px;
+    font-weight: bold;
+    transform: rotate(90deg);
+    transform-origin: left top;
+    color: rgba(255,255,255,0.2);
+}
+.contents_title_theme::after {
+    content: "Theme";
+}
+.contents_title_news::after {
+    content: "News";
+}
+.contents_title_coc::after {
+    content: "Code of Conducts";
+}
+
+
+}
+
+/* ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+ここから下、タブレット用
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ */
+@media (max-width: 1080px) and (min-width: 768px) {
+
+
+body::after {
+    background-size: 1280px;
+}
+
+/* ★★★★★★★★★★ TOP_冒頭ビジュアル ★★★★★★★★★★ */
+.top_contents_wrap{
+    position: relative;
+    width: calc(100% - 100px);
+    max-width: 800px;
+    margin: 0px auto 0;
+    padding: 100px 0 120px;
+}
+.top_contents_wrap img{
+    width: 50%;
+    height: auto;
+}
+
+/* ★★★★★★★★★★ コンテンツ ★★★★★★★★★★ */
+.contents_wrap{
+    position: relative;
+    width: calc(100% - 100px);
+    max-width: 700px;
+    margin: 0 auto 0px;
+    padding: 100px 0 50px;
+    color: #fff;
+}
+.contents_wrap a{
+    text-decoration: underline;
+    word-break: break-all;
+}
+.contents_wrap a:hover{
+    text-decoration: none;
+}
+
+h2.contents_title{
+    display: inline-block;
+    margin: 0em 0 1.5em;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1.3em;
+}
+h2.contents_title span{
+    display: block;
+    font-size: 16px;
+}
+.contents_title::before {
+    content: '';
+    display: block;
+    width: 160px;
+    padding: 10px 0 0px;
+    border-top: solid 1px rgba(255,255,255,0.2);
+}
+
+.contents_title::after {
+    position: absolute;
+    top: 100px;
+    left: -20px;
+    display: block;
+    font-family: 'Dongle', sans-serif;
+    font-size: 80px;
+    font-weight: bold;
+    transform: rotate(90deg);
+    transform-origin: left top;
+    color: rgba(255,255,255,0.2);
+}
+.contents_title_theme::after {
+    content: "Theme";
+}
+.contents_title_news::after {
+    content: "News";
+}
+.contents_title_coc::after {
+    content: "Code of Conducts";
+}
+
+}
+/* ★★★★★★★★★★　部分的にiPad対応する用　★★★★★★★★★★ */
+@media (max-width: 960px) and (min-width: 768px) {
+}
+
+
+
+
+
+/* ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+ここから下、スマホ用
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ */
+
+@media screen and (max-width: 767px) {
+/* スマホ用記述 */
+body {
+/* ★★★ 背景白は解除background-color:#ffffff;★★★ */
+	color:#111;
+	font-size:13px;
+	line-height:1.9em;
+}
+
+body::after {
+    background-image: url(../images/bg/back_top_sp.svg);
+    background-size: 100%;
+}
+body.page::after {
+    background-image: url(../images/bg/back_page_sp.svg);
+}
+
+.br-sp{display:block;}
+.br-pc{display:none;}
+.pc{display: none;}
+.sp{display: inline-block;}
+
+/* ★★★★★★★★★★ ページ用テンプレート ★★★★★★★★★★ */
+#wrapper {
+    width:100%;
+    margin:0 auto 0;
+	padding:60px 0px 0px ;
+}
+.page_logo{
+    position: absolute;
+    top: 9px;
+    left: 8px;
+    width: 56px;
+}
+.page_logo img{
+    width: 100%;
+    height: auto;
+}
+
+
+
+a.text_link{
+    display: inline-block;
+    margin: 0 0 0 0px;
+    text-decoration: underline;
+}
+a.text_link:hover{
+    text-decoration: none;
+}
+
+/* ★★★★★★★★★★ TOP_冒頭ビジュアル ★★★★★★★★★★ */
+.top_contents_wrap{
+    position: relative;
+    width: 84%;
+    margin: 0px 0 0;
+    padding: 70px 5% 180px;
+}
+.top_contents_wrap img{
+    width: 100%;
+    height: auto;
+}
+
+/* ★★★★★★★★★★ コンテンツ ★★★★★★★★★★ */
+.contents_wrap{
+    position: relative;
+    width: calc(100% - 80px);
+    max-width: 800px;
+    margin: 0 auto 0px;
+    padding: 60px 0 20px;
+    color: #fff;
+}
+.contents_wrap a{
+    text-decoration: underline;
+}
+.contents_wrap a:hover{
+    text-decoration: none;
+}
+
+h2.contents_title{
+    display: inline-block;
+    margin: 0em 0 1.5em;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1.3em;
+}
+h2.contents_title span{
+    display: block;
+    font-size: 13px;
+    margin: 0.5em 0 0.75em;
+}
+.contents_title::before {
+    content: '';
+    display: block;
+    width: 90px;
+    padding: 10px 0 0px;
+    border-top: solid 1px rgba(255,255,255,0.2);
+}
+
+.contents_title::after {
+    position: absolute;
+    top: 60px;
+    left: -12px;
+    display: block;
+    font-family: 'Dongle', sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+    transform: rotate(90deg);
+    transform-origin: left top;
+    color: rgba(255,255,255,0.2);
+}
+.contents_title_theme::after {
+    content: "Theme";
+}
+.contents_title_news::after {
+    content: "News";
+}
+.contents_title_coc::after {
+    content: "Code of Conducts";
+}
+
+
+
+
+
+
+}
