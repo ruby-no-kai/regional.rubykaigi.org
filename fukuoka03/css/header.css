@@ -1,0 +1,224 @@
+@media screen and (min-width: 768px) {
+/* 共通用のスタイル記述 */
+.mega_header_wrap{
+  width: 100%;
+  position: fixed;
+  top:0;
+  background-color: transparent;
+  z-index: 999;
+  transition: all .5s;
+}
+.mega_header_wrap.change_color {
+  background-color: #701227 !important;
+}
+
+.mega_header{
+  width: calc(100% - 100px);
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.mega_header .logo{
+  width:280px;
+  float: left;
+  margin: 16px 0 9px;
+}
+.mega_header .logo img{
+  width:100%;
+  height: auto;
+}
+#gnav{
+  float: right;
+}
+#gnav ul {
+  float: left;
+}
+#gnav ul li {
+  display: inline-block;
+  padding:0 0 0;
+  margin:0 0 0 0;
+}
+
+#gnav ul li a {
+  display: block;
+  margin:0 0 0 30px;
+  padding: 22px 0px 15px;
+  transition: all .2s ease-in;
+  font-size: 16px;
+  line-height: 1em;
+  color: #fff;
+}
+#gnav ul li a:hover {
+  opacity: 0.5;
+}
+#gnav ul li a img{
+  margin: 0 0 -3px;
+}
+
+.language_pc{
+  margin: 29px 0 0 24px;
+  font-size: 0 !important;
+}
+.language_pc li{
+  margin: 0 0 0 -1px !important;
+  border: solid 1px #111;
+}
+.language_pc li a{
+  margin:0 !important;
+  padding: 12px 0px 12px !important;
+  width: 36px;
+  text-align: center;
+  font-size: 13px !important;
+  line-height: 0;
+}
+
+
+
+
+
+
+
+
+
+
+#gnav > ul .menu .menu_inner2 li {
+  display: block;
+  margin: 0 0 0px 0;
+}
+#gnav > ul .menu .menu_inner2 li a span.menu_inner_arrow{
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0px 0 0px 7px;
+  padding: 0px 0 0px 0;
+  border-bottom: solid 0px;
+  line-height: 1.25em;
+}
+#gnav > ul .menu .menu_inner2 li a span.menu_inner_arrow img{
+  width:100%;
+  height: auto;
+}
+@media (max-width: 960px) and (min-width: 768px) {
+  #gnav > ul .menu .menu_inner2 li a span.menu_inner_arrow img{
+    width:80%;
+    height: auto;
+  }
+}
+#gnav > ul .menu .menu_inner2 li:first-of-type {
+  margin: 0 0 20px 0;
+}
+#gnav > ul .menu .menu_inner2 li:nth-of-type(2){
+  margin: 0 0 20px 0;
+}
+@media (max-width: 960px) and (min-width: 768px) {
+  #gnav > ul .menu .menu_inner2 li:first-of-type {
+    margin: 0 0 15px 0;
+  }
+  #gnav > ul .menu .menu_inner2 li:nth-of-type(2){
+    margin: 0 0 15px 0;
+  }
+}
+#gnav > ul .menu .menu_inner2_2 li:last-of-type{
+  margin: 0 0 0 0;
+}
+#gnav > ul .menu .menu_inner2 li p{
+  font-size: 12px;
+  line-height: 2em;
+  color: #000;
+}
+@media (max-width: 960px) and (min-width: 768px) {
+  #gnav > ul .menu .menu_inner2 li p{
+    font-size: 10px;
+    line-height: 2em;
+    color: #000;
+  }
+}
+a.nav_contact{
+  position: absolute;
+  right: 0;
+  bottom: -10px;
+  display: block;
+  margin: 0px 0px 0px 0px !important;
+  padding: 0px 0px !important;
+  background-color: #0B308E;
+  color: #fff !important;
+  line-height: 0;
+  border-radius: 20px;
+  transition: 0.5s;
+}
+a.nav_contact:hover{
+  opacity: 0.5;
+}
+
+}
+
+/* ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+ここから下、タブレット用
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ */
+
+
+@media (max-width: 1060px) and (min-width: 768px) {
+  /* タブレット用のスタイル記述 */
+
+}
+
+
+/* ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+ここから下、スマホ用
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ */
+
+
+
+@media screen and (max-width: 767px) {
+/* スマホ用のスタイル記述 */
+
+.mega_header_wrap{
+  width: 100%;
+  position: fixed;
+  top:0;
+  height:60px;
+  background-color: transparent;
+  z-index: 100;
+  transition: all .5s;
+}
+.mega_header_wrap.change_color {
+  background-color: #701227 !important;
+}
+
+.mega_header{
+  width:100%;
+  max-width: 1180px;
+  margin:0 auto;
+}
+.mega_header .logo{
+  width: 150px;
+  float: left;
+  margin: 10px 0 0 15px;
+}
+.mega_header .logo img{
+  width:100%;
+  height: auto;
+}
+
+#gnav{
+  display: none;
+}
+
+
+
+}

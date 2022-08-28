@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+.loading {
+    width: 100vw;
+    height: 100vh;
+    transition: all 1s;
+    background-color: #701227 !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    opacity: 1;
+    visibility: visible;
+}
+
+.loading.is-active {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loading-animation {
+    width: 100vw;
+    height: 100vh;
+    transition: all 1s;
+    background-color: #701227 !important;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+}
+.loading-animation img{
+    width: 300px;
+    height: auto;
+    margin: -30px 0 0;
+}
+
+.loading-animation.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media screen and (max-width: 768px) {
+    /* スマホ用のスタイル記述 */
+    .loading-animation img{
+      width: 160px;
+      height: auto;
+      margin: -20px 0 0;
+    }
+}
