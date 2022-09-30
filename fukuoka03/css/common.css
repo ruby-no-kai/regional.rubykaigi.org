@@ -92,7 +92,7 @@ a.text_link:hover{
     position: relative;
     width: 1080px;
     margin: 0px auto 0;
-    padding: 180px 0 120px;
+    padding: 180px 0 90px;
 }
 
 /* ★★★★★★★★★★ コンテンツ ★★★★★★★★★★ */
@@ -121,13 +121,15 @@ h2.contents_title{
 }
 h2.contents_title span{
     display: block;
+    margin: 0 0 10px;
     font-size: 16px;
+    line-height: 1.3em;
 }
 .contents_title::before {
     content: '';
     display: block;
     width: 160px;
-    padding: 10px 0 0px;
+    padding: 20px 0 0px;
     border-top: solid 1px rgba(255,255,255,0.2);
 }
 
@@ -137,7 +139,7 @@ h2.contents_title span{
     left: -105px;
     display: block;
     font-family: 'Dongle', sans-serif;
-    font-size: 120px;
+    font-size: 115px;
     font-weight: bold;
     transform: rotate(90deg);
     transform-origin: left top;
@@ -152,6 +154,59 @@ h2.contents_title span{
 .contents_title_coc::after {
     content: "Code of Conducts";
 }
+.contents_title_keynote::after {
+    content: "Keynote Speakers";
+}
+
+
+/* ★★★★★★★★★★ TOP_キーノートスピーカー ★★★★★★★★★★ */
+.keynote_speakers_flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+.keynote_speakers_item{
+    width: 45%;
+    margin: 0 10% 0 0;
+}
+.keynote_speakers_item:last-of-type{
+    width: 45%;
+    margin: 0 0% 0 0;
+}
+.keynote_speakers_item img{
+    width: 240px;
+    height: auto;
+    border-radius: 4px;
+}
+.keynote_speakers_name{
+    margin: 0.25em 0 0.5em;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1.2em;
+}
+.keynote_speakers_sns_list{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 5px 0;
+}
+.keynote_speakers_sns_list li{
+    margin: 0 10px 0 0;
+}
+.keynote_speakers_sns_list li a{
+    display: block;
+    width: 30px;
+    transition: 0.5s;
+}
+.keynote_speakers_sns_list li a:hover{
+    opacity: 0.5;
+}
+.keynote_speakers_sns_list li a img{
+    width: 100%;
+    height: auto;
+}
+.keynote_speakers_text{
+    margin: 0;
+}
+
 
 
 }
@@ -180,7 +235,7 @@ body::after {
     width: calc(100% - 100px);
     max-width: 800px;
     margin: 0px auto 0;
-    padding: 100px 0 120px;
+    padding: 100px 0 90px;
 }
 .top_contents_wrap img{
     width: 50%;
@@ -213,13 +268,15 @@ h2.contents_title{
 }
 h2.contents_title span{
     display: block;
+    margin: 0 0 10px;
     font-size: 16px;
+    line-height: 1.3em;
 }
 .contents_title::before {
     content: '';
     display: block;
     width: 160px;
-    padding: 10px 0 0px;
+    padding: 20px 0 0px;
     border-top: solid 1px rgba(255,255,255,0.2);
 }
 
@@ -321,7 +378,7 @@ a.text_link:hover{
     position: relative;
     width: 84%;
     margin: 0px 0 0;
-    padding: 70px 5% 180px;
+    padding: 70px 5% 150px;
 }
 .top_contents_wrap img{
     width: 100%;
@@ -353,14 +410,15 @@ h2.contents_title{
 }
 h2.contents_title span{
     display: block;
+    margin: 0 0 10px;
     font-size: 13px;
-    margin: 0.5em 0 0.75em;
+    line-height: 1.3em;
 }
 .contents_title::before {
     content: '';
     display: block;
     width: 90px;
-    padding: 10px 0 0px;
+    padding: 20px 0 0px;
     border-top: solid 1px rgba(255,255,255,0.2);
 }
 
@@ -387,6 +445,52 @@ h2.contents_title span{
 }
 
 
+
+
+/* ★★★★★★★★★★ TOP_キーノートスピーカー ★★★★★★★★★★ */
+.keynote_speakers_item{
+    width: 100%;
+    margin: 0 0 40px 0;
+}
+.keynote_speakers_item:last-of-type{
+    width: 100%;
+    margin: 0 0 0px 0;
+}
+.keynote_speakers_item img{
+    margin: 0 auto;
+    width: 210px;
+    height: auto;
+    border-radius: 4px;
+}
+.keynote_speakers_name{
+    margin: 0.25em 0 0.5em;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.2em;
+}
+.keynote_speakers_sns_list{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 0px 0;
+}
+.keynote_speakers_sns_list li{
+    margin: 0 10px 0 0;
+}
+.keynote_speakers_sns_list li a{
+    display: block;
+    width: 27px;
+    transition: 0.5s;
+}
+.keynote_speakers_sns_list li a:hover{
+    opacity: 0.5;
+}
+.keynote_speakers_sns_list li a img{
+    width: 100%;
+    height: auto;
+}
+.keynote_speakers_text{
+    margin: 0;
+}
 
 
 
