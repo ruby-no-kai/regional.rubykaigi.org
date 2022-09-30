@@ -11,7 +11,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 <link rel="stylesheet" href="css/default.css" type="text/css">
-<link rel="stylesheet" href="css/common.css" type="text/css">
+<link rel="stylesheet" href="css/common.css?2" type="text/css">
 <link rel="stylesheet" href="css/header.css" type="text/css">
 <link rel="stylesheet" href="css/footer.css" type="text/css">
 
@@ -48,7 +48,8 @@
   <div class="overlayMenuInner">
     <div class="overlayMenuItem">
         <ul>
-            <li><a href="index.html" onfocus="this.blur();">HOME</a></li>
+            <li><a href="index.html" onfocus="this.blur();">Home</a></li>
+            <li><a href="http://re-rental.com/ekihigashi/access/" target="_blank">Access</a></li>
             <li><a href="coc.html" onfocus="this.blur();">CoC</a></li>
             <li><a href="http://re-rental.com/ekihigashi/virus-measure/" target="_blank">COVID-19</a></li>
         </ul>
@@ -79,6 +80,7 @@
         </div>
         <nav id="gnav">
             <ul>
+                <li><a href="http://re-rental.com/ekihigashi/access/" target="_blank">Access</a></li>
                 <li><a href="coc.html">CoC</a></li>
                 <li><a href="http://re-rental.com/ekihigashi/virus-measure/" target="_blank">COVID-19</a></li>
                 <li><a href="https://twitter.com/Fukuoka_RK" target="_blank"><img src="images/common/sns_tw.svg" width="24" alt="" /></a></li>
@@ -91,12 +93,15 @@
 <div id="wrapper">
 
 <section class="top_contents_wrap">
-    <img src="images/top/title.png" width="500" alt="2023.2.18(Sat)開催 福岡Ruby会議03" />
+    <h1>
+        <img src="images/top/title.png" width="500" alt="福岡Ruby会議03 | 2023.2.18(Sat)開催 | 主催：Fukuoka.rb / 株式会社Ruby開発 | 会場：リファレンス駅東ビル4階 会議室Q " />
+    </h1>
 </section>
 
 
 
 <!-- テーマ -->
+<div id="theme"></div>
 <section class="contents_wrap">
     <h2 class="contents_title contents_title_theme">
         <span>テーマ</span>
@@ -114,6 +119,7 @@
 
 
 <!-- お知らせ -->
+<div id="news"></div>
 <section class="contents_wrap">
     <h2 class="contents_title contents_title_news">
         <span>お知らせ</span>
@@ -122,6 +128,36 @@
     <p class="">
         参加者の方々に水出し八女茶を提供いたします。また、数量限定ですが、温かい八女茶も提供いたします。極上の八女茶をコミニュケーションツールとして活用してください。
     </p>
+</section>
+
+
+
+<!-- Keynote Speakers -->
+<div id="keynotespeakers"></div>
+<section class="contents_wrap">
+    <h2 class="contents_title contents_title_keynote">
+        基調講演
+    </h2>
+    <div class="keynote_speakers_flex">
+        <div class="keynote_speakers_item">
+            <img src="images/keynote/soraha.png" alt="" />
+            <p class="keynote_speakers_name">そらは</p>
+            <ul class="keynote_speakers_sns_list">
+                <li><a href="https://twitter.com/sora_h" target="_blank"><img src="images/common/profile_tw.svg" alt="" /></a></li>
+                <li><a href="https://github.com/sorah" target="_blank"><img src="images/common/profile_gh.svg" alt="" /></a></li>
+            </ul>
+            <p class="keynote_speakers_text">Cookpad JP SRE と Global Corporate Engineering Team の Staff Software Engineer。<br/>RubyKaigi Organizer として各種渉外からバーチャル会場や Wi-Fi も担当。<br/>趣味は IP ネットワークで AS59128 の運用なども。Rubyist でありまた Rustacean wannabe。</p>
+        </div>
+        <div class="keynote_speakers_item">
+            <img src="images/keynote/tompng.png" alt="" />
+            <p class="keynote_speakers_name">tompng</p>
+            <ul class="keynote_speakers_sns_list">
+                <li><a href="https://twitter.com/tompng" target="_blank"><img src="images/common/profile_tw.svg" alt="" /></a></li>
+                <li><a href="https://github.com/tompng" target="_blank"><img src="images/common/profile_gh.svg" alt="" /></a></li>
+            </ul>
+            <p class="keynote_speakers_text">TRICK 2022 Gold Medalist</p>
+        </div>
+    </div>
 </section>
 
 
