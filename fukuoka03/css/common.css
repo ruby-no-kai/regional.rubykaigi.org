@@ -157,7 +157,12 @@ h2.contents_title span{
 .contents_title_keynote::after {
     content: "Keynote Speakers";
 }
-
+.contents_title_staff::after {
+    content: "Staff";
+}
+.contents_title_designer::after {
+    content: "Designer";
+}
 
 /* ★★★★★★★★★★ TOP_キーノートスピーカー ★★★★★★★★★★ */
 .keynote_speakers_flex{
@@ -303,9 +308,7 @@ h2.contents_title span{
 }
 
 }
-/* ★★★★★★★★★★　部分的にiPad対応する用　★★★★★★★★★★ */
-@media (max-width: 960px) and (min-width: 768px) {
-}
+
 
 
 
@@ -490,6 +493,28 @@ h2.contents_title span{
 }
 .keynote_speakers_text{
     margin: 0;
+}
+
+
+
+
+.staff_item{
+    width: 45%;
+    margin: 0 10% 0 0;
+}
+.staff_item:nth-child(2n){
+    width: 45%;
+    margin: 0 0% 0 0;
+}
+.staff_item:last-of-type{
+    width: 45%;
+    margin: 0 0% 0 0;
+}
+.staff_item img{
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
 }
 
 
