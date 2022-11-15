@@ -91,6 +91,7 @@
   list-style-type: none;
 }
 .overlayMenuItem ul li a {
+  position: relative;
   display: block;
   margin: 0 0;
   width: calc(100% - 80px);
@@ -103,6 +104,17 @@
 .overlayMenuItem ul li a:hover {
   opacity: 0.5
 }
+.overlayMenuItem ul li a.extarnal_link::after {
+  content: '';
+  display: inline-block;
+  margin: 0 0 4px 5px;
+  width: 15px;
+  height: 15px;
+  background-image: url(../images/common/link.svg);
+  background-size: contain;
+  vertical-align: middle;
+}
+
 
 .overlayMenuItem ul li a:hover { background-color: rgba(0,0,0,0.2); }
 .overlayMenuItem ul li a:hover { color: #fff; }

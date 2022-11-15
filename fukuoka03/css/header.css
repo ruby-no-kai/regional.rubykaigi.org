@@ -19,9 +19,9 @@
   padding: 0 20px;
 }
 .mega_header .logo{
-  width:280px;
+  width:308px;
   float: left;
-  margin: 16px 0 9px;
+  margin: 17px 0 8px;
 }
 .mega_header .logo img{
   width:100%;
@@ -40,8 +40,9 @@
 }
 
 #gnav ul li a {
+  position: relative;
   display: block;
-  margin:0 0 0 30px;
+  margin:0 0 0 20px;
   padding: 22px 0px 15px;
   transition: all .2s ease-in;
   font-size: 16px;
@@ -53,6 +54,16 @@
 }
 #gnav ul li a img{
   margin: 0 0 -3px;
+}
+#gnav ul li a.extarnal_link::after {
+  content: '';
+  display: inline-block;
+  margin: 0 0 4px 5px;
+  width: 15px;
+  height: 15px;
+  background-image: url(../images/common/link.svg);
+  background-size: contain;
+  vertical-align: middle;
 }
 
 .language_pc{
@@ -206,7 +217,7 @@ a.nav_contact:hover{
   margin:0 auto;
 }
 .mega_header .logo{
-  width: 150px;
+  width: 168px;
   float: left;
   margin: 10px 0 0 15px;
 }
