@@ -62,8 +62,6 @@ hr{
     z-index: 1;
 }
 
-
-
 .page_logo{
     position: absolute;
     top: 18px;
@@ -75,8 +73,6 @@ hr{
     width: 100%;
     height: auto;
 }
-
-
 
 a.text_link{
     display: inline-block;
@@ -112,14 +108,14 @@ a.text_link:hover{
     text-decoration: none;
 }
 
-h2.contents_title{
+h1.contents_title, h2.contents_title{
     display: inline-block;
     margin: 0em 0 1.5em;
     font-size: 32px;
     font-weight: bold;
     line-height: 1.3em;
 }
-h2.contents_title span{
+h1.contents_title span, h2.contents_title span{
     display: block;
     margin: 0 0 10px;
     font-size: 16px;
@@ -132,7 +128,6 @@ h2.contents_title span{
     padding: 20px 0 0px;
     border-top: solid 1px rgba(255,255,255,0.2);
 }
-
 .contents_title::after {
     position: absolute;
     top: 100px;
@@ -163,7 +158,30 @@ h2.contents_title span{
 .contents_title_designer::after {
     content: "Designer";
 }
+.contents_title_notice::after{
+    content: "Notice";
+}
+.contents_title_cfp::after{
+    content: "CFP";
+}
 
+
+/* ★★★★★★★★★★ TOP_CFP ★★★★★★★★★★ */
+a.cfp_button{
+    display: inline-block;
+    margin: -10px 0 10px;
+    padding: 5px 16px 5px 20px;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #7C142B;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.5s;
+}
+a.cfp_button:hover{
+    opacity: 0.5;
+}
 /* ★★★★★★★★★★ TOP_キーノートスピーカー ★★★★★★★★★★ */
 .keynote_speakers_flex{
     display: flex;
@@ -212,6 +230,19 @@ h2.contents_title span{
     margin: 0;
 }
 
+
+
+/* ★★★★★★★★★★ Noticeページ_ ★★★★★★★★★★ */
+h2.contents_sub_title{
+    display: block;
+    margin: 2em 0 0.25em;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1.3em;
+}
+h2.contents_sub_title:first-of-type{
+    margin: 1em 0 0.25em;
+}
 
 
 }
@@ -264,14 +295,14 @@ body::after {
     text-decoration: none;
 }
 
-h2.contents_title{
+h1.contents_title, h2.contents_title{
     display: inline-block;
     margin: 0em 0 1.5em;
     font-size: 32px;
     font-weight: bold;
     line-height: 1.3em;
 }
-h2.contents_title span{
+h1.contents_title span, h2.contents_title span{
     display: block;
     margin: 0 0 10px;
     font-size: 16px;
@@ -404,14 +435,14 @@ a.text_link:hover{
     text-decoration: none;
 }
 
-h2.contents_title{
+h1.contents_title, h2.contents_title{
     display: inline-block;
     margin: 0em 0 1.5em;
     font-size: 21px;
     font-weight: bold;
     line-height: 1.3em;
 }
-h2.contents_title span{
+h1.contents_title span, h2.contents_title span{
     display: block;
     margin: 0 0 10px;
     font-size: 13px;
@@ -448,7 +479,22 @@ h2.contents_title span{
 }
 
 
-
+/* ★★★★★★★★★★ TOP_CFP ★★★★★★★★★★ */
+a.cfp_button{
+    display: inline-block;
+    margin: -10px 0 10px;
+    padding: 5px 16px 5px 20px;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #7C142B;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.5s;
+}
+a.cfp_button:hover{
+    opacity: 0.5;
+}
 
 /* ★★★★★★★★★★ TOP_キーノートスピーカー ★★★★★★★★★★ */
 .keynote_speakers_item{
