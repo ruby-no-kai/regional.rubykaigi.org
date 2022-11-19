@@ -442,3 +442,7 @@
   start_on: 2021-11-02
   end_on: 2021-11-02
   external_url: https://asakusarb.doorkeeper.jp/events/128278  
+- name: fukuoka03
+  title: "福岡Rubyist会議03"
+  start_on: 2023-02-18
+  end_on: 2023-02-18
