@@ -152,6 +152,9 @@ h1.contents_title span, h2.contents_title span{
 .contents_title_keynote::after {
     content: "Keynote Speakers";
 }
+.contents_title_support::after {
+    content: "Support";
+}
 .contents_title_staff::after {
     content: "Staff";
 }
@@ -229,6 +232,39 @@ a.cfp_button:hover{
 .keynote_speakers_text{
     margin: 0;
 }
+
+/* ★★★★★★★★★★ TOP_後援、スポンサー ★★★★★★★★★★ */
+.support_flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+.support_item{
+    width: 45%;
+    margin: 0 10% 0 0;
+}
+.supports_item:last-of-type{
+    width: 45%;
+    margin: 0 0% 0 0;
+}
+.support_item a{
+    text-decoration: none;
+    transition: 0.5s;
+}
+.support_item a:hover{
+    opacity: 0.5;
+}
+.support_item img{
+    width: 240px;
+    height: auto;
+    border-radius: 4px;
+}
+.support_name{
+    margin: 0.25em 0 0.5em;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1.2em;
+}
+
 
 
 
@@ -319,10 +355,10 @@ h1.contents_title span, h2.contents_title span{
 .contents_title::after {
     position: absolute;
     top: 100px;
-    left: -20px;
+    left: -15px;
     display: block;
     font-family: 'Dongle', sans-serif;
-    font-size: 80px;
+    font-size: 72px;
     font-weight: bold;
     transform: rotate(90deg);
     transform-origin: left top;
@@ -542,8 +578,6 @@ a.cfp_button:hover{
 }
 
 
-
-
 .staff_item{
     width: 45%;
     margin: 0 10% 0 0;
@@ -563,6 +597,35 @@ a.cfp_button:hover{
     border-radius: 4px;
 }
 
+
+
+/* ★★★★★★★★★★ TOP_後援、スポンサー ★★★★★★★★★★ */
+.support_flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+.support_item{
+    width: 100%;
+    margin: 0 00% 0 0;
+}
+.supports_item:last-of-type{
+    width: 100%;
+    margin: 0 0% 0 0;
+}
+.support_item a{
+    text-decoration: none;
+}
+.support_item img{
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+.support_name{
+    margin: 0.25em 0 0.5em;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1.2em;
+}
 
 
 

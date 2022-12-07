@@ -178,6 +178,15 @@ a.nav_contact:hover{
 @media (max-width: 1060px) and (min-width: 768px) {
   /* タブレット用のスタイル記述 */
 
+  .mega_header .logo{
+    width:240px;
+    margin: 22px 0 8px;
+  }
+
+  #gnav ul li a {
+    margin:0 0 0 15px;
+  }
+
 }
 
 
