@@ -179,12 +179,13 @@ a.nav_contact:hover{
   /* タブレット用のスタイル記述 */
 
   .mega_header .logo{
-    width:240px;
-    margin: 22px 0 8px;
+    width:220px;
+    margin: 23px 0 8px;
   }
 
   #gnav ul li a {
-    margin:0 0 0 15px;
+    margin:0 0 0 12px;
+    font-size: 15px;
   }
 
 }
