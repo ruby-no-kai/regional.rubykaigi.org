@@ -155,6 +155,9 @@ h1.contents_title span, h2.contents_title span{
 .contents_title_support::after {
     content: "Support";
 }
+.contents_title_sponser::after {
+    content: "Sponsors";
+}
 .contents_title_staff::after {
     content: "Staff";
 }
@@ -233,17 +236,42 @@ a.cfp_button:hover{
     margin: 0;
 }
 
+
+.staff_flex{
+    width: 900px;
+}
+.staff_item{
+    width: 30%;
+    margin: 0 5% 0 0;
+}
+.staff_item:nth-child(3n){
+    width: 30%;
+    margin: 0 0% 0 0;
+}
+.staff_item:last-of-type{
+    width: 30%;
+    margin: 0 0% 0 0;
+}
+.staff_item img{
+    width: 240px;
+    height: auto;
+    border-radius: 4px;
+}
+
+
+
 /* ★★★★★★★★★★ TOP_後援、スポンサー ★★★★★★★★★★ */
 .support_flex{
     display: flex;
     flex-wrap: wrap;
+    width: 900px;
 }
 .support_item{
-    width: 45%;
-    margin: 0 10% 0 0;
+    width: 30%; /* 2つの場合は45%、3つの場合は30% */
+    margin: 0 5% 0 0;
 }
-.supports_item:last-of-type{
-    width: 45%;
+.support_item:last-of-type{
+    width: 30%; /* 2つの場合は45%、3つの場合は30% */
     margin: 0 0% 0 0;
 }
 .support_item a{
@@ -372,6 +400,22 @@ h1.contents_title span, h2.contents_title span{
 }
 .contents_title_coc::after {
     content: "Code of Conducts";
+}
+
+.staff_flex{
+    width: 100%;
+}
+.staff_item img{
+    width: 90%;
+    height: auto;
+}
+
+.support_flex{
+    width: 100%;
+}
+.support_item img{
+    width: 90%;
+    height: auto;
 }
 
 }
@@ -577,7 +621,9 @@ a.cfp_button:hover{
     margin: 0;
 }
 
-
+.staff_flex{
+    width: 100%;
+}
 .staff_item{
     width: 45%;
     margin: 0 10% 0 0;
@@ -588,7 +634,7 @@ a.cfp_button:hover{
 }
 .staff_item:last-of-type{
     width: 45%;
-    margin: 0 0% 0 0;
+    margin: 7.5% 0% 0 0;
 }
 .staff_item img{
     margin: 0 auto;
@@ -603,12 +649,13 @@ a.cfp_button:hover{
 .support_flex{
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
 }
 .support_item{
     width: 100%;
-    margin: 0 00% 0 0;
+    margin: 0 0% 40px 0;
 }
-.supports_item:last-of-type{
+.support_item:last-of-type{
     width: 100%;
     margin: 0 0% 0 0;
 }
