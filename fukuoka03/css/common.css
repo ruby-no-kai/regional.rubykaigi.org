@@ -164,6 +164,9 @@ h1.contents_title span, h2.contents_title span{
 .contents_title_designer::after {
     content: "Designer";
 }
+.contents_title_helper::after {
+    content: "Helper";
+}
 .contents_title_notice::after{
     content: "Notice";
 }
@@ -264,6 +267,10 @@ a.cfp_button:hover{
     width: 30%;
     margin: 0 5% 0 0;
 }
+.staff_item:nth-child(1), .staff_item:nth-child(2), .staff_item:nth-child(3){
+    width: 30%;
+    margin: 0 5% 5% 0;
+}
 .staff_item:nth-child(3n){
     width: 30%;
     margin: 0 0% 0 0;
@@ -277,7 +284,11 @@ a.cfp_button:hover{
     height: auto;
     border-radius: 4px;
 }
-
+.staff_name{
+    margin: 0.1em 0 0.75em;
+    font-size: 18px;
+    line-height: 1.2em;
+}
 
 
 /* ★★★★★★★★★★ TOP_後援、スポンサー ★★★★★★★★★★ */
@@ -733,13 +744,13 @@ a.cfp_button{
     width: 45%;
     margin: 0 10% 0 0;
 }
+.staff_item:nth-child(1), .staff_item:nth-child(2), .staff_item:nth-child(3){
+    width: 45%;
+    margin: 0 10% 7.5% 0;
+}
 .staff_item:nth-child(2n){
     width: 45%;
-    margin: 0 0% 0 0;
-}
-.staff_item:last-of-type{
-    width: 45%;
-    margin: 7.5% 0% 0 0;
+    margin: 0 0% 7.5% 0;
 }
 .staff_item img{
     margin: 0 auto;
@@ -747,7 +758,11 @@ a.cfp_button{
     height: auto;
     border-radius: 4px;
 }
-
+.staff_name{
+    margin: 0.1em 0 0.75em;
+    font-size: 15px;
+    line-height: 1.2em;
+}
 
 
 /* ★★★★★★★★★★ TOP_後援、スポンサー ★★★★★★★★★★ */
