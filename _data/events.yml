@@ -441,7 +441,7 @@
   title: "大江戸Ruby会議09"
   start_on: 2021-11-02
   end_on: 2021-11-02
-  external_url: https://asakusarb.doorkeeper.jp/events/128278  
+  external_url: https://asakusarb.doorkeeper.jp/events/128278
 - name: fukuoka03
   title: "福岡Rubyist会議03"
   start_on: 2023-02-18
@@ -450,3 +450,4 @@
   title: "鹿児島Ruby会議02"
   start_on: 2023-03-04
   end_on: 2023-03-04
+  external_url: https://k-ruby.com/kagoshima-rubykaigi02/
