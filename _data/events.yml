@@ -436,7 +436,7 @@
   title: "とちぎRuby会議09"
   start_on: 2020-09-12
   end_on: 2020-09-12
-  report_url: https://tkojitu.github.io/TochigiRubyKaigi09Report/
+  report_url: https://magazine.rubyist.net/articles/0062/0062-TochigiRubyKaigi09Report.html
 - name: oedo09
   title: "大江戸Ruby会議09"
   start_on: 2021-11-02
@@ -446,8 +446,10 @@
   title: "福岡Rubyist会議03"
   start_on: 2023-02-18
   end_on: 2023-02-18
+  report_url: https://magazine.rubyist.net/articles/0062/0062-FukuokaRubyistKaigi03Report.html
 - name: kagoshima02
   title: "鹿児島Ruby会議02"
   start_on: 2023-03-04
   end_on: 2023-03-04
   external_url: https://k-ruby.com/kagoshima-rubykaigi02/
+  report_url: https://magazine.rubyist.net/articles/0062/0062-KagoshimaRubyKaigi02Report.html
