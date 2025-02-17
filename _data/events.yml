@@ -464,6 +464,7 @@
   start_on: 2023-09-09
   end_on: 2023-09-09
   external_url: https://rubykansai.github.io/osaka03/
+  report_url: https://magazine.rubyist.net/articles/0065/0065-OsakaRubyKaigi03Report.html
 - name: oedo10
   title: "大江戸Ruby会議10"
   start_on: 2023-10-15
@@ -473,6 +474,7 @@
   start_on: 2024-08-24
   end_on: 2024-08-24
   external_url: https://rubykansai.github.io/osaka04/
+  report_url: https://magazine.rubyist.net/articles/0065/0065-OsakaRubyKaigi04Report.html
 - name: fukuoka04
   title: "福岡Rubyist会議04"
   start_on: 2024-09-07
