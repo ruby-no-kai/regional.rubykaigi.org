@@ -494,3 +494,8 @@
   start_on: 2025-01-18
   end_on: 2025-01-18
   external_url: https://regional.rubykaigi.org/tokyo12/
+- name: kansai08
+  title: "関西Ruby会議08"
+  start_on: 2025-06-28
+  end_on: 2025-06-28
+  external_url: https://regional.rubykaigi.org/kansai08/
