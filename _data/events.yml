@@ -489,6 +489,7 @@
   start_on: 2024-10-05
   end_on: 2024-10-05
   external_url: http://matsue.rubyist.net/matrk11/
+  report_url: https://magazine.rubyist.net/articles/0065/0065-MatsueRubyKaigi11Report.html
 - name: tokyo12
   title: "東京Ruby会議12"
   start_on: 2025-01-18
