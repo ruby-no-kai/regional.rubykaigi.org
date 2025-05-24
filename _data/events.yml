@@ -499,3 +499,8 @@
   start_on: 2025-06-28
   end_on: 2025-06-28
   external_url: https://regional.rubykaigi.org/kansai08/
+- name: nagara01
+  title: "ながらRuby会議01"
+  start_on: 2025-09-06
+  end_on: 2025-09-06
+  external_url: https://regional.rubykaigi.org/nagara01/
