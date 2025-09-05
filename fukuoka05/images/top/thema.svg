@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_1" data-name=" レイヤー 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 598.704 609.479">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #a31130;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        fill: #7fbbac;
+      }
+    </style>
+  </defs>
+  <g id="_レイヤー_2" data-name=" レイヤー 2">
+    <rect class="cls-1" x="36.804" width="561.9" height="569.71"/>
+  </g>
+  <rect class="cls-1" x="15.725" y="71.939" width="521.788" height="522.635" transform="translate(-72.759 589.213) rotate(-86.532)"/>
+  <polygon class="cls-2" points="274.211 115.102 287.913 161.622 274.611 281.6 375.161 251.966 357.709 401.334 403.432 553.575 405.699 561.275 592.113 187.485 436.842 67.182 274.211 115.102"/>
+  <polygon class="cls-4" points="246.448 123.292 260.255 170.144 242.771 317.505 343.348 287.874 331.343 409.347 379.466 569.003 3.333 358.785 74.143 174.052 246.448 123.292"/>
+  <ellipse class="cls-3" cx="421.904" cy="162.771" rx="25.899" ry="25.863" transform="translate(-28.802 125.875) rotate(-16.417)"/>
+  <ellipse class="cls-3" cx="271.064" cy="399.329" rx="25.899" ry="25.863" transform="translate(-101.808 92.889) rotate(-16.417)"/>
+  <ellipse class="cls-4" cx="415.761" cy="163.911" rx="19.687" ry="19.651" transform="translate(-29.375 124.186) rotate(-16.417)"/>
+  <ellipse class="cls-2" cx="277.124" cy="397.546" rx="19.592" ry="19.556" transform="translate(-101.057 94.529) rotate(-16.417)"/>
+</svg>

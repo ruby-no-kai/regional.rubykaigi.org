@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_1" data-name="レイヤー 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 43.5">
+  <defs>
+    <style>
+      .cls-1 {
+        mask: url(#mask);
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+    <mask id="mask" x="0" y="-2.25" width="48" height="48" maskUnits="userSpaceOnUse">
+      <g id="mask0_26_11" data-name="mask0 26 11">
+        <path class="cls-2" d="M0-2.25h48v48H0V-2.25Z"/>
+      </g>
+    </mask>
+  </defs>
+  <g class="cls-1">
+    <path class="cls-2" d="M37.8,0h7.36l-16.08,18.43,18.92,25.08h-14.81l-11.61-15.21-13.27,15.21H.94l17.2-19.71L0,0h15.19l10.48,13.9L37.8,0ZM35.21,39.09h4.08L12.96,4.19h-4.37l26.63,34.9Z"/>
+  </g>
+</svg>
