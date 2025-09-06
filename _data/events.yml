@@ -499,6 +499,7 @@
   start_on: 2025-01-18
   end_on: 2025-01-18
   external_url: https://regional.rubykaigi.org/tokyo12/
+  report_url: https://magazine.rubyist.net/articles/0065/0065-TokyoRubyKaigi12Report.html
 - name: kansai08
   title: "関西Ruby会議08"
   start_on: 2025-06-28
