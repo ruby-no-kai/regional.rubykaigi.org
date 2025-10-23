@@ -510,13 +510,35 @@
   start_on: 2025-09-06
   end_on: 2025-09-06
   external_url: https://regional.rubykaigi.org/nagara01/
+- name: tokyu16
+  title: "TokyuRuby会議16"
+  start_on: 2025-11-29
+  end_on: 2025-11-29
+  external_url: https://tokyurubykaigi.github.io/tokyu16/
 - name: hokuriku01
   title: "北陸Ruby会議01"
   start_on: 2025-12-06
   end_on: 2025-12-06
   external_url: https://regional.rubykaigi.org/hokuriku01/
+- name: izumo01
+  title: "出雲Ruby会議01"
+  start_on: 2026-02-22
+  end_on: 2026-02-22
 - name: fukuoka05
   title: "福岡Rubyist会議05"
   start_on: 2026-02-28
   end_on: 2026-02-28
   external_url: https://regional.rubykaigi.org/fukuoka05/
+- name: matsue12
+  title: "松江Ruby会議12"
+  start_on: 2026-06-06
+  end_on: 2026-06-06
+- name: kansai09
+  title: "関西Ruby会議09"
+  start_on: 2025-07-18
+  end_on: 2025-07-18
+  external_url: https://regional.rubykaigi.org/kansai09/
+- name: nagoya05
+  title: "名古屋Ruby会議05"
+  start_on: 2026-09-19
+  end_on: 2026-09-19
