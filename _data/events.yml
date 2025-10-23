@@ -535,8 +535,8 @@
   end_on: 2026-06-06
 - name: kansai09
   title: "関西Ruby会議09"
-  start_on: 2025-07-18
-  end_on: 2025-07-18
+  start_on: 2026-07-18
+  end_on: 2026-07-18
   external_url: https://regional.rubykaigi.org/kansai09/
 - name: nagoya05
   title: "名古屋Ruby会議05"
