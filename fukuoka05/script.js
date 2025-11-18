@@ -9,6 +9,11 @@ const navigationLinks = [
     href: "https://re-rental.com/ekihigashi/access/",
     hasIcon: true,
   },
+  {
+    text: "GOODS",
+    href: "https://suzuri.jp/fukuokark",
+    hasIcon: true,
+  },
 ];
 
 // Render navigation links
