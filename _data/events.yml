@@ -143,8 +143,8 @@
   title: "大江戸Ruby会議02"
   start_on: 2012-02-21
   end_on: 2012-02-21
-  external_url: http://jp.rubyist.net/magazine/?0039-MetPragdaveAtAsakusarb
-  report_url: http://jp.rubyist.net/magazine/?0039-MetPragdaveAtAsakusarb
+  external_url: 'https://magazine.rubyist.net/articles/0039/0039-MetPragdaveAtAsakusarb.html#:~:text=%E3%81%97%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82-,%E5%A4%A7%E6%B1%9F%E6%88%B8%20Ruby%20%E4%BC%9A%E8%AD%B0%2002,-%E3%81%95%E3%81%A6%E3%80%81%E3%81%82%E3%81%BE%E3%82%8A%E3%81%AB%20Dave'
+  report_url: https://magazine.rubyist.net/articles/0039/0039-MetPragdaveAtAsakusarb.html
 - name: minato01
   title: "みなとRuby会議01"
   start_on: 2012-06-02
