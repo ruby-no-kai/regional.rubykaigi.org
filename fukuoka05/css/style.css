@@ -115,7 +115,9 @@ body {
 .speaker-info {
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin-top: 22px;
+  width: 100%;
 }
 
 /* Notice */
@@ -257,17 +259,26 @@ body {
 .speaker-card {
   width: 350px;
   padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .speaker-card img {
   border-radius: 12px;
   width: 200px;
   height: 200px;
+  display: block;
+  margin: 0 auto;
 }
 
 .speaker-info p {
   color: #ffffff;
   font-size: 14px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .speaker-name {
@@ -275,7 +286,8 @@ body {
   font-weight: bold;
   color: #ffffff;
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  justify-content: center;
   gap: 5px;
   font-size: 26px;
   margin-bottom: 10px;
@@ -284,11 +296,16 @@ body {
 /* Social Share */
 .social-icons {
   display: flex;
+  align-items: center;
   justify-content: flex-start;
   gap: 8px;
   margin: 12px 0;
   padding: 0;
   list-style: none;
+}
+
+.page-index .social-icons {
+  justify-content: center;
 }
 
 .social-icon {
@@ -320,6 +337,55 @@ body {
   background-image: url("../images/common/github.svg");
 }
 
+/* PANELISTS */
+.panelists-speakers {
+  background-color: #7fbbac;
+  padding: 80px 20px;
+  box-sizing: border-box;
+}
+
+.panelists-heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.panelists-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  color: #ffffff;
+  letter-spacing: 2px;
+}
+
+.panelists-sub-title {
+  font-weight: 700;
+  font-size: 16px;
+  color: #ffffff;
+  line-height: 1.2;
+  margin: 0;
+}
+/* and more... */
+.and-more {
+  margin: 40px 0 0;
+  text-align: center;
+  color: #fff;
+  font-family: "Poppins", "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  font-size: 16px;
+}
+
+.panelists-theme {
+  margin: 12px auto 0;
+  padding: 0 12px;
+  max-width: 42rem;
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  font-size: clamp(14px, 2.2vw, 20px);
+}
+
 /* team */
 .teams {
   margin-top: 60px;
@@ -349,7 +415,8 @@ body {
   margin: 50px 0;
 }
 
-.team-title {
+.team-title,
+.timetable-title {
   font-family: "Poppins", sans-serif;
   font-weight: bold;
   font-size: 48px;
@@ -365,7 +432,8 @@ body {
   letter-spacing: 2px;
 }
 
-.team-sub-title {
+.team-sub-title,
+.timetable-sub-title {
   font-weight: bold;
   font-size: 16px;
   color: #fff;
@@ -828,5 +896,176 @@ body {
 
   .social-icons {
     justify-content: center;
+  }
+}
+
+/* Timetable */
+.timetable {
+  padding: 120px 20px;
+  background: #952433;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+}
+
+.timetable-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.table-timetable {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border: 3px solid #fff;
+}
+.table-timetable-info {
+  background: #7fbbac;
+}
+
+.table-timetable th {
+  /* background: #a31130; */
+  color: #fff;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  width: 180px;
+  vertical-align: top;
+  border: 1px solid #fff;
+}
+
+.table-timetable th span {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.table-timetable td {
+  padding: 25px;
+  border-bottom: 1px solid #fff;
+  vertical-align: top;
+}
+
+.table-timetable tr:last-child td {
+  border-bottom: none;
+}
+
+.table-timetable_program_title {
+  font-size: 20px;
+  margin: 0;
+  font-weight: bold;
+}
+
+.table-timetable_wrap {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.table-timetable_speaker_info img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10%;
+  object-fit: cover;
+}
+
+.table-timetable_program_info {
+  flex: 1;
+}
+
+.table-timetable_program_info h3 {
+  font-size: 18px;
+  color: #fff;
+  margin: 0;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.table-timetable_program_info p {
+  color: #fff;
+  line-height: 1.6;
+  margin: 0 0 10px 0;
+  font-size: 14px;
+}
+
+.program_speakers_name {
+  font-weight: bold;
+  line-height: 1.6;
+  font-size: 16px !important;
+  margin: 10px 0 10px 0 !important;
+}
+
+.program_speakers_sns_list {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.program_speakers_sns_list img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.2s ease;
+}
+
+.program_speakers_sns_list a:hover img {
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .timetable-content {
+    padding: 20px 10px;
+  }
+
+  .table-timetable th {
+    width: 120px;
+    padding: 15px 10px;
+    font-size: 14px;
+  }
+
+  .table-timetable td {
+    padding: 20px 15px;
+  }
+
+  .table-timetable_wrap {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .table-timetable_speaker_info {
+    align-self: center;
+  }
+
+  .table-timetable_speaker_info img {
+    width: clamp(56px, 18vw, 84px);
+    height: clamp(56px, 18vw, 84px);
+    border-radius: 12px;
+  }
+
+  .table-timetable_program_info h3 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .table-timetable th {
+    width: 100px;
+    padding: 12px 8px;
+    font-size: 14px;
+  }
+
+  .table-timetable td {
+    padding: 15px 10px;
+  }
+
+  .table-timetable_program_info h3 {
+    font-size: 15px;
+  }
+
+  .table-timetable_program_info p {
+    font-size: 13px;
   }
 }

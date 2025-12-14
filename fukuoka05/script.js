@@ -1,6 +1,7 @@
 // Navigation links configuration
 const navigationLinks = [
   { text: "TOP", href: "index.html" },
+  { text: "TIMETABLE", href: "timetable.html" },
   { text: "TEAM", href: "team.html" },
   { text: "NOTICE", href: "notice.html" },
   { text: "COC", href: "coc.html" },
