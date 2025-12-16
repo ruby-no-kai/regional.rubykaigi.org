@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>出雲Ruby会議01</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome (SNS icons) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+  <style>
+    :root {
+      --ruby-main: #9b111e;
+      --ruby-sub: #b11226;
+      --ruby-light: #fdf2f3;
+    }
+
+    body {
+      line-height: 1.8;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--ruby-main), var(--ruby-sub));
+      color: white;
+      padding: 4rem 1rem;
+    }
+
+    .section-title {
+      color: var(--ruby-main);
+      font-weight: 700;
+    }
+
+    .speaker-avatar {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    /* Timeline */
+    .timeline-item {
+      padding: 0.5rem 0;
+    }
+
+    .timeline-time {
+      min-width: 120px; /* 時刻の列幅を固定 */
+      font-size: 1.2rem;
+    }
+
+    .timeline-title {
+      flex-grow: 1; /* タイトルを主役に */
+      font-size: 1.2rem;
+    }
+
+    .timeline-item img {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+    }
+
+    .sponsor-logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      border: 1px solid #e5e7eb; /* 薄いグレー */
+      border-radius: 8px;
+      background-color: #fff;
+    }
+
+    .sponsor-logo img {
+      max-height: 200px;   /* ← サイズ調整はここ */
+      width: auto;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ================= Header ================= -->
+<header class="hero text-center">
+  <div class="container">
+    <h1 class="display-5 fw-bold">出雲Ruby会議01</h1>
+
+    <p class="mt-3 fw-semibold display-6">
+      Ruby × X
+    </p>
+
+    <p class="lead mt-2">
+      Rubyistが出雲に集い、学び、語り合う1日
+    </p>
+  </div>
+</header>
+
+<!-- ================= Registration ================= -->
+<section class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="section-title mb-3">参加登録</h2>
+    <p class="mb-4">
+      参加は無料です。事前登録をお願いします。
+    </p>
+    <a href="https://a8b91a9d1359e036b14668d7ad.doorkeeper.jp/events/193709" target="_blank" rel="noopener" class="btn btn-danger btn-lg">
+      参加登録はこちら
+    </a>
+  </div>
+</section>
+
+<!-- ================= Overview ================= -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="section-title mb-4">開催概要</h2>
+
+    <div class="row">
+      <div class="col-md-6">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><strong>日時：</strong>2026年2月21日（土）</li>
+          <li class="list-group-item"><strong>会場：</strong>ニューウェルシティ出雲 <a href="https://maps.google.com/maps?ll=35.362299,132.745784&z=16&t=m&hl=ja&gl=JP&mapclient=embed&cid=9588714844315458927" target="_blank" rel="noopener">MAP</a></li>
+          <li class="list-group-item"><strong>車でお越しの方へ</strong><br/>会場であるニューウェルシティ出雲の駐車場を、無料でご利用いただけます。</li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <p>
+          出雲Ruby会議01は、Rubyを軸に技術・人・地域をつなぐ地域Ruby会議です。
+          エンジニア同士が知見を共有し、コミュニティの広がりを感じられる場を目指しています。
+        </p>
+        <p>
+          <strong>
+            特別企画
+            📚<a href="https://bs.atdot.net/" target="_blank" rel="noopener">
+              @.bookstore
+            </a>
+          </strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= News (Accordion) ================= -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="section-title mb-4">新着お知らせ</h2>
+
+    <div class="accordion" id="newsAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#news2">
+            2025/12/15 サイトを公開・参加登録フォームを公開しました。
+          </button>
+        </h2>
+        <div id="news2" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            参加登録フォームを公開しました。定員に達し次第締切となります。
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Speakers ================= -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="section-title mb-5 text-center">
+      招待講演
+    </h2>
+
+    <div class="row justify-content-center text-center g-4">
+
+      <!-- Speaker 1 -->
+      <div class="col-12 col-md-4">
+        <img
+          src="https://avatars.githubusercontent.com/amatsuda?v=4"
+          class="rounded-circle img-fluid mb-3 speaker-avatar"
+          alt="Akira Matsuda"
+          style="max-width: 180px;"
+        />
+        <h5 class="fw-semibold">Akira Matsuda</h5>
+      </div>
+
+      <!-- Speaker 2 -->
+      <div class="col-12 col-md-4">
+        <img
+          src="https://avatars.githubusercontent.com/ko1"
+          class="rounded-circle img-fluid mb-3 speaker-avatar"
+          alt="Koichi Sasada"
+          style="max-width: 180px;"
+        />
+        <h5 class="fw-semibold">Koichi Sasada</h5>
+      </div>
+
+      <!-- Speaker 3 -->
+      <div class="col-12 col-md-4">
+        <img
+          src="https://avatars.githubusercontent.com/shugo?v=4"
+          class="rounded-circle img-fluid mb-3 speaker-avatar"
+          alt="Shugo Maeda"
+          style="max-width: 180px;"
+        />
+        <h5 class="fw-semibold">Shugo Maeda</h5>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= Timetable ================= -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="section-title mb-5 text-center">タイムテーブル</h2>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="d-flex align-items-center gap-3 flex-wrap">
+          <div class="timeline-time text-muted fw-semibold">12:30 –</div>
+          <div class="timeline-title fw-bold">開場</div>
+          <div class="d-flex align-items-center gap-2 ms-auto"></div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="d-flex align-items-center gap-3 flex-wrap">
+          <div class="timeline-time text-muted fw-semibold">13:00 – 13:05</div>
+          <div class="timeline-title fw-bold">オープニング</div>
+          <div class="d-flex align-items-center gap-2 ms-auto"></div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="d-flex align-items-center gap-3 flex-wrap">
+          <div class="timeline-time text-muted fw-semibold">13:05 – 13:30</div>
+          <div class="timeline-title fw-bold">招待講演</div>
+          <div class="d-flex align-items-center gap-2 ms-auto">
+            <span></span>
+            <a href="#" class="text-muted"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="d-flex align-items-center gap-3 flex-wrap">
+          <div class="timeline-time text-muted fw-semibold">13:30 – 13:40</div>
+          <div class="timeline-title fw-bold">休憩</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="d-flex align-items-center gap-3 flex-wrap">
+          <div class="timeline-time text-muted fw-semibold">13:40 – 13:55</div>
+          <div class="timeline-title fw-bold">島根枠</div>
+          <div class="d-flex align-items-center gap-2 ms-auto">
+            <img src="https://avatars.githubusercontent.com/u/26062441?v=4" class="rounded-circle" alt="S.H." />
+            <span>S.H.</span>
+            <a href="https://github.com/S-H-GAMELINKS" class="text-muted">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="d-flex align-items-center gap-3 flex-wrap">
+          <div class="timeline-time text-muted fw-semibold">13:55 –14:10</div>
+          <div class="timeline-title fw-bold">島根枠</div>
+          <div class="d-flex align-items-center gap-2 ms-auto">
+            <img src="https://avatars.githubusercontent.com/u/133784227?v=4" class="rounded-circle" alt="おにぎり" />
+            <span>おにぎり</span>
+            <a href="https://github.com/onigiripurin" class="text-muted"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="d-flex align-items-center gap-3 flex-wrap">
+          <div class="timeline-time text-muted fw-semibold">14:10 –14:25</div>
+          <div class="timeline-title fw-bold">島根枠</div>
+          <div class="d-flex align-items-center gap-2 ms-auto">
+            <span>Team 島情</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="d-flex align-items-center gap-3 flex-wrap">
+          <div class="timeline-time text-muted fw-semibold">14:25 –14:40</div>
+          <div class="timeline-title fw-bold">島根枠</div>
+          <div class="d-flex align-items-center gap-2 ms-auto">
+            <img src="https://avatars.githubusercontent.com/u/13091676?v=4" class="rounded-circle" alt="matsudai" />
+            <span>matsudai</span>
+            <a href="https://github.com/matsudai" class="text-muted"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="d-flex align-items-center gap-3 flex-wrap">
+          <div class="timeline-time text-muted fw-semibold">14:40 – 14:45</div>
+          <div class="timeline-title fw-bold">休憩</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="d-flex align-items-center gap-3 flex-wrap">
+          <div class="timeline-time text-muted fw-semibold">14:45 – 15:10</div>
+          <div class="timeline-title fw-bold">招待講演</div>
+          <div class="d-flex align-items-center gap-2 ms-auto">
+            <span></span>
+            <a href="#" class="text-muted"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="d-flex align-items-center gap-3 flex-wrap">
+          <div class="timeline-time text-muted fw-semibold">15:10 – 15:20</div>
+          <div class="timeline-title fw-bold">休憩</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="d-flex align-items-center gap-3 flex-wrap">
+          <div class="timeline-time text-muted fw-semibold">15:20 –15:40</div>
+          <div class="timeline-title fw-bold">LT枠</div>
+          <div class="d-flex align-items-center gap-2 ms-auto">
+
+            <img src="https://pbs.twimg.com/profile_images/1942134000329363456/DmtMp6hV_400x400.jpg" class="rounded-circle" alt="みしま" />
+            <span>みしま</span>
+            <a href="https://x.com/mishima_ruby" class="text-muted"><i class="fab fa-twitter"></i></a>
+
+            <img src="https://pbs.twimg.com/profile_images/1986739071218257920/mFfthTa1_400x400.jpg" class="rounded-circle" alt="がっきー" />
+            <span>がっきー</span>
+            <a href="https://x.com/gakki_27373" class="text-muted"><i class="fab fa-twitter"></i></a>
+
+            <img src="https://pbs.twimg.com/profile_images/1569696342271983617/kJpNdYWX_400x400.jpg" class="rounded-circle" alt="yamamoto" />
+            <span>yamamoto</span>
+            <a href="https://x.com/yamako_inaka" class="text-muted"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="d-flex align-items-center gap-3 flex-wrap">
+          <div class="timeline-time text-muted fw-semibold">15:40 – 15:45</div>
+          <div class="timeline-title fw-bold">休憩</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="d-flex align-items-center gap-3 flex-wrap">
+          <div class="timeline-time text-muted fw-semibold">15:45 –16:15</div>
+          <div class="timeline-title fw-bold">招待講演</div>
+          <div class="d-flex align-items-center gap-2 ms-auto">
+            <span></span>
+            <a href="#" class="text-muted"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="d-flex align-items-center gap-3 flex-wrap">
+          <div class="timeline-time text-muted fw-semibold">16:15 –16:20</div>
+          <div class="timeline-title fw-bold">クロージング</div>
+          <div class="d-flex align-items-center gap-2 ms-auto"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Support ================= -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="section-title mb-5 text-center">
+      Support
+    </h2>
+
+    <div class="row justify-content-center align-items-center g-4">
+      <div class="col-6 col-md-3 text-center">
+        <a href="https://ruby-no-kai.org/" class="sponsor-logo">
+          <img src="/izumo01/images/ruby_no_kai.png"
+               class="img-fluid"
+               alt="日本Rubyの会">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Code of Conduct ================= -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="section-title mb-4 text-center">
+      Code of Conduct
+    </h2>
+
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <p>
+          出雲Ruby会議01 は、参加者・登壇者・スタッフを含む
+          すべての関係者が安心して参加できる場を目指しています。
+        </p>
+
+        <p>
+          年齢、性別、性的指向、障害、外見、人種、宗教、
+          技術選択などに関わらず、すべての参加者を尊重します。
+        </p>
+
+        <p>
+          ハラスメント行為や不適切な言動は許容されません。
+          問題が発生した場合は、速やかに運営までご連絡ください。
+        </p>
+
+        <p class="mb-0">
+          本イベントは
+          <a href="https://www.ruby-lang.org/ja/conduct/"
+             target="_blank" rel="noopener">
+            Rubyコミュニティの行動規範
+          </a>
+          に準拠します。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= Footer ================= -->
+<footer class="py-4 bg-dark text-light text-center">
+  <div class="container">
+    <small>
+      © 2025-2026 出雲Ruby会議01
+    </small>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
