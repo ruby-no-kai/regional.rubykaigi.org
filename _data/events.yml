@@ -533,6 +533,11 @@
   title: "松江Ruby会議12"
   start_on: 2026-06-06
   end_on: 2026-06-06
+- name: tokyo13
+  title: "東京Ruby会議13"
+  start_on: 2026-06-27
+  end_on: 2026-06-27
+  external_url: https://regional.rubykaigi.org/tokyo13/
 - name: kansai09
   title: "関西Ruby会議09"
   start_on: 2026-07-18
