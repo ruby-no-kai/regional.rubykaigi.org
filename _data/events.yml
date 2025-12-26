@@ -529,6 +529,10 @@
   start_on: 2026-02-28
   end_on: 2026-02-28
   external_url: https://regional.rubykaigi.org/fukuoka05/
+- name: sekigahara01
+  title: "関ヶ原Ruby会議01"
+  start_on: 2026-05-30
+  end_on: 2026-05-30
 - name: matsue12
   title: "松江Ruby会議12"
   start_on: 2026-06-06
