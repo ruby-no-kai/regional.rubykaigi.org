@@ -56,6 +56,25 @@ function renderNavigation() {
   }
 }
 
+function applyExternalLinkBehavior(root = document) {
+  const externalLinks = root.querySelectorAll(
+    'a[href^="http://"], a[href^="https://"]'
+  );
+
+  externalLinks.forEach((a) => {
+    // Respect explicit target if already set
+    if (!a.getAttribute("target")) a.setAttribute("target", "_blank");
+
+    // Ensure rel includes noopener/noreferrer for security
+    const existingRel = (a.getAttribute("rel") || "")
+      .split(/\s+/)
+      .filter(Boolean);
+    if (!existingRel.includes("noopener")) existingRel.push("noopener");
+    if (!existingRel.includes("noreferrer")) existingRel.push("noreferrer");
+    a.setAttribute("rel", existingRel.join(" "));
+  });
+}
+
 // Setup navigation event listeners
 function setupNavigationListeners() {
   // Smooth scrolling for desktop navigation links
@@ -137,6 +156,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Setup navigation event listeners
   setupNavigationListeners();
+
+  // Open external links in a new tab
+  applyExternalLinkBehavior();
 
   // Hamburger Menu functionality
   const hamburgerMenu = document.querySelector(".hamburger-menu");
