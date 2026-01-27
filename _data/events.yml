@@ -522,8 +522,8 @@
   external_url: https://regional.rubykaigi.org/hokuriku01/
 - name: izumo01
   title: "出雲Ruby会議01"
-  start_on: 2026-02-22
-  end_on: 2026-02-22
+  start_on: 2026-02-21
+  end_on: 2026-02-21
 - name: fukuoka05
   title: "福岡Rubyist会議05"
   start_on: 2026-02-28
