@@ -1,0 +1,33 @@
+body {
+  background: #d4d4d4;
+}
+
+body div.container {
+  background: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: left;
+  width: 1000px;
+}
+
+ul.closing {
+  text-decoration: line-through;
+}
+
+p.closing {
+  color: red;
+}
+
+.table {
+  background: #ffffff;
+}
+
+.table thead {
+  background-color: #d9edf7;
+}
+
+.table th {
+  text-align: center;
+}
