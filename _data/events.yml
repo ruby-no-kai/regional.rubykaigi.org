@@ -520,6 +520,7 @@
   start_on: 2025-12-06
   end_on: 2025-12-06
   external_url: https://regional.rubykaigi.org/hokuriku01/
+  report_url: https://magazine.rubyist.net/articles/0066/0066-HokurikuRubyKaigi01Report.html
 - name: izumo01
   title: "出雲Ruby会議01"
   start_on: 2026-02-21
