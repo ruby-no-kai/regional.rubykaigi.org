@@ -553,6 +553,11 @@
   title: "名古屋Ruby会議05"
   start_on: 2026-09-19
   end_on: 2026-09-19
+- name: sendai03
+  title: "仙台Ruby会議03"
+  start_on: 2026-11-21
+  end_on: 2026-11-21
+  external_url: https://regional.rubykaigi.org/sendai03/
 - name: okrk03
   title: "沖縄Ruby会議03"
   start_on: 2027-02-20
