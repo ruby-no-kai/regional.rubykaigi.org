@@ -22,5 +22,9 @@ jobs:
         run: bundle exec ruby -Itest -e 'Dir["test/**/*_test.rb"].sort.each { |file| require_relative file }'
       - name: Validate event data
         run: ruby script/validate_events.rb
+      - name: Install OGP image dependencies
+        run: sudo apt-get update && sudo apt-get install -y fonts-noto-cjk librsvg2-bin
+      - name: Generate OGP image
+        run: ruby script/generate_og_image.rb
       - name: Build site
         run: bundle exec jekyll build

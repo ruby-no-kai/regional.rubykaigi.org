@@ -11,6 +11,7 @@ This repository contains the Regional RubyKaigi event index and event websites h
 - `<event-name>/`: Static pages for events hosted directly on this domain
 - `stylesheets/`, `javascripts/`, `images/`: Shared assets for the index and archived sites
 - `script/validate_events.rb`: Event data validation script
+- `script/generate_og_image.rb`: OGP image generator for the event index
 
 ## Local development
 
@@ -25,6 +26,15 @@ Validate the event data:
 ```console
 ruby script/validate_events.rb
 ```
+
+The OGP image is generated from the nearest upcoming event in `_data/events.yml`.
+Install `librsvg` and a Noto CJK font, then generate it before building the site:
+
+```console
+ruby script/generate_og_image.rb
+```
+
+GitHub Actions installs these system dependencies and generates the image automatically.
 
 Start the site with Jekyll, then open <http://localhost:4000/>:
 
