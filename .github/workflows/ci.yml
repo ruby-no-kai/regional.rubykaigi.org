@@ -1,0 +1,23 @@
+name: Continuous Integration
+
+on:
+  pull_request:
+  push:
+    branches:
+      - gh-pages
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+      - name: Run all tests
+        run: ruby -Itest -e 'Dir["test/**/*_test.rb"].sort.each { |file| require_relative file }'
+      - name: Validate event data
+        run: ruby script/validate_events.rb
