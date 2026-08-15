@@ -554,6 +554,11 @@
   title: "名古屋Ruby会議05"
   start_on: 2026-09-19
   end_on: 2026-09-19
+- name: hokuriku02
+  title: "北陸Ruby会議02"
+  start_on: 2026-11-14
+  end_on: 2026-11-14
+  external_url: https://regional.rubykaigi.org/hokuriku02/
 - name: sendai03
   title: "仙台Ruby会議03"
   start_on: 2026-11-21
