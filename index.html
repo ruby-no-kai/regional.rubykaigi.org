@@ -53,7 +53,7 @@ body_class: regional-index
               <span class="upcoming-date">
                 {{ event.start_on | date: "%Y-%m-%d(%a)" }}{% if event.start_on != event.end_on %}〜{% if event.start_on.year == event.end_on.year %}{{ event.end_on | date: "%m-%d(%a)" }}{% else %}{{ event.end_on | date: "%Y-%m-%d(%a)" }}{% endif %}{% endif %}
               </span>
-              <span class="upcoming-title">{{ event.title }}{% if event.external_url %}<svg class="external-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>{% endif %}</span>
+              <span class="upcoming-title">{{ event.title }}<svg class="external-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></span>
             </a>
           {% endif %}
         {% endfor %}
@@ -109,7 +109,7 @@ body_class: regional-index
                     {% if event.external_url %}
                       <a class="event-title" href="{{ event.external_url }}" target="_blank" rel="noopener">{{ event.title }}<svg class="external-icon external-icon-event" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>
                     {% else %}
-                      <a class="event-title" href="/{{ event.name }}/">{{ event.title }}</a>
+                      <a class="event-title" href="/{{ event.name }}/">{{ event.title }}<svg class="external-icon external-icon-event" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>
                     {% endif %}
                   </article>
                 {% endif %}
