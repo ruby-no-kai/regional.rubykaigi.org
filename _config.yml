@@ -7,3 +7,4 @@ exclude:
   - README.md
   - script
   - test
+  - vendor

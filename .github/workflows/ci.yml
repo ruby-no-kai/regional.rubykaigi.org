@@ -17,7 +17,10 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.3"
+          bundler-cache: true
       - name: Run all tests
-        run: ruby -Itest -e 'Dir["test/**/*_test.rb"].sort.each { |file| require_relative file }'
+        run: bundle exec ruby -Itest -e 'Dir["test/**/*_test.rb"].sort.each { |file| require_relative file }'
       - name: Validate event data
         run: ruby script/validate_events.rb
+      - name: Build site
+        run: bundle exec jekyll build
