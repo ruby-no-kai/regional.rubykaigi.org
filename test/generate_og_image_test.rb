@@ -46,4 +46,11 @@ class GenerateOgImageTest < Minitest::Test
     assert_includes svg, "ほか2件"
     assert_equal OgImageGenerator::MAX_EVENTS, svg.scan("<circle ").length
   end
+
+  def test_renders_a_fallback_when_there_are_no_upcoming_events
+    svg = OgImageGenerator.render_svg([])
+
+    assert_includes svg, "次回の開催をお楽しみに"
+    assert_includes svg, "日本各地のRubyコミュニティイベント"
+  end
 end
