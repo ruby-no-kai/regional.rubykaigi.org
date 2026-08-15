@@ -35,8 +35,8 @@ module OgImageGenerator
     card_height = visible_events.empty? ? 144 : 44 + (visible_events.length * 52)
     event_rows = if visible_events.empty?
       <<~SVG
-        <text x="128" y="332" fill="#302b29" font-family="'M PLUS 1'" font-size="42" font-weight="800">次回の開催をお楽しみに</text>
-        <text x="130" y="380" fill="#6a605c" font-family="'M PLUS 1'" font-size="24">開催予定はまだありません</text>
+        <text x="128" y="332" fill="#302b29" font-family="'M PLUS 1'" font-size="42" font-weight="800">次回の開催をお楽しみに!!</text>
+        <text x="130" y="380" fill="#6a605c" font-family="'M PLUS 1'" font-size="24">開催のお知らせをお待ちしています!!!q</text>
       SVG
     else
       visible_events.each_with_index.map do |event, index|

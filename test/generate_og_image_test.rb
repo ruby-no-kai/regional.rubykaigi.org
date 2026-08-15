@@ -50,7 +50,7 @@ class GenerateOgImageTest < Minitest::Test
   def test_renders_a_fallback_when_there_are_no_upcoming_events
     svg = OgImageGenerator.render_svg([])
 
-    assert_includes svg, "次回の開催をお楽しみに"
-    assert_includes svg, "開催予定はまだありません"
+    assert_includes svg, "次回の開催をお楽しみに!!"
+    assert_includes svg, "開催のお知らせをお待ちしています!!!q"
   end
 end
