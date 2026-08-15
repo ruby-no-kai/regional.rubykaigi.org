@@ -510,11 +510,13 @@
   start_on: 2025-09-06
   end_on: 2025-09-06
   external_url: https://regional.rubykaigi.org/nagara01/
+  report_url: https://magazine.rubyist.net/articles/0066/0066-NagaraRubyKaigi01Report.html
 - name: tokyu16
   title: "TokyuRuby会議16"
   start_on: 2025-11-29
   end_on: 2025-11-29
   external_url: https://tokyurubykaigi.github.io/tokyu16/
+  report_url: https://magazine.rubyist.net/articles/0066/0066-TokyuRubyKaigi16Report.html
 - name: hokuriku01
   title: "北陸Ruby会議01"
   start_on: 2025-12-06
