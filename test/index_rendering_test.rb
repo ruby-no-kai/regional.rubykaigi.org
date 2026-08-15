@@ -45,6 +45,11 @@ class IndexRenderingTest < Minitest::Test
     assert_includes anchor, "external-icon"
   end
 
+  def test_includes_explicit_x_card_metadata
+    assert_includes @html, '<meta name="twitter:card" content="summary_large_image">'
+    assert_includes @html, '<meta name="twitter:image" content="https://regional.rubykaigi.org/images/og/regional-rubykaigi.png">'
+  end
+
   private
 
   def event_anchor(href)
