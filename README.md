@@ -12,6 +12,7 @@ This repository contains the Regional RubyKaigi event index and event websites h
 - `stylesheets/`, `javascripts/`, `images/`: Shared assets for the index and archived sites
 - `script/validate_events.rb`: Event data validation script
 - `script/generate_og_image.rb`: OGP image generator for the event index
+- `script/assets/`: Build-only assets, including the OFL-licensed M PLUS 1 font
 
 ## Local development
 
@@ -28,10 +29,10 @@ ruby script/validate_events.rb
 ```
 
 The OGP image is generated from upcoming events in `_data/events.yml`.
-Install `librsvg`, download the M PLUS 1 variable font from Google Fonts, then generate it before building the site:
+Install `librsvg`, then generate it before building the site. The required M PLUS 1 font is included in `script/assets/`.
 
 ```console
-OG_IMAGE_FONT_FILE=/path/to/MPLUS1-wght.ttf ruby script/generate_og_image.rb
+ruby script/generate_og_image.rb
 ```
 
 GitHub Actions installs these system dependencies and generates the image automatically.
@@ -48,3 +49,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution instructions.
 
 Code and documentation are provided under the [MIT License](LICENSE) unless otherwise noted.
 Assets in archived event sites may be subject to separate rights or licenses.
+The bundled M PLUS 1 font is provided under the SIL Open Font License 1.1 in `script/assets/MPLUS1-OFL.txt`.

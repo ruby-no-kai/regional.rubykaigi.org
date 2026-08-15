@@ -12,6 +12,7 @@ require "yaml"
 module OgImageGenerator
   DATA_FILE = File.expand_path("../_data/events.yml", __dir__)
   OUTPUT_FILE = File.expand_path("../images/og/regional-rubykaigi.png", __dir__)
+  FONT_FILE = File.expand_path("assets/MPLUS1-wght.ttf", __dir__)
   WIDTH = 1200
   HEIGHT = 630
   MAX_EVENTS = 5
@@ -92,8 +93,8 @@ module OgImageGenerator
   end
 
   def with_font_environment
-    font_file = ENV["OG_IMAGE_FONT_FILE"]
-    return yield({}) unless font_file
+    font_file = ENV.fetch("OG_IMAGE_FONT_FILE", FONT_FILE)
+    raise "OGP font not found: #{font_file}" unless File.file?(font_file)
 
     Dir.mktmpdir("regional-rubykaigi-fontconfig") do |cache_dir|
       Tempfile.create(["fonts", ".conf"]) do |config|
