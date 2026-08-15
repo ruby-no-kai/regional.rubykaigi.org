@@ -35,7 +35,7 @@ Install `librsvg`, then generate it before building the site. The required M PLU
 ruby script/generate_og_image.rb
 ```
 
-GitHub Actions installs these system dependencies and generates the image automatically.
+The GitHub Pages deployment workflow installs this system dependency and generates the image automatically.
 
 Start the site with Jekyll, then open <http://localhost:4000/>:
 
