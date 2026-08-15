@@ -27,11 +27,11 @@ Validate the event data:
 ruby script/validate_events.rb
 ```
 
-The OGP image is generated from the nearest upcoming event in `_data/events.yml`.
-Install `librsvg` and a Noto CJK font, then generate it before building the site:
+The OGP image is generated from upcoming events in `_data/events.yml`.
+Install `librsvg`, download the M PLUS 1 variable font from Google Fonts, then generate it before building the site:
 
 ```console
-ruby script/generate_og_image.rb
+OG_IMAGE_FONT_FILE=/path/to/MPLUS1-wght.ttf ruby script/generate_og_image.rb
 ```
 
 GitHub Actions installs these system dependencies and generates the image automatically.

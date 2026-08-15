@@ -6,6 +6,7 @@ require "date"
 require "fileutils"
 require "open3"
 require "tempfile"
+require "tmpdir"
 require "yaml"
 
 module OgImageGenerator
@@ -32,17 +33,19 @@ module OgImageGenerator
     remaining_count = events.length - visible_events.length
     event_rows = if visible_events.empty?
       <<~SVG
-        <text x="128" y="388" fill="#302b29" font-family="'Noto Sans CJK JP', 'Noto Sans JP', sans-serif" font-size="52" font-weight="800">次回の開催をお楽しみに</text>
-        <text x="132" y="452" fill="#6a605c" font-family="'Noto Sans CJK JP', 'Noto Sans JP', sans-serif" font-size="28">日本各地のRubyコミュニティイベント</text>
+        <rect x="80" y="270" width="1040" height="144" rx="16" fill="#fff5f2" stroke="#eadfdb" stroke-width="2"/>
+        <text x="116" y="332" fill="#302b29" font-family="'M PLUS 1'" font-size="42" font-weight="800">次回の開催をお楽しみに</text>
+        <text x="118" y="380" fill="#6a605c" font-family="'M PLUS 1'" font-size="24">日本各地のRubyコミュニティイベント</text>
       SVG
     else
       visible_events.each_with_index.map do |event, index|
         title = event.fetch("title")
         title_size = [[680 / title.length, 38].min, 28].max
-        baseline = 326 + (index * 54)
+        baseline = 306 + (index * 62)
         <<~SVG
-          <text x="128" y="#{baseline}" fill="#a52a32" font-family="monospace" font-size="25" font-weight="700">#{date(event.fetch("start_on")).iso8601}</text>
-          <text x="390" y="#{baseline}" fill="#302b29" font-family="'Noto Sans CJK JP', 'Noto Sans JP', sans-serif" font-size="#{title_size}" font-weight="800">#{CGI.escapeHTML(title)}</text>
+          <rect x="80" y="#{baseline - 42}" width="1040" height="52" rx="10" fill="#fff5f2" stroke="#eadfdb" stroke-width="2"/>
+          <text x="108" y="#{baseline - 5}" fill="#a52a32" font-family="'M PLUS 1'" font-size="23" font-weight="700">#{date(event.fetch("start_on")).iso8601}</text>
+          <text x="356" y="#{baseline - 5}" fill="#302b29" font-family="'M PLUS 1'" font-size="#{title_size}" font-weight="800">#{CGI.escapeHTML(title)}</text>
         SVG
       end.join
     end
@@ -50,14 +53,12 @@ module OgImageGenerator
 
     <<~SVG
       <svg xmlns="http://www.w3.org/2000/svg" width="#{WIDTH}" height="#{HEIGHT}" viewBox="0 0 #{WIDTH} #{HEIGHT}">
-        <rect width="1200" height="630" fill="#fffdfb"/>
-        <rect x="64" y="64" width="1072" height="502" rx="28" fill="#fff5f2" stroke="#eadfdb" stroke-width="2"/>
-        <rect x="64" y="64" width="12" height="502" rx="6" fill="#a52a32"/>
-        <text x="128" y="138" fill="#a52a32" font-family="monospace" font-size="26" font-weight="700" letter-spacing="2">REGIONAL RUBYKAIGI</text>
-        <text x="1072" y="138" text-anchor="end" fill="#6a605c" font-family="monospace" font-size="20">regional.rubykaigi.org</text>
-        <text x="128" y="208" fill="#302b29" font-family="'Noto Sans CJK JP', 'Noto Sans JP', sans-serif" font-size="48" font-weight="800">地域Ruby会議</text>
-        <text x="128" y="268" fill="#a52a32" font-family="'Noto Sans CJK JP', 'Noto Sans JP', sans-serif" font-size="28" font-weight="700">これからの開催</text>
-        <text x="1072" y="268" text-anchor="end" fill="#6a605c" font-family="'Noto Sans CJK JP', 'Noto Sans JP', sans-serif" font-size="22">#{remaining_label}</text>
+        <rect width="1200" height="630" fill="#ffffff"/>
+        <text x="80" y="82" fill="#a52a32" font-family="'M PLUS 1'" font-size="22" font-weight="700" letter-spacing="2">REGIONAL RUBYKAIGI</text>
+        <text x="1120" y="82" text-anchor="end" fill="#6a605c" font-family="'M PLUS 1'" font-size="18">regional.rubykaigi.org</text>
+        <text x="80" y="154" fill="#302b29" font-family="'M PLUS 1'" font-size="48" font-weight="900">地域Ruby会議</text>
+        <text x="80" y="238" fill="#302b29" font-family="'M PLUS 1'" font-size="27" font-weight="700">これからの開催</text>
+        <text x="1120" y="238" text-anchor="end" fill="#6a605c" font-family="'M PLUS 1'" font-size="20">#{remaining_label}</text>
         #{event_rows}
       </svg>
     SVG
@@ -71,11 +72,14 @@ module OgImageGenerator
     Tempfile.create(["regional-rubykaigi-og", ".svg"]) do |file|
       file.write(svg)
       file.flush
-      _stdout, stderr, status = Open3.capture3(
-        "rsvg-convert", "--width", WIDTH.to_s, "--height", HEIGHT.to_s,
-        "--output", output_file, file.path
-      )
-      raise "rsvg-convert failed: #{stderr}" unless status.success?
+      with_font_environment do |environment|
+        _stdout, stderr, status = Open3.capture3(
+          environment,
+          "rsvg-convert", "--width", WIDTH.to_s, "--height", HEIGHT.to_s,
+          "--output", output_file, file.path
+        )
+        raise "rsvg-convert failed: #{stderr}" unless status.success?
+      end
     end
 
     output_file
@@ -83,6 +87,26 @@ module OgImageGenerator
 
   def date(value)
     value.is_a?(Date) ? value : Date.iso8601(value.to_s)
+  end
+
+  def with_font_environment
+    font_file = ENV["OG_IMAGE_FONT_FILE"]
+    return yield({}) unless font_file
+
+    Dir.mktmpdir("regional-rubykaigi-fontconfig") do |cache_dir|
+      Tempfile.create(["fonts", ".conf"]) do |config|
+        config.write(<<~XML)
+          <?xml version="1.0"?>
+          <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+          <fontconfig>
+            <dir>#{CGI.escapeHTML(File.dirname(File.expand_path(font_file)))}</dir>
+            <cachedir>#{CGI.escapeHTML(cache_dir)}</cachedir>
+          </fontconfig>
+        XML
+        config.flush
+        yield("FONTCONFIG_FILE" => config.path)
+      end
+    end
   end
 end
 

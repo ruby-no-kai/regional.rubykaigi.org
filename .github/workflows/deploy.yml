@@ -36,9 +36,15 @@ jobs:
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Install OGP image dependencies
-        run: sudo apt-get update && sudo apt-get install -y fonts-noto-cjk librsvg2-bin
+        run: sudo apt-get update && sudo apt-get install -y librsvg2-bin
+      - name: Download OGP font
+        run: |
+          curl --fail --location --silent --show-error \
+            "https://raw.githubusercontent.com/google/fonts/352f6b7d9d6cc4fa9e242b931291d31b21a6dc84/ofl/mplus1/MPLUS1%5Bwght%5D.ttf" \
+            --output /tmp/MPLUS1-wght.ttf
+          echo "32dab296a06c3e87841ecd2bc9912434a964ad541e22ea19f764969dae93fced  /tmp/MPLUS1-wght.ttf" | sha256sum --check
       - name: Generate OGP image
-        run: ruby script/generate_og_image.rb
+        run: OG_IMAGE_FONT_FILE=/tmp/MPLUS1-wght.ttf ruby script/generate_og_image.rb
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
