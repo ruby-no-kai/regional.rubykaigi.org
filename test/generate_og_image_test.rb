@@ -51,6 +51,6 @@ class GenerateOgImageTest < Minitest::Test
     svg = OgImageGenerator.render_svg([])
 
     assert_includes svg, "次回の開催をお楽しみに"
-    assert_includes svg, "日本各地のRubyコミュニティイベント"
+    assert_includes svg, "開催予定はまだありません"
   end
 end
