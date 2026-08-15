@@ -26,4 +26,16 @@ class EventFiltersTest < Minitest::Test
 
     assert_equal %w[later earlier], events.map { |event| event["name"] }
   end
+
+  def test_regional_rubykaigi_url_stays_in_the_same_tab
+    refute external_to_regional_rubykaigi("https://regional.rubykaigi.org/nagara01/")
+  end
+
+  def test_other_domains_open_in_a_new_tab
+    assert external_to_regional_rubykaigi("https://tokyurubykaigi.github.io/tokyu16/")
+  end
+
+  def test_relative_urls_stay_in_the_same_tab
+    refute external_to_regional_rubykaigi("/izumo01/")
+  end
 end
