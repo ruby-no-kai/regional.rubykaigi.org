@@ -31,21 +31,21 @@ module OgImageGenerator
   def render_svg(events)
     visible_events = events.first(MAX_EVENTS)
     remaining_count = events.length - visible_events.length
+    card_height = visible_events.empty? ? 144 : 44 + (visible_events.length * 52)
     event_rows = if visible_events.empty?
       <<~SVG
-        <rect x="80" y="270" width="1040" height="144" rx="16" fill="#fff5f2" stroke="#eadfdb" stroke-width="2"/>
-        <text x="116" y="332" fill="#302b29" font-family="'M PLUS 1'" font-size="42" font-weight="800">次回の開催をお楽しみに</text>
-        <text x="118" y="380" fill="#6a605c" font-family="'M PLUS 1'" font-size="24">日本各地のRubyコミュニティイベント</text>
+        <text x="128" y="332" fill="#302b29" font-family="'M PLUS 1'" font-size="42" font-weight="800">次回の開催をお楽しみに</text>
+        <text x="130" y="380" fill="#6a605c" font-family="'M PLUS 1'" font-size="24">日本各地のRubyコミュニティイベント</text>
       SVG
     else
       visible_events.each_with_index.map do |event, index|
         title = event.fetch("title")
         title_size = [[680 / title.length, 38].min, 28].max
-        baseline = 306 + (index * 62)
+        baseline = 316 + (index * 52)
         <<~SVG
-          <rect x="80" y="#{baseline - 42}" width="1040" height="52" rx="10" fill="#fff5f2" stroke="#eadfdb" stroke-width="2"/>
-          <text x="108" y="#{baseline - 5}" fill="#a52a32" font-family="'M PLUS 1'" font-size="23" font-weight="700">#{date(event.fetch("start_on")).iso8601}</text>
-          <text x="356" y="#{baseline - 5}" fill="#302b29" font-family="'M PLUS 1'" font-size="#{title_size}" font-weight="800">#{CGI.escapeHTML(title)}</text>
+          <circle cx="124" cy="#{baseline - 9}" r="5" fill="#a52a32"/>
+          <text x="148" y="#{baseline}" fill="#a52a32" font-family="'M PLUS 1'" font-size="23" font-weight="700">#{date(event.fetch("start_on")).iso8601}</text>
+          <text x="390" y="#{baseline}" fill="#302b29" font-family="'M PLUS 1'" font-size="#{title_size}" font-weight="800">#{CGI.escapeHTML(title)}</text>
         SVG
       end.join
     end
@@ -59,6 +59,8 @@ module OgImageGenerator
         <text x="80" y="154" fill="#302b29" font-family="'M PLUS 1'" font-size="48" font-weight="900">地域Ruby会議</text>
         <text x="80" y="238" fill="#302b29" font-family="'M PLUS 1'" font-size="27" font-weight="700">これからの開催</text>
         <text x="1120" y="238" text-anchor="end" fill="#6a605c" font-family="'M PLUS 1'" font-size="20">#{remaining_label}</text>
+        <rect x="80" y="264" width="1040" height="#{card_height}" rx="16" fill="#fff5f2" stroke="#eadfdb" stroke-width="2"/>
+        <rect x="80" y="264" width="10" height="#{card_height}" rx="5" fill="#a52a32"/>
         #{event_rows}
       </svg>
     SVG

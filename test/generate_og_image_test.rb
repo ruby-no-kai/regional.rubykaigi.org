@@ -44,5 +44,6 @@ class GenerateOgImageTest < Minitest::Test
     assert_includes svg, "Event 4"
     refute_includes svg, "Event 5"
     assert_includes svg, "ほか2件"
+    assert_equal OgImageGenerator::MAX_EVENTS, svg.scan("<circle ").length
   end
 end
