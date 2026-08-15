@@ -1,71 +1,132 @@
 ---
 layout: default
+body_class: regional-index
 ---
+{% assign today = site.time | date: "%Y-%m-%d" %}
 {% assign events = site.data.events | sort_events_by_start_on %}
-<h1 id='welcome'>地域Ruby会議(Regional RubyKaigi)</h1>
-<div class='epigraph'>
-<blockquote cite='http://dablog.rubypal.com/2008/9/13/tracks-a-go-go-at-rubyconf-2008'>
-“regional” wasn’t going to mean “provincial”—that regional conferences could be top-notch events—and that hope has been fulfilled beyond what we could possibly have wished for.
-</blockquote>
-<div class='source'>
-――
-<a href="http://dablog.rubypal.com/2008/9/13/tracks-a-go-go-at-rubyconf-2008">D.A.Black</a>
-</div>
-</div>
-<div class='event_index'>
-<p>地域Ruby会議(Regional RubyKaigi;りーじょなるるびーかいぎ)は、<a href="http://rubykaigi.org/">RubyKaigi</a>のようなイベントをいろんな地域でやってしまおうというプロジェクトです。<a href="http://ruby-no-kai.org">日本Rubyの会</a>が<a href="http://www.fdiary.net/ml/ruby/msg/1929">後援</a>しています。</p>
-
-<h2>地域Ruby会議</h2>
-
-<p>未確定情報を含む、今後の開催情報は、日本Ruby会の公式Wikiの<a href="https://scrapbox.io/ruby-no-kai/RubyEventCheck">RubyEventCheck</a>のページも参照してください。</p>
-
-<table>
-<th>
-  <tr>
-    <th>Date</th>
-    <th>Name</th>
-    <th>Report</th>
-  </tr>
-</th>
-{% for event in events reversed %}
-<tr>
-  <td>
-  {{ event.start_on | date: "%Y-%m-%d(%a)" }}
-  {% if event.start_on != event.end_on %}
-    〜
-    {% if event.start_on.year == event.end_on.year %}
-      {{ event.end_on | date: "%m-%d(%a)" }}
-    {% else %}
-      {{ event.end_on | date: "%Y-%m-%d(%a)" }}
+{% assign events_desc = events | reverse %}
+{% assign upcoming_count = 0 %}
+{% assign past_count = 0 %}
+{% assign oldest_past_year = '' %}
+{% assign latest_past_year = '' %}
+{% for event in events %}
+  {% assign event_date = event.start_on | date: "%Y-%m-%d" %}
+  {% if event_date >= today %}
+    {% assign upcoming_count = upcoming_count | plus: 1 %}
+  {% else %}
+    {% assign past_count = past_count | plus: 1 %}
+    {% assign event_year = event.start_on | date: "%Y" | plus: 0 %}
+    {% if oldest_past_year == '' %}
+      {% assign oldest_past_year = event_year %}
     {% endif %}
+    {% assign latest_past_year = event_year %}
   {% endif %}
-  </td>
-  
-  <td>
-  {% if event.external_url %}
-    <a href="{{ event.external_url }}">{{ event.title }}</a>
-  {% else %}
-    <a href="/{{ event.name }}">{{ event.title }}</a>
-  {% endif %}
-  </td>
-
-  <td>
-  {% if event.report_url %}
-    <a href="{{ event.report_url }}">レポート</a>
-  {% else %}
-    レポートはまだありません
-  {% endif %}
-  </td>
-</tr>
-
 {% endfor %}
-</table>
 
-<h2>地域Ruby会議を開催するには</h2>
-<div>
-日本Rubyの会のWikiの
-<a href="https://scrapbox.io/ruby-no-kai/Regional_RubyKaigi">RegionalRubyKaigiのページ</a>
-を参照してください。<br /><span style="color:#999">(かつてはredmine.ruby-lang.orgに書いていたのですが、移転しました)</span>
-</div>
+<main class="index-page">
+  <header class="site-intro">
+    <p class="eyebrow">Regional RubyKaigi</p>
+    <h1>地域Ruby会議 <span>（Regional RubyKaigi）</span></h1>
 
-</div>
+    <blockquote cite="https://davidablack.net/dablog.html#2008/9/13/tracks-a-go-go-at-rubyconf-2008">
+      <p>“regional” wasn’t going to mean “provincial”—that regional conferences could be top-notch events—and that hope has been fulfilled beyond what we could possibly have wished for.</p>
+      <footer>—— <a href="https://davidablack.net/dablog.html#2008/9/13/tracks-a-go-go-at-rubyconf-2008" target="_blank" rel="noopener">D.A.Black</a>, 2008</footer>
+    </blockquote>
+
+  </header>
+
+  <section class="upcoming-events" aria-labelledby="upcoming-heading">
+    <h2 id="upcoming-heading">これからの開催</h2>
+    {% if upcoming_count > 0 %}
+      <div class="upcoming-list">
+        {% for event in events %}
+          {% assign event_date = event.start_on | date: "%Y-%m-%d" %}
+          {% if event_date >= today %}
+            {% if event.external_url %}
+              {% assign event_url = event.external_url %}
+              {% assign link_attributes = ' target="_blank" rel="noopener"' %}
+            {% else %}
+              {% capture event_url %}/{{ event.name }}/{% endcapture %}
+              {% assign link_attributes = '' %}
+            {% endif %}
+            <a class="upcoming-card" href="{{ event_url }}"{{ link_attributes }}>
+              <span class="upcoming-date">
+                {{ event.start_on | date: "%Y-%m-%d(%a)" }}{% if event.start_on != event.end_on %}〜{% if event.start_on.year == event.end_on.year %}{{ event.end_on | date: "%m-%d(%a)" }}{% else %}{{ event.end_on | date: "%Y-%m-%d(%a)" }}{% endif %}{% endif %}
+              </span>
+              <span class="upcoming-title">{{ event.title }}{% if event.external_url %}<svg class="external-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>{% endif %}</span>
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="no-upcoming">
+        <h3>開催予定はまだありません</h3>
+        <p>日本Rubyの会のWikiの「(Regional RubyKaigiを)<a href="https://scrapbox.io/ruby-no-kai/Regional_RubyKaigi#6387d9fd686daf0000f4b9a2" target="_blank" rel="noopener">開催するには<svg class="external-icon external-icon-small" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>」を読んで、開催してください!!q</p>
+      </div>
+    {% endif %}
+  </section>
+
+  <section class="about-regional" aria-labelledby="about-heading">
+    <h2 id="about-heading">地域Ruby会議について</h2>
+    <p class="introduction">地域Ruby会議(Regional RubyKaigi: りーじょなるるびーかいぎ)は、<a href="http://rubykaigi.org/">RubyKaigi</a>のようなイベントをいろんな地域でやってしまおうというプロジェクトです。<a href="http://ruby-no-kai.org">日本Rubyの会</a>が<a href="http://www.fdiary.net/ml/ruby/msg/1929">後援</a>しています。未確定情報を含む、今後の開催情報は日本Rubyの会公式Wikiの<a href="https://scrapbox.io/ruby-jp/RubyEventCheck">RubyEventCheck</a>も参照してください。</p>
+    <p class="introduction">地域Ruby会議を開催するには、日本Rubyの会のWikiの<a href="https://scrapbox.io/ruby-no-kai/Regional_RubyKaigi">RegionalRubyKaigiのページ</a>を参照してください。</p>
+  </section>
+
+  <section class="past-events" aria-labelledby="past-heading">
+    <h2 id="past-heading">これまでの開催 <span>（{{ past_count }}開催）</span></h2>
+    <div class="year-groups">
+      {% if past_count > 0 %}
+        {% for year in (oldest_past_year..latest_past_year) reversed %}
+          {% assign year_count = 0 %}
+          {% for event in events_desc %}
+            {% assign event_date = event.start_on | date: "%Y-%m-%d" %}
+            {% assign event_year = event.start_on | date: "%Y" | plus: 0 %}
+            {% if event_date < today and event_year == year %}
+              {% assign year_count = year_count | plus: 1 %}
+            {% endif %}
+          {% endfor %}
+          <section class="year-group{% if year_count == 0 %} year-group-empty{% endif %}" aria-labelledby="year-{{ year }}">
+            <h3 id="year-{{ year }}"><span class="year">{{ year }}</span><span class="year-count">（{{ year_count }}開催）</span></h3>
+            {% if year_count == 0 %}
+              <p>この年は開催されませんでした</p>
+            {% else %}
+              <div class="year-events">
+              {% for event in events_desc %}
+                {% assign event_date = event.start_on | date: "%Y-%m-%d" %}
+                {% assign event_year = event.start_on | date: "%Y" | plus: 0 %}
+                {% if event_date < today and event_year == year %}
+                  <article class="past-event">
+                    <div class="event-meta">
+                      <time datetime="{{ event.start_on | date: "%Y-%m-%d" }}">
+                        {{ event.start_on | date: "%Y-%m-%d(%a)" }}{% if event.start_on != event.end_on %}〜{% if event.start_on.year == event.end_on.year %}{{ event.end_on | date: "%m-%d(%a)" }}{% else %}{{ event.end_on | date: "%Y-%m-%d(%a)" }}{% endif %}{% endif %}
+                      </time>
+                      {% if event.report_url %}
+                        <a class="report-link" href="{{ event.report_url }}" target="_blank" rel="noopener">開催レポート<svg class="external-icon external-icon-small" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>
+                      {% else %}
+                        <span class="report-missing">開催レポートはまだありません</span>
+                      {% endif %}
+                    </div>
+                    {% if event.external_url %}
+                      <a class="event-title" href="{{ event.external_url }}" target="_blank" rel="noopener">{{ event.title }}<svg class="external-icon external-icon-event" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>
+                    {% else %}
+                      <a class="event-title" href="/{{ event.name }}/">{{ event.title }}</a>
+                    {% endif %}
+                  </article>
+                {% endif %}
+              {% endfor %}
+              </div>
+            {% endif %}
+          </section>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <a href="https://github.com/ruby-no-kai/regional.rubykaigi.org" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1C5.925 1 1 5.925 1 12c0 4.867 3.149 8.995 7.521 10.451.55.102.752-.239.752-.53 0-.263-.01-1.129-.015-2.048-3.059.665-3.705-1.297-3.705-1.297-.5-1.271-1.221-1.609-1.221-1.609-.998-.682.075-.668.075-.668 1.104.078 1.685 1.133 1.685 1.133.981 1.681 2.573 1.195 3.2.914.1-.71.384-1.196.698-1.471-2.442-.278-5.01-1.221-5.01-5.436 0-1.2.429-2.182 1.132-2.952-.114-.277-.49-1.396.106-2.91 0 0 .923-.295 3.025 1.128A10.52 10.52 0 0 1 12 6.334c.936.004 1.879.127 2.758.371 2.1-1.423 3.021-1.128 3.021-1.128.598 1.514.222 2.633.108 2.91.705.77 1.13 1.752 1.13 2.952 0 4.225-2.573 5.155-5.022 5.427.395.341.747 1.01.747 2.035 0 1.471-.013 2.655-.013 3.02 0 .293.198.637.756.529C19.853 20.991 23 16.865 23 12c0-6.075-4.925-11-11-11Z"></path></svg>
+      <span>Source</span>
+    </a>
+  </footer>
+
+</main>
