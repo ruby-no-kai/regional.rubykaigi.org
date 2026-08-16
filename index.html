@@ -30,7 +30,10 @@ body_class: regional-index
 
     <blockquote cite="https://davidablack.net/dablog.html#2008/9/13/tracks-a-go-go-at-rubyconf-2008">
       <p>“regional” wasn’t going to mean “provincial”—that regional conferences could be top-notch events—and that hope has been fulfilled beyond what we could possibly have wished for.</p>
-      <footer>—— <a href="https://davidablack.net/dablog.html#2008/9/13/tracks-a-go-go-at-rubyconf-2008" target="_blank" rel="noopener">D.A.Black</a>, 2008</footer>
+      <footer>
+        <span class="quote-attribution"><strong>David A.Black</strong>, 2008</span>
+        <a class="quote-source" href="https://davidablack.net/dablog.html#2008/9/13/tracks-a-go-go-at-rubyconf-2008" target="_blank" rel="noopener">davidablack.net<svg class="external-icon external-icon-small" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>
+      </footer>
     </blockquote>
 
   </header>
@@ -55,7 +58,7 @@ body_class: regional-index
             {% endif %}
             <a class="upcoming-card" href="{{ event_url }}"{{ link_attributes }}>
               <span class="upcoming-date">
-                {{ event.start_on | date: "%Y-%m-%d(%a)" }}{% if event.start_on != event.end_on %}〜{% if event.start_on.year == event.end_on.year %}{{ event.end_on | date: "%m-%d(%a)" }}{% else %}{{ event.end_on | date: "%Y-%m-%d(%a)" }}{% endif %}{% endif %}
+                {{ event.start_on | date: "%Y-%m-%d(%a)" }}{% if event.start_on != event.end_on %}..{% if event.start_on.year == event.end_on.year %}{{ event.end_on | date: "%m-%d(%a)" }}{% else %}{{ event.end_on | date: "%Y-%m-%d(%a)" }}{% endif %}{% endif %}
               </span>
               <span class="upcoming-title">{{ event.title }}<svg class="external-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></span>
             </a>
@@ -72,8 +75,8 @@ body_class: regional-index
 
   <section class="about-regional" aria-labelledby="about-heading">
     <h2 id="about-heading">地域Ruby会議について</h2>
-    <p class="introduction">地域Ruby会議(Regional RubyKaigi: りーじょなるるびーかいぎ)は、<a href="http://rubykaigi.org/">RubyKaigi</a>のようなイベントをいろんな地域でやってしまおうというプロジェクトです。<a href="http://ruby-no-kai.org">日本Rubyの会</a>が<a href="http://www.fdiary.net/ml/ruby/msg/1929">後援</a>しています。未確定情報を含む、今後の開催情報は日本Rubyの会公式Wikiの<a href="https://scrapbox.io/ruby-jp/RubyEventCheck">RubyEventCheck</a>も参照してください。</p>
-    <p class="introduction">地域Ruby会議を開催するには、日本Rubyの会のWikiの<a href="https://scrapbox.io/ruby-no-kai/Regional_RubyKaigi">RegionalRubyKaigiのページ</a>を参照してください。</p>
+    <p class="introduction">地域Ruby会議(Regional RubyKaigi: りーじょなるるびーかいぎ)は、<a href="http://rubykaigi.org/"><strong>RubyKaigi</strong></a>のようなイベントをいろんな地域でやってしまおうというプロジェクトです。<a href="http://ruby-no-kai.org"><strong>日本Rubyの会</strong></a>が<a href="http://www.fdiary.net/ml/ruby/msg/1929">後援</a>しています。未確定情報を含む、今後の開催情報は<a href="https://ruby-jp.github.io/">ruby-jp</a>有志による<a href="https://scrapbox.io/ruby-jp/RubyEventCheck"><strong>RubyEventCheck</strong></a>も参照してください。</p>
+    <p class="introduction">地域Ruby会議を開催するには、日本Rubyの会のWikiの<a href="https://scrapbox.io/ruby-no-kai/Regional_RubyKaigi"><strong>RegionalRubyKaigiのページ</strong></a>を参照してください。</p>
   </section>
 
   <section class="past-events" aria-labelledby="past-heading">
@@ -102,7 +105,7 @@ body_class: regional-index
                   <article class="past-event">
                     <div class="event-meta">
                       <time datetime="{{ event.start_on | date: "%Y-%m-%d" }}">
-                        {{ event.start_on | date: "%Y-%m-%d(%a)" }}{% if event.start_on != event.end_on %}〜{% if event.start_on.year == event.end_on.year %}{{ event.end_on | date: "%m-%d(%a)" }}{% else %}{{ event.end_on | date: "%Y-%m-%d(%a)" }}{% endif %}{% endif %}
+                        {{ event.start_on | date: "%Y-%m-%d(%a)" }}{% if event.start_on != event.end_on %}..{% if event.start_on.year == event.end_on.year %}{{ event.end_on | date: "%m-%d(%a)" }}{% else %}{{ event.end_on | date: "%Y-%m-%d(%a)" }}{% endif %}{% endif %}
                       </time>
                       {% if event.report_url %}
                         <a class="report-link" href="{{ event.report_url }}" target="_blank" rel="noopener">開催レポート<svg class="external-icon external-icon-small" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>

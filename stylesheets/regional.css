@@ -71,8 +71,6 @@ body.regional-index {
 
 .site-intro blockquote {
   margin: 0 0 28px;
-  padding: 4px 0 4px 20px;
-  border-left: 3px solid oklch(48% 0.18 25);
   color: oklch(32% 0.01 60);
   font-family: var(--prose-font);
   font-size: 17px;
@@ -81,13 +79,34 @@ body.regional-index {
 }
 
 .site-intro blockquote p {
-  margin: 0 0 8px;
+  margin: 0 0 12px;
+  padding: 4px 0 4px 20px;
+  border-left: 3px solid oklch(48% 0.18 25);
 }
 
 .site-intro blockquote footer {
-  color: oklch(42% 0.01 60);
-  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 4px;
   font-style: normal;
+}
+
+.quote-attribution {
+  color: oklch(42% 0.01 60);
+  font-family: var(--ui-font);
+  font-size: 14px;
+}
+
+.quote-attribution strong {
+  color: oklch(22% 0.01 60);
+  font-weight: 700;
+}
+
+.quote-source {
+  color: var(--muted-text);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
 }
 
 .introduction {
@@ -96,6 +115,10 @@ body.regional-index {
   font-family: var(--prose-font);
   font-size: 15px;
   line-height: 2;
+}
+
+.introduction strong {
+  font-family: var(--ui-font);
 }
 
 .about-regional {
