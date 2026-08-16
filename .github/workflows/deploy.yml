@@ -33,6 +33,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Install OGP image dependencies
@@ -40,10 +44,7 @@ jobs:
       - name: Generate OGP image
         run: ruby script/generate_og_image.rb
       - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./
-          destination: ./_site
+        run: bundle exec jekyll build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
 
