@@ -47,7 +47,7 @@ class IndexRenderingTest < Minitest::Test
 
   def test_includes_explicit_x_card_metadata
     assert_includes @html, '<meta name="twitter:card" content="summary_large_image">'
-    assert_includes @html, '<meta name="twitter:image" content="https://regional.rubykaigi.org/images/og/regional-rubykaigi.png">'
+    assert_match %r{<meta name="twitter:image" content="https://regional\.rubykaigi\.org/images/og/regional-rubykaigi\.png\?v=(?:latest|[0-9a-f]{12})">}, @html
   end
 
   private

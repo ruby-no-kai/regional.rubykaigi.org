@@ -3,6 +3,7 @@
 
 require "cgi"
 require "date"
+require "digest"
 require "fileutils"
 require "open3"
 require "tempfile"
@@ -12,6 +13,7 @@ require "yaml"
 module OgImageGenerator
   DATA_FILE = File.expand_path("../_data/events.yml", __dir__)
   OUTPUT_FILE = File.expand_path("../images/og/regional-rubykaigi.png", __dir__)
+  VERSION_FILE = File.expand_path("../_data/og_image.yml", __dir__)
   FONT_FILE = File.expand_path("assets/MPLUS1-wght.ttf", __dir__)
   WIDTH = 1200
   HEIGHT = 630
@@ -84,6 +86,9 @@ module OgImageGenerator
         raise "rsvg-convert failed: #{stderr}" unless status.success?
       end
     end
+
+    digest = Digest::SHA256.file(output_file).hexdigest[0, 12]
+    File.write(VERSION_FILE, "digest: #{digest}\n")
 
     output_file
   end
