@@ -8,11 +8,8 @@ on:
       - ".github/**"
       - "AGENTS.md"
       - "CONTRIBUTING.md"
-      - "Gemfile"
-      - "Gemfile.lock"
       - "LICENSE"
       - "README.md"
-      - "script/**"
       - "test/**"
   workflow_dispatch:
   schedule:
