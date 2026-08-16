@@ -1,4 +1,5 @@
 /_site
 /images/og/regional-rubykaigi.png
+/_data/og_image.yml
 Gemfile.lock
 .DS_Store
