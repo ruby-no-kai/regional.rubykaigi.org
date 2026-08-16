@@ -9,6 +9,16 @@ class IndexRenderingTest < Minitest::Test
 
   def self.rendered_html
     @rendered_html ||= Dir.mktmpdir("regional-rubykaigi-site") do |destination|
+      # Load gems from the Gemfile's :jekyll_plugins group first, exactly as
+      # `exe/jekyll` does before building a site. Skipping this would build
+      # against a different plugin/safe-mode configuration than `bundle exec
+      # jekyll build` (what CI and deploy.yml actually run) — see
+      # .agents/notes/track2-data-integration-infra.md for the production bug
+      # this blind spot hid (the `github-pages` gem, merely by being present
+      # in that Bundler group, used to force safe mode and silently disable
+      # everything under `_plugins/`).
+      Dir.chdir(ROOT) { Jekyll::PluginManager.require_from_bundler }
+
       config = Jekyll.configuration(
         "source" => ROOT,
         "destination" => destination,
