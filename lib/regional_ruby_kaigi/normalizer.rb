@@ -36,6 +36,7 @@ module RegionalRubyKaigi
     end
 
     def merge(events:, kaigis:)
+      kaigis ||= {}
       Array(events) + kaigis.keys.sort.map { |key| normalize(kaigis[key], key) }
     end
 
@@ -70,12 +71,5 @@ module RegionalRubyKaigi
     end
 
     def read_yaml_file(path) = YAML.safe_load_file(path, permitted_classes: [Date], aliases: false)
-  end
-
-  # Given a `site` (or anything with a `.data` Hash shaped like Jekyll's),
-  # pulls out `events` and `kaigis` and merges them via Normalizer.
-  # `_plugins/normalized_kaigi_generator.rb` is the only caller.
-  def self.normalize_kaigis(site)
-    Normalizer.merge(events: site.data["events"] || [], kaigis: site.data["kaigis"] || {})
   end
 end
