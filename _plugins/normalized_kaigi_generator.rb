@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "../lib/regional_ruby_kaigi/normalizer"
+require_relative "../lib/regional_ruby_kaigi"
 
 module RegionalRubyKaigi
   # `_data/events.yml` and `_data/kaigis/*.yml` are two different layouts
