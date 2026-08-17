@@ -8,10 +8,9 @@ require "fileutils"
 require "open3"
 require "tempfile"
 require "tmpdir"
-require "yaml"
+require_relative "../lib/regional_ruby_kaigi/normalizer"
 
 module OgImageGenerator
-  DATA_FILE = File.expand_path("../_data/events.yml", __dir__)
   OUTPUT_FILE = File.expand_path("../images/og/regional-rubykaigi.png", __dir__)
   VERSION_FILE = File.expand_path("../_data/og_image.yml", __dir__)
   FONT_FILE = File.expand_path("assets/MPLUS1-wght.ttf", __dir__)
@@ -69,8 +68,8 @@ module OgImageGenerator
     SVG
   end
 
-  def generate(data_file: DATA_FILE, output_file: OUTPUT_FILE, today: japan_today)
-    events = YAML.safe_load_file(data_file, permitted_classes: [Date], aliases: false)
+  def generate(data_dir: nil, output_file: OUTPUT_FILE, today: japan_today)
+    events = RegionalRubyKaigi::Normalizer.load(data_dir: data_dir)
     svg = render_svg(upcoming_events(events, today: today))
     FileUtils.mkdir_p(File.dirname(output_file))
 

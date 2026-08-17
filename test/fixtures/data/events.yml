@@ -1,0 +1,5 @@
+---
+- name: legacy01
+  title: "Legacy Kaigi 01"
+  start_on: 2020-01-01
+  end_on: 2020-01-01
