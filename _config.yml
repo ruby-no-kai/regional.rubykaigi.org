@@ -5,6 +5,7 @@ exclude:
   - Gemfile.lock
   - LICENSE
   - README.md
+  - lib
   - script
   - test
   - vendor
