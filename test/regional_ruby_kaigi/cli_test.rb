@@ -32,6 +32,21 @@ module RegionalRubyKaigi
       end
     end
 
+    def test_validate_kaigis_reports_a_kaigis_filename_name_mismatch
+      Dir.mktmpdir do |dir|
+        File.write(File.join(dir, "events.yml"), "[]\n")
+        Dir.mkdir(File.join(dir, "kaigis"))
+        File.write(File.join(dir, "kaigis", "okrk03.yml"), "name: okrk04\ntitle: Oops\nstart_on: 2027-01-01\nend_on: 2027-01-01\n")
+        out = StringIO.new
+        err = StringIO.new
+
+        status = CLI.validate_kaigis(data_dir: dir, out: out, err: err)
+
+        assert_equal 1, status
+        assert_match(/okrk03\.yml/, err.string)
+      end
+    end
+
     def test_validate_kaigis_reports_malformed_events_yml_via_normalizer
       Dir.mktmpdir do |dir|
         File.write(File.join(dir, "events.yml"), "not an array\n")

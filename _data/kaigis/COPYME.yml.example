@@ -1,0 +1,23 @@
+# このファイルをコピーして、開催回の識別子をファイル名にしてください。
+# 例: okrk04.yml （小文字英数字、既存の回と重複しないもの）
+# なお、ファイル名がそのままイベントの識別子になるので、name は省略できます。
+#
+# このサンプルファイルの説明コメントは削除してもらってかまいません。
+
+title: "〇〇Ruby会議01"
+
+# 単日開催の場合は held_on だけを指定してください。
+held_on: 2027-01-23
+
+# 複数日開催の場合は held_on の代わりに start_on と end_on を使ってください。
+# start_on: 2027-01-23
+# end_on: 2027-01-24
+
+# 別の場所で公式サイトを公開している場合はそのHTTPS URLを指定してください。
+# regional.rubykaigi.org上でサイトを公開する場合は省略してください。
+# 公開方法（このリポジトリに置く／自分のリポジトリのGitHub Pagesを使う）は
+# CONTRIBUTING.mdを参照してください。
+external_url: https://example.org/
+
+# Rubyist Magazine(るびま)で開催レポートが公開されたら追加してください（お待ちしています!)
+# report_url: https://magazine.rubyist.net/articles/...

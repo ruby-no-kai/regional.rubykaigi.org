@@ -5,12 +5,12 @@ This repository contains the Regional RubyKaigi event index and event websites h
 
 ## Repository structure
 
-- `_data/events.yml`: Regional RubyKaigi event data
+- `_data/events.yml`, `_data/kaigis/*.yml`: Regional RubyKaigi event data
 - `index.html`: Jekyll template for the event index
 - `_layouts/`: Shared layouts
 - `<event-name>/`: Static pages for events hosted directly on this domain
 - `stylesheets/`, `javascripts/`, `images/`: Shared assets for the index and archived sites
-- `script/validate_events.rb`: Event data validation script
+- `script/validate_kaigis.rb`: Event data validation script
 - `script/generate_og_image.rb`: OGP image generator for the event index
 - `script/assets/`: Build-only assets, including the OFL-licensed M PLUS 1 font
 
@@ -25,10 +25,10 @@ bundle install
 Validate the event data:
 
 ```console
-ruby script/validate_events.rb
+ruby script/validate_kaigis.rb
 ```
 
-The OGP image is generated from upcoming events in `_data/events.yml`.
+The OGP image is generated from upcoming events in `_data/events.yml` and `_data/kaigis/`.
 Install `librsvg`, then generate it before building the site. The required M PLUS 1 font is included in `script/assets/`.
 
 ```console

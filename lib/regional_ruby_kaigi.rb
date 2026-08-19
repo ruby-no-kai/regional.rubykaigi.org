@@ -2,7 +2,9 @@
 
 require "date"
 require_relative "regional_ruby_kaigi/normalizer"
+require_relative "regional_ruby_kaigi/loader"
 require_relative "regional_ruby_kaigi/kaigi"
+require_relative "regional_ruby_kaigi/validator"
 
 module RegionalRubyKaigi
   # The outermost namespace, never instantiated — module_function here (only
@@ -11,20 +13,49 @@ module RegionalRubyKaigi
   # instead of qualifying every call. See script/generate_og_image.rb.
   module_function
 
-  # Given a `site` (or anything with a `.data` Hash shaped like Jekyll's),
-  # pulls out `events` and `kaigis` and merges them via Normalizer.
-  # `_plugins/normalized_kaigi_generator.rb` is the only caller.
+  # Raised by `validate_kaigis!` when the kaigi data isn't valid. `errors`
+  # holds every message collected — filename/name mismatches, missing or
+  # malformed fields — not just the first one, so a caller can report all
+  # of them in one pass.
+  class ValidationError < StandardError
+    attr_reader :errors
+
+    def initialize(errors)
+      @errors = errors
+      super("#{errors.length}件のエラーがあります")
+    end
+  end
+
+  # The processing NormalizedKaigiGenerator needs: given a `site` (or
+  # anything with a `.data` Hash shaped like Jekyll's), pulls out `events`
+  # and `kaigis` and merges them via Normalizer. Returns a plain Array of
+  # Hashes — the shape `site.data["events"]` is assigned back to.
   def normalize_kaigis(site)
     Normalizer.merge(events: site.data["events"], kaigis: site.data["kaigis"])
   end
 
+  # What "validate the kaigi data" means: read it, and check both the
+  # filename/name agreement only Loader can see and the field-level rules
+  # only Validator knows. A caller that wants this (CLI) shouldn't need to
+  # know it's two collaborators combined this particular way. Returns the
+  # kaigis when they're valid; raises ValidationError (carrying every
+  # message collected) otherwise — the `!` says a caller can treat getting
+  # a return value at all as "valid," instead of checking an errors list.
+  def validate_kaigis!(data_dir: nil)
+    kaigis = Loader.load(data_dir: data_dir)
+    errors = Loader.name_mismatches(data_dir: data_dir) + Validator.validate(kaigis)
+    raise ValidationError, errors unless errors.empty?
+
+    kaigis
+  end
+
   # The kaigis that haven't happened yet as of `today`, earliest first, as
   # `Kaigi` objects. Which kaigi counts as upcoming — and fetching the list
-  # to check — isn't Normalizer's job (that's about combining sources) or
-  # the caller's (generate_og_image.rb): callers just want "what's
-  # upcoming". `loader` only needs to respond to `.load`; override it in
-  # tests instead of touching the filesystem.
-  def upcoming(today = japan_today, loader: Normalizer)
+  # to check — isn't Loader's job (that's about reading and combining
+  # sources) or the caller's (generate_og_image.rb): callers just want
+  # "what's upcoming". `loader` only needs to respond to `.load`; override
+  # it in tests instead of touching the filesystem.
+  def upcoming(today = japan_today, loader: Loader)
     loader.load
       .map { |attrs| Kaigi.new(attrs) }
       .select { |kaigi| kaigi.start_on >= today }

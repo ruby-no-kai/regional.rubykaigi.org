@@ -117,7 +117,7 @@ module RegionalRubyKaigi
 
       def self.call(today = RegionalRubyKaigi.japan_today, **collaborators) = new(**collaborators).call(today)
 
-      def initialize(loader: Normalizer, renderer: Renderer, destination: DEFAULT_DESTINATION)
+      def initialize(loader: Loader, renderer: Renderer, destination: DEFAULT_DESTINATION)
         @loader = loader
         @renderer = renderer
         @destination = destination
