@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 
 require "minitest/autorun"
+require "tmpdir"
 require_relative "../lib/regional_ruby_kaigi"
 
 class RegionalRubyKaigiTest < Minitest::Test
+  FIXTURE_DIR = File.expand_path("fixtures/data", __dir__)
+
   StubSite = Struct.new(:data)
   StubLoader = Struct.new(:kaigis) do
     def load = kaigis
@@ -54,5 +57,28 @@ class RegionalRubyKaigiTest < Minitest::Test
   def test_date_accepts_a_date_or_an_iso8601_string
     assert_equal Date.new(2026, 2, 1), RegionalRubyKaigi.date(Date.new(2026, 2, 1))
     assert_equal Date.new(2026, 2, 1), RegionalRubyKaigi.date("2026-02-01")
+  end
+
+  def test_validate_kaigis_returns_the_kaigis_when_valid
+    kaigis = RegionalRubyKaigi.validate_kaigis!(data_dir: FIXTURE_DIR)
+
+    assert_equal 3, kaigis.length
+  end
+
+  def test_validate_kaigis_raises_combining_loader_and_validator_errors
+    Dir.mktmpdir do |dir|
+      File.write(File.join(dir, "events.yml"), "[]\n")
+      Dir.mkdir(File.join(dir, "kaigis"))
+      # A filename/name mismatch (Loader's job to catch) alongside a
+      # missing required field (Validator's job) — both should show up.
+      File.write(File.join(dir, "kaigis", "okrk03.yml"), "name: okrk04\ntitle: Oops\n")
+
+      error = assert_raises(RegionalRubyKaigi::ValidationError) do
+        RegionalRubyKaigi.validate_kaigis!(data_dir: dir)
+      end
+
+      assert(error.errors.any? { |message| message.include?("okrk03.yml") })
+      assert(error.errors.any? { |message| message.include?("start_on") })
+    end
   end
 end

@@ -21,6 +21,6 @@ jobs:
       - name: Run all tests
         run: bundle exec ruby -Itest -e 'Dir["test/**/*_test.rb"].sort.each { |file| require_relative file }'
       - name: Validate event data
-        run: ruby script/validate_events.rb
+        run: ruby script/validate_kaigis.rb
       - name: Build site
         run: bundle exec jekyll build
