@@ -22,5 +22,11 @@ module RegionalRubyKaigi
 
       assert_equal Date.new(2026, 2, 1), kaigi.start_on
     end
+
+    def test_seq_reads_the_seq_attribute
+      kaigi = Kaigi.new("title" => "Sample", "seq" => 42)
+
+      assert_equal 42, kaigi.seq
+    end
   end
 end

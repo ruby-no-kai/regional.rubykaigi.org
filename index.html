@@ -2,26 +2,26 @@
 layout: default
 body_class: regional-index
 ---
-{% assign today = site.time | date: "%Y-%m-%d" %}
-{% assign events = site.data.events | sort_events_by_start_on %}
-{% assign events_desc = events | reverse %}
-{% assign upcoming_count = 0 %}
-{% assign past_count = 0 %}
-{% assign oldest_past_year = '' %}
-{% assign latest_past_year = '' %}
-{% for event in events %}
-  {% assign event_date = event.start_on | date: "%Y-%m-%d" %}
-  {% if event_date >= today %}
-    {% assign upcoming_count = upcoming_count | plus: 1 %}
-  {% else %}
-    {% assign past_count = past_count | plus: 1 %}
-    {% assign event_year = event.start_on | date: "%Y" | plus: 0 %}
-    {% if oldest_past_year == '' %}
-      {% assign oldest_past_year = event_year %}
-    {% endif %}
-    {% assign latest_past_year = event_year %}
-  {% endif %}
-{% endfor %}
+{%- assign today = site.time | date: "%Y-%m-%d" -%}
+{%- assign events = site.data.events | sort_events_by_start_on -%}
+{%- assign events_desc = events | reverse -%}
+{%- assign upcoming_count = 0 -%}
+{%- assign past_count = 0 -%}
+{%- assign oldest_past_year = '' -%}
+{%- assign latest_past_year = '' -%}
+{%- for event in events -%}
+  {%- assign event_date = event.start_on | date: "%Y-%m-%d" -%}
+  {%- if event_date >= today -%}
+    {%- assign upcoming_count = upcoming_count | plus: 1 -%}
+  {%- else -%}
+    {%- assign past_count = past_count | plus: 1 -%}
+    {%- assign event_year = event.start_on | date: "%Y" | plus: 0 -%}
+    {%- if oldest_past_year == '' -%}
+      {%- assign oldest_past_year = event_year -%}
+    {%- endif -%}
+    {%- assign latest_past_year = event_year -%}
+  {%- endif -%}
+{%- endfor -%}
 
 <main class="index-page">
   <header class="site-intro">
@@ -40,37 +40,38 @@ body_class: regional-index
 
   <section class="upcoming-events" aria-labelledby="upcoming-heading">
     <h2 id="upcoming-heading">これからの開催</h2>
-    {% if upcoming_count > 0 %}
+    {%- if upcoming_count > 0 -%}
       <div class="upcoming-list">
-        {% for event in events %}
-          {% assign event_date = event.start_on | date: "%Y-%m-%d" %}
-          {% if event_date >= today %}
-            {% if event.external_url %}
-              {% assign event_url = event.external_url %}
-            {% else %}
-              {% capture event_url %}/{{ event.name }}/{% endcapture %}
-            {% endif %}
-            {% assign opens_new_tab = event_url | external_to_regional_rubykaigi %}
-            {% if opens_new_tab %}
-              {% assign link_attributes = ' target="_blank" rel="noopener"' %}
-            {% else %}
-              {% assign link_attributes = '' %}
-            {% endif %}
+        {%- for event in events -%}
+          {%- assign event_date = event.start_on | date: "%Y-%m-%d" -%}
+          {%- if event_date >= today -%}
+            {%- if event.external_url -%}
+              {%- assign event_url = event.external_url -%}
+            {%- else -%}
+              {%- capture event_url -%}/{{ event.name }}/{%- endcapture -%}
+            {%- endif -%}
+            {%- assign opens_new_tab = event_url | external_to_regional_rubykaigi -%}
+            {%- if opens_new_tab -%}
+              {%- assign link_attributes = ' target="_blank" rel="noopener"' -%}
+            {%- else -%}
+              {%- assign link_attributes = '' -%}
+            {%- endif -%}
             <a class="upcoming-card" href="{{ event_url }}"{{ link_attributes }}>
+              <data class="event-seq" value="{{ event.seq }}">{{ event.seq }}</data>
               <span class="upcoming-date">
                 {{ event.start_on | date: "%Y-%m-%d(%a)" }}{% if event.start_on != event.end_on %}..{% if event.start_on.year == event.end_on.year %}{{ event.end_on | date: "%m-%d(%a)" }}{% else %}{{ event.end_on | date: "%Y-%m-%d(%a)" }}{% endif %}{% endif %}
               </span>
               <span class="upcoming-title">{{ event.title }}<svg class="external-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></span>
             </a>
-          {% endif %}
-        {% endfor %}
+          {% endif -%}
+        {%- endfor -%}
       </div>
-    {% else %}
+    {%- else -%}
       <div class="no-upcoming">
         <h3>開催予定はまだありません</h3>
         <p>日本Rubyの会のWikiの「(Regional RubyKaigiを)<a href="https://scrapbox.io/ruby-no-kai/Regional_RubyKaigi#6387d9fd686daf0000f4b9a2" target="_blank" rel="noopener">開催するには<svg class="external-icon external-icon-small" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>」を読んで、開催してください!!q</p>
       </div>
-    {% endif %}
+    {%- endif -%}
   </section>
 
   <section class="about-regional" aria-labelledby="about-heading">
@@ -82,51 +83,52 @@ body_class: regional-index
   <section class="past-events" aria-labelledby="past-heading">
     <h2 id="past-heading">これまでの開催 <span>（{{ past_count }}開催）</span></h2>
     <div class="year-groups">
-      {% if past_count > 0 %}
-        {% for year in (oldest_past_year..latest_past_year) reversed %}
-          {% assign year_count = 0 %}
-          {% for event in events_desc %}
-            {% assign event_date = event.start_on | date: "%Y-%m-%d" %}
-            {% assign event_year = event.start_on | date: "%Y" | plus: 0 %}
-            {% if event_date < today and event_year == year %}
-              {% assign year_count = year_count | plus: 1 %}
-            {% endif %}
-          {% endfor %}
+      {%- if past_count > 0 -%}
+        {%- for year in (oldest_past_year..latest_past_year) reversed -%}
+          {%- assign year_count = 0 -%}
+          {%- for event in events_desc -%}
+            {%- assign event_date = event.start_on | date: "%Y-%m-%d" -%}
+            {%- assign event_year = event.start_on | date: "%Y" | plus: 0 -%}
+            {%- if event_date < today and event_year == year -%}
+              {%- assign year_count = year_count | plus: 1 -%}
+            {%- endif -%}
+          {%- endfor -%}
           <section class="year-group{% if year_count == 0 %} year-group-empty{% endif %}" aria-labelledby="year-{{ year }}">
             <h3 id="year-{{ year }}"><span class="year">{{ year }}</span><span class="year-count">（{{ year_count }}開催）</span></h3>
-            {% if year_count == 0 %}
+            {%- if year_count == 0 -%}
               <p>この年は開催されませんでした</p>
-            {% else %}
+            {%- else -%}
               <div class="year-events">
-              {% for event in events_desc %}
-                {% assign event_date = event.start_on | date: "%Y-%m-%d" %}
-                {% assign event_year = event.start_on | date: "%Y" | plus: 0 %}
-                {% if event_date < today and event_year == year %}
+              {%- for event in events_desc -%}
+                {%- assign event_date = event.start_on | date: "%Y-%m-%d" -%}
+                {%- assign event_year = event.start_on | date: "%Y" | plus: 0 -%}
+                {%- if event_date < today and event_year == year -%}
                   <article class="past-event">
                     <div class="event-meta">
+                      <data class="event-seq" value="{{ event.seq }}">{{ event.seq }}</data>
                       <time datetime="{{ event.start_on | date: "%Y-%m-%d" }}">
                         {{ event.start_on | date: "%Y-%m-%d(%a)" }}{% if event.start_on != event.end_on %}..{% if event.start_on.year == event.end_on.year %}{{ event.end_on | date: "%m-%d(%a)" }}{% else %}{{ event.end_on | date: "%Y-%m-%d(%a)" }}{% endif %}{% endif %}
                       </time>
-                      {% if event.report_url %}
+                      {%- if event.report_url -%}
                         <a class="report-link" href="{{ event.report_url }}" target="_blank" rel="noopener">開催レポート<svg class="external-icon external-icon-small" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>
-                      {% else %}
+                      {%- else -%}
                         <span class="report-missing">開催レポートはまだありません</span>
-                      {% endif %}
+                      {%- endif -%}
                     </div>
-                    {% if event.external_url %}
-                      {% assign opens_new_tab = event.external_url | external_to_regional_rubykaigi %}
+                    {%- if event.external_url -%}
+                      {%- assign opens_new_tab = event.external_url | external_to_regional_rubykaigi -%}
                       <a class="event-title" href="{{ event.external_url }}"{% if opens_new_tab %} target="_blank" rel="noopener"{% endif %}>{{ event.title }}<svg class="external-icon external-icon-event" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>
-                    {% else %}
+                    {%- else -%}
                       <a class="event-title" href="/{{ event.name }}/">{{ event.title }}<svg class="external-icon external-icon-event" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>
-                    {% endif %}
+                    {%- endif -%}
                   </article>
-                {% endif %}
-              {% endfor %}
+                {% endif -%}
+              {%- endfor -%}
               </div>
-            {% endif %}
+            {%- endif -%}
           </section>
-        {% endfor %}
-      {% endif %}
+        {% endfor -%}
+      {%- endif -%}
     </div>
   </section>
 
