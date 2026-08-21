@@ -305,6 +305,12 @@ body.regional-index {
   letter-spacing: 0.02em;
 }
 
+/* event.seq is data for machine readers (see index.html), not something a
+   visiting reader needs to see. */
+.event-seq {
+  display: none;
+}
+
 .report-link {
   color: var(--muted-text) !important;
   font-size: 12px;

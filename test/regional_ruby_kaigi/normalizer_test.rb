@@ -97,5 +97,35 @@ module RegionalRubyKaigi
     def test_merge_treats_nil_events_and_kaigis_as_empty
       assert_empty Normalizer.merge(events: nil, kaigis: nil)
     end
+
+    def test_merge_numbers_entries_by_start_on_order_starting_at_1
+      events = [{ "name" => "tokyo01", "start_on" => "2008-08-21" }]
+      kaigis = { "sapporo01" => { "name" => "sapporo01", "start_on" => "2008-10-25" } }
+
+      result = Normalizer.merge(events: events, kaigis: kaigis)
+
+      assert_equal [1, 2], result.map { |event| event["seq"] }
+    end
+
+    def test_merge_numbers_kaigis_entries_by_their_true_start_on_order_even_though_they_are_appended_after_events
+      events = [{ "name" => "later", "start_on" => "2030-01-01" }]
+      kaigis = { "earlier" => { "name" => "earlier", "start_on" => "2000-01-01" } }
+
+      result = Normalizer.merge(events: events, kaigis: kaigis)
+
+      assert_equal 2, result.find { |event| event["name"] == "later" }["seq"]
+      assert_equal 1, result.find { |event| event["name"] == "earlier" }["seq"]
+    end
+
+    def test_merge_breaks_same_start_on_ties_by_keeping_the_existing_order
+      events = [
+        { "name" => "nagoya02", "start_on" => "2011-02-26" },
+        { "name" => "tochigi03", "start_on" => "2011-02-26" }
+      ]
+
+      result = Normalizer.merge(events: events, kaigis: {})
+
+      assert_equal [1, 2], result.map { |event| event["seq"] }
+    end
   end
 end

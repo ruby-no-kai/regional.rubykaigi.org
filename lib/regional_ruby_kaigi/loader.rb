@@ -66,8 +66,11 @@ module RegionalRubyKaigi
     end
 
     # Every file under `_data/kaigis/`, as `{filepath:, filename:, entry:}`.
+    # `Dir.glob` doesn't guarantee an order, but callers need a stable one
+    # — Normalizer's seq ranking breaks ties between same-day kaigis by
+    # position, and that has to mean the same thing on every run.
     def kaigi_files
-      Dir.glob(File.join(@data_dir, "kaigis", "*.{yml,yaml}")).map do |filepath|
+      Dir.glob(File.join(@data_dir, "kaigis", "*.{yml,yaml}")).sort.map do |filepath|
         { filepath: filepath, filename: File.basename(filepath, ".*"), entry: read_yaml_file(filepath) }
       end
     end

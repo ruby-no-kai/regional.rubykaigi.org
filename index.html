@@ -57,6 +57,7 @@ body_class: regional-index
               {% assign link_attributes = '' %}
             {% endif %}
             <a class="upcoming-card" href="{{ event_url }}"{{ link_attributes }}>
+              <data class="event-seq" value="{{ event.seq }}">{{ event.seq }}</data>
               <span class="upcoming-date">
                 {{ event.start_on | date: "%Y-%m-%d(%a)" }}{% if event.start_on != event.end_on %}..{% if event.start_on.year == event.end_on.year %}{{ event.end_on | date: "%m-%d(%a)" }}{% else %}{{ event.end_on | date: "%Y-%m-%d(%a)" }}{% endif %}{% endif %}
               </span>
@@ -104,6 +105,7 @@ body_class: regional-index
                 {% if event_date < today and event_year == year %}
                   <article class="past-event">
                     <div class="event-meta">
+                      <data class="event-seq" value="{{ event.seq }}">{{ event.seq }}</data>
                       <time datetime="{{ event.start_on | date: "%Y-%m-%d" }}">
                         {{ event.start_on | date: "%Y-%m-%d(%a)" }}{% if event.start_on != event.end_on %}..{% if event.start_on.year == event.end_on.year %}{{ event.end_on | date: "%m-%d(%a)" }}{% else %}{{ event.end_on | date: "%Y-%m-%d(%a)" }}{% endif %}{% endif %}
                       </time>

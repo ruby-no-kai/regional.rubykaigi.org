@@ -27,10 +27,29 @@ module RegionalRubyKaigi
       # same way: comparing as strings, not `Date`, keeps this from raising
       # on a `start_on` that's missing or malformed — Validator reports
       # that, not this.
-      Array(events) + normalized_kaigis.sort_by { |entry| entry["start_on"].to_s }
+      combined = Array(events) + normalized_kaigis.sort_by { |entry| entry["start_on"].to_s }
+      with_seq(combined)
     end
 
     private
+
+    # The nth Regional RubyKaigi ever held, across every region, in
+    # start_on order — 1 for the earliest. Computed here rather than
+    # written by hand into each kaigi file: like held_on, a value this
+    # mechanically derivable from start_on shouldn't also need an
+    # organizer (or two organizers filing PRs around the same time) to
+    # keep in sync. `combined`'s own order isn't guaranteed to already be
+    # start_on order (see the class comment above), so this ranks a copy
+    # independently instead of trusting position; ties (same start_on)
+    # keep combined's own order.
+    def with_seq(combined)
+      seq_by_index = combined.each_with_index
+        .sort_by { |entry, index| [entry["start_on"].to_s, index] }
+        .each_with_index
+        .to_h { |(_, original_index), rank| [original_index, rank + 1] }
+
+      combined.each_with_index.map { |entry, index| entry.merge("seq" => seq_by_index.fetch(index)) }
+    end
 
     # An entry's `name` (an organizer-written field, optional and easy to
     # confuse with `filename` — the filename it came from, minus the
