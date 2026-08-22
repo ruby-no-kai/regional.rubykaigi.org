@@ -1,0 +1,25 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Regional RubyKaigi</title>
+    <link>https://regional.rubykaigi.org/</link>
+    <atom:link href="https://regional.rubykaigi.org/index.rss" rel="self" type="application/rss+xml" />
+    <description>日本各地で開催される地域Ruby会議の開催情報</description>
+    <language>ja</language>
+    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+    {%- assign recent_events = site.data.events | recent_events: 20 -%}
+    {%- for event in recent_events -%}
+    {%- assign url = event | event_url -%}
+    <item>
+      <title>{{ event.title | xml_escape }}</title>
+      <link>{{ url }}</link>
+      <guid isPermaLink="true">{{ url }}</guid>
+      <pubDate>{{ event.added_on | date_to_rfc822 }}</pubDate>
+      <description>{{ event.start_on | date: "%Y-%m-%d" }}{% if event.start_on != event.end_on %} - {{ event.end_on | date: "%Y-%m-%d" }}{% endif %} 開催</description>
+    </item>
+    {%- endfor -%}
+  </channel>
+</rss>

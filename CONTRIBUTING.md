@@ -51,6 +51,10 @@ example01/
 
 この方法では、このリポジトリ（ruby-no-kai/regional.rubykaigi.org）へのPRとは別に、rko-router側へのPRも必要になります。このリポジトリへのPull Requestでは `_data/kaigis/` にファイルを追加するだけで、`index.html` などは不要です。
 
+### RSSフィードへの掲載
+
+`_data/kaigis/`に追加したファイルは、そのPRがマージされた時点で自動的に[index.rss](https://regional.rubykaigi.org/index.rss)に載ります。書き加える項目はありません——掲載日はファイルがリポジトリに追加された日から自動的に決まります。`_data/events.yml`側の（歴史的経緯で残っている）既存イベントは対象外です。
+
 ### 開催レポートを追加する
 
 るびま（Rubyist Magazine）に開催レポートが掲載されたら、`report_url` にそのURLを追加してください。

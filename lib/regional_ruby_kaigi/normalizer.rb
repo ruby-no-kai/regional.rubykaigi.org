@@ -13,12 +13,17 @@ module RegionalRubyKaigi
   class Normalizer
     # The Jekyll-independent core: takes already-parsed Ruby data (matching
     # the shapes Jekyll::DataReader produces for `site.data`) and does no
-    # I/O.
+    # I/O. `added_on` is a caller-supplied `{filename => Date}` map (see
+    # GitAddedOn, which is where those dates actually come from — git
+    # history is I/O, so it stays out of this class); only entries from
+    # `kaigis` can be looked up in it — `events.yml` entries never get an
+    # `added_on`, matching GitAddedOn's own limits on that file.
     def self.merge(...) = new.merge(...)
 
-    def merge(events:, kaigis:)
+    def merge(events:, kaigis:, added_on: {})
       kaigis ||= {}
-      normalized_kaigis = kaigis.map { |filename, entry| normalize(filename, entry) }
+      added_on ||= {}
+      normalized_kaigis = kaigis.map { |filename, entry| normalize(filename, entry, added_on[filename]) }
       # `events.yml` is already in `start_on` order (see event_filters.rb's
       # sort_events_by_start_on, which templates apply on top regardless —
       # this isn't the only place order matters, but it shouldn't be the
@@ -59,9 +64,10 @@ module RegionalRubyKaigi
     # organizers can write instead of `start_on`/`end_on`; expanded away
     # here so every other layer (Validator, templates, Kaigi, OgImage) only
     # ever deals in `start_on`/`end_on`.
-    def normalize(filename, entry)
+    def normalize(filename, entry, added_on)
       entry = with_default_name(filename, entry) || entry
-      with_expanded_held_on(entry) || entry
+      entry = with_expanded_held_on(entry) || entry
+      with_added_on(entry, added_on) || entry
     end
 
     # Fills in `name` from `filename` when the entry doesn't have one;
@@ -80,6 +86,13 @@ module RegionalRubyKaigi
 
       held_on = entry["held_on"]
       entry.except("held_on").merge("start_on" => held_on, "end_on" => held_on)
+    end
+
+    # Returns `nil` (falsy, same as the other `with_*` helpers' `false`)
+    # when `added_on` is nil — nothing in the map for this filename — so
+    # the result composes with `||`.
+    def with_added_on(entry, added_on)
+      added_on && entry.merge("added_on" => added_on)
     end
   end
 end
