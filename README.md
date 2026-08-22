@@ -7,6 +7,7 @@ This repository contains the Regional RubyKaigi event index and event websites h
 
 - `_data/events.yml`, `_data/kaigis/*.yml`: Regional RubyKaigi event data
 - `index.html`: Jekyll template for the event index
+- `index.rss`: RSS feed of the most recently added `_data/kaigis/` entries (see `CONTRIBUTING.md`)
 - `_layouts/`: Shared layouts
 - `<event-name>/`: Static pages for events hosted directly on this domain
 - `stylesheets/`, `javascripts/`, `images/`: Shared assets for the index and archived sites

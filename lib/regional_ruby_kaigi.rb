@@ -30,8 +30,9 @@ module RegionalRubyKaigi
   # anything with a `.data` Hash shaped like Jekyll's), pulls out `events`
   # and `kaigis` and merges them via Normalizer. Returns a plain Array of
   # Hashes — the shape `site.data["events"]` is assigned back to.
-  def normalize_kaigis(site)
-    Normalizer.merge(events: site.data["events"], kaigis: site.data["kaigis"])
+  # `added_on` is passed straight through to Normalizer.merge — see there.
+  def normalize_kaigis(site, added_on: {})
+    Normalizer.merge(events: site.data["events"], kaigis: site.data["kaigis"], added_on: added_on)
   end
 
   # What "validate the kaigi data" means: read it, and check both the

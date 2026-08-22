@@ -14,6 +14,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # The test suite builds the site (see test/index_rss_rendering_test.rb),
+          # and index.rss's added_on comes from git history (see GitAddedOn) —
+          # the default shallow checkout wouldn't have it.
+          fetch-depth: 0
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.3"
