@@ -349,6 +349,14 @@ body.regional-index {
   text-align: center;
 }
 
+.site-footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
 .site-footer a {
   display: inline-flex;
   align-items: center;
