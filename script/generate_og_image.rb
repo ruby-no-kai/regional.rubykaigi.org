@@ -3,9 +3,7 @@
 
 require_relative "../lib/regional_ruby_kaigi/og_image"
 
-if $PROGRAM_NAME == __FILE__
-  include RegionalRubyKaigi
+include RegionalRubyKaigi
 
-  og_image = OgImage.generate(japan_today)
-  puts "Generated #{og_image.path} (#{og_image.width}x#{og_image.height})"
-end
+og_image = OgImage.generate(japan_today)
+puts "Generated #{og_image.path} (#{og_image.width}x#{og_image.height})"
