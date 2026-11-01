@@ -3,3 +3,4 @@
 /_data/og_image.yml
 Gemfile.lock
 .DS_Store
+AGENTS.override.md
