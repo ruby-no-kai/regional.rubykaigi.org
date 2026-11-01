@@ -4,6 +4,7 @@ require "minitest/autorun"
 require "jekyll"
 require "tmpdir"
 require "rexml/document"
+require_relative "../lib/regional_ruby_kaigi/loader"
 
 class IndexRssRenderingTest < Minitest::Test
   ROOT = File.expand_path("..", __dir__)
@@ -40,15 +41,16 @@ class IndexRssRenderingTest < Minitest::Test
     assert_equal "https://regional.rubykaigi.org/", channel.elements["link"].text
   end
 
-  # `_data/kaigis/` only has entries once organizers add them, and
-  # `_data/events.yml`'s legacy entries never get an added_on (see
-  # GitAddedOn) — so the right item count is whatever's on disk right now,
-  # capped at 20, not a number to hardcode here.
-  def test_item_count_matches_the_kaigis_directory_capped_at_20
-    kaigis_count = Dir.glob(File.join(ROOT, "_data", "kaigis", "*.{yml,yaml}")).length
+  # Every events.yml/kaigis entry gets an added_on now — events.yml
+  # entries fall back to their own start_on when they're not in
+  # `_data/events_added_on.yml` (see Normalizer) — so the right item count
+  # is the total number of events on disk right now, capped at 20, not a
+  # number to hardcode here.
+  def test_item_count_is_the_total_event_count_capped_at_20
+    total_events_count = RegionalRubyKaigi::Loader.load(data_dir: File.join(ROOT, "_data")).length
     items = @doc.root.elements["channel"].get_elements("item")
 
-    assert_equal [kaigis_count, 20].min, items.length
+    assert_equal [total_events_count, 20].min, items.length
   end
 
   def test_every_item_has_an_absolute_link_and_a_pub_date

@@ -10,6 +10,8 @@ class RegionalRubyKaigiTest < Minitest::Test
   StubSite = Struct.new(:data)
   StubLoader = Struct.new(:kaigis) do
     def load = kaigis
+    def added_on_by_filename(_filenames) = {}
+    def events_added_on = {}
   end
 
   def test_normalize_kaigis_merges_a_sites_events_and_kaigis_data
@@ -18,7 +20,7 @@ class RegionalRubyKaigiTest < Minitest::Test
       "kaigis" => { "sample02" => { "name" => "sample02" } }
     })
 
-    result = RegionalRubyKaigi.normalize_kaigis(site)
+    result = RegionalRubyKaigi.normalize_kaigis(site, loader: StubLoader.new({}))
 
     assert_equal %w[legacy01 sample02], result.map { |event| event["name"] }
   end
@@ -26,7 +28,37 @@ class RegionalRubyKaigiTest < Minitest::Test
   def test_normalize_kaigis_defaults_missing_data_to_empty
     site = StubSite.new({})
 
-    assert_empty RegionalRubyKaigi.normalize_kaigis(site)
+    assert_empty RegionalRubyKaigi.normalize_kaigis(site, loader: StubLoader.new({}))
+  end
+
+  def test_normalize_kaigis_asks_the_loader_for_added_on_by_the_sites_kaigi_filenames
+    site = StubSite.new({
+      "events" => [],
+      "kaigis" => { "sample02" => { "name" => "sample02" } }
+    })
+    loader = StubLoader.new({})
+    def loader.added_on_by_filename(filenames)
+      filenames.to_h { |filename| [filename, Date.new(2021, 2, 2)] }
+    end
+
+    result = RegionalRubyKaigi.normalize_kaigis(site, loader: loader)
+
+    assert_equal Date.new(2021, 2, 2), result.find { |event| event["name"] == "sample02" }["added_on"]
+  end
+
+  def test_normalize_kaigis_asks_the_loader_for_events_added_on
+    site = StubSite.new({
+      "events" => [{ "name" => "legacy01", "start_on" => "2020-01-01" }],
+      "kaigis" => {}
+    })
+    loader = StubLoader.new({})
+    def loader.events_added_on
+      { "legacy01" => Date.new(2020, 3, 15) }
+    end
+
+    result = RegionalRubyKaigi.normalize_kaigis(site, loader: loader)
+
+    assert_equal Date.new(2020, 3, 15), result.find { |event| event["name"] == "legacy01" }["added_on"]
   end
 
   def test_upcoming_selects_and_sorts_by_start_on

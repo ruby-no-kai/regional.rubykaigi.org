@@ -13,16 +13,23 @@ module RegionalRubyKaigi
   class Normalizer
     # The Jekyll-independent core: takes already-parsed Ruby data (matching
     # the shapes Jekyll::DataReader produces for `site.data`) and does no
-    # I/O. `added_on` is a caller-supplied `{filename => Date}` map (see
-    # GitAddedOn, which is where those dates actually come from — git
-    # history is I/O, so it stays out of this class); only entries from
-    # `kaigis` can be looked up in it — `events.yml` entries never get an
-    # `added_on`, matching GitAddedOn's own limits on that file.
+    # I/O. `added_on` is a caller-supplied `{filename => Date}` map for
+    # `kaigis` entries (see GitAddedOn, which is where those dates actually
+    # come from — git history is I/O, so it stays out of this class).
+    # `events_added_on` is the analogous `{name => Date}` map for
+    # `events.yml` entries (see `_data/events_added_on.yml` — a per-entry
+    # git history there reflects that shared file's own edit history, not
+    # any one kaigi's, so those dates were worked out by hand once rather
+    # than derived the way GitAddedOn derives kaigis'); an events.yml entry
+    # missing from it falls back to its own `start_on` — a coarser but
+    # always-available stand-in.
     def self.merge(...) = new.merge(...)
 
-    def merge(events:, kaigis:, added_on: {})
+    def merge(events:, kaigis:, added_on: {}, events_added_on: {})
       kaigis ||= {}
       added_on ||= {}
+      events_added_on ||= {}
+      normalized_events = Array(events).map { |entry| with_events_added_on(entry, events_added_on) }
       normalized_kaigis = kaigis.map { |filename, entry| normalize(filename, entry, added_on[filename]) }
       # `events.yml` is already in `start_on` order (see event_filters.rb's
       # sort_events_by_start_on, which templates apply on top regardless —
@@ -32,7 +39,7 @@ module RegionalRubyKaigi
       # same way: comparing as strings, not `Date`, keeps this from raising
       # on a `start_on` that's missing or malformed — Validator reports
       # that, not this.
-      combined = Array(events) + normalized_kaigis.sort_by { |entry| entry["start_on"].to_s }
+      combined = normalized_events + normalized_kaigis.sort_by { |entry| entry["start_on"].to_s }
       with_seq(combined)
     end
 
@@ -93,6 +100,14 @@ module RegionalRubyKaigi
     # the result composes with `||`.
     def with_added_on(entry, added_on)
       added_on && entry.merge("added_on" => added_on)
+    end
+
+    # An events.yml entry's added_on: the hand-worked-out date from
+    # `events_added_on` when there is one, its own `start_on` otherwise.
+    # Unlike `with_added_on` above, this never leaves added_on unset —
+    # every events.yml entry has a start_on to fall back to.
+    def with_events_added_on(entry, events_added_on)
+      entry.merge("added_on" => events_added_on[entry["name"]] || entry["start_on"])
     end
   end
 end

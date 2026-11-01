@@ -28,11 +28,17 @@ module RegionalRubyKaigi
 
   # The processing NormalizedKaigiGenerator needs: given a `site` (or
   # anything with a `.data` Hash shaped like Jekyll's), pulls out `events`
-  # and `kaigis` and merges them via Normalizer. Returns a plain Array of
-  # Hashes — the shape `site.data["events"]` is assigned back to.
-  # `added_on` is passed straight through to Normalizer.merge — see there.
-  def normalize_kaigis(site, added_on: {})
-    Normalizer.merge(events: site.data["events"], kaigis: site.data["kaigis"], added_on: added_on)
+  # and `kaigis`, asks `loader` for each kaigi's added_on date plus the
+  # hand-worked-out ones for events.yml entries, and merges everything via
+  # Normalizer. Returns a plain Array of Hashes — the shape
+  # `site.data["events"]` is assigned back to. `site` is the only Jekyll
+  # knowledge in this call — `loader` (Loader by default; a test can pass a
+  # stub) never sees `site` itself, only the plain filename Strings pulled
+  # out of it.
+  def normalize_kaigis(site, loader: Loader)
+    kaigis = site.data["kaigis"]
+    added_on = loader.added_on_by_filename((kaigis || {}).keys)
+    Normalizer.merge(events: site.data["events"], kaigis: kaigis, added_on: added_on, events_added_on: loader.events_added_on)
   end
 
   # What "validate the kaigi data" means: read it, and check both the
