@@ -62,6 +62,34 @@ module RegionalRubyKaigi
       end
     end
 
+    def test_added_on_by_filename_returns_each_requested_filenames_first_commit_date
+      result = Loader.added_on_by_filename(%w[sample02], data_dir: FIXTURE_DIR)
+
+      assert_equal({ "sample02" => Date.new(2026, 8, 17) }, result)
+    end
+
+    def test_added_on_by_filename_omits_a_filename_not_found_under_kaigis
+      result = Loader.added_on_by_filename(%w[nonexistent], data_dir: FIXTURE_DIR)
+
+      assert_empty result
+    end
+
+    def test_events_added_on_returns_the_map_from_events_added_on_yml
+      Dir.mktmpdir do |dir|
+        File.write(File.join(dir, "events_added_on.yml"), "legacy01: 2020-03-15\n")
+
+        result = Loader.new(data_dir: dir).events_added_on
+
+        assert_equal({ "legacy01" => Date.new(2020, 3, 15) }, result)
+      end
+    end
+
+    def test_events_added_on_returns_empty_when_the_file_is_missing
+      Dir.mktmpdir do |dir|
+        assert_empty Loader.new(data_dir: dir).events_added_on
+      end
+    end
+
     def test_name_mismatches_allows_a_missing_name
       Dir.mktmpdir do |dir|
         File.write(File.join(dir, "events.yml"), "[]\n")

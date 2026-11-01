@@ -134,16 +134,36 @@ module RegionalRubyKaigi
       refute result.first.key?("added_on")
     end
 
-    def test_merge_never_adds_added_on_to_a_legacy_events_entry
+    def test_merge_ignores_the_kaigis_only_added_on_map_for_a_legacy_events_entry
       events = [{ "name" => "legacy01", "start_on" => "2020-01-01" }]
-      # Even a coincidentally-matching key in the map should not leak an
-      # added_on onto an events.yml entry — only `kaigis` entries are
-      # eligible (see the class comment on `merge`).
-      added_on = { "legacy01" => Date.new(2020, 1, 1) }
+      # A coincidentally-matching key in the kaigis-only added_on map must
+      # not leak onto an events.yml entry — only `kaigis` entries are
+      # eligible for it (see the class comment on `merge`). events.yml
+      # entries get their added_on from events_added_on (or start_on)
+      # instead — this uses a deliberately different date so a leak would
+      # be caught.
+      added_on = { "legacy01" => Date.new(2099, 12, 31) }
 
       result = Normalizer.merge(events: events, kaigis: {}, added_on: added_on)
 
-      refute result.first.key?("added_on")
+      assert_equal "2020-01-01", result.first["added_on"]
+    end
+
+    def test_merge_adds_added_on_to_a_legacy_events_entry_from_events_added_on
+      events = [{ "name" => "legacy01", "start_on" => "2020-01-01" }]
+      events_added_on = { "legacy01" => Date.new(2020, 3, 15) }
+
+      result = Normalizer.merge(events: events, kaigis: {}, events_added_on: events_added_on)
+
+      assert_equal Date.new(2020, 3, 15), result.first["added_on"]
+    end
+
+    def test_merge_falls_back_to_start_on_for_a_legacy_events_entry_missing_from_events_added_on
+      events = [{ "name" => "legacy01", "start_on" => "2020-01-01" }]
+
+      result = Normalizer.merge(events: events, kaigis: {})
+
+      assert_equal "2020-01-01", result.first["added_on"]
     end
 
     def test_merge_breaks_same_start_on_ties_by_keeping_the_existing_order

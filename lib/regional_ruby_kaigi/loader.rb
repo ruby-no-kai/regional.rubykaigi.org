@@ -3,6 +3,7 @@
 require "date"
 require "yaml"
 require_relative "normalizer"
+require_relative "git_added_on"
 
 module RegionalRubyKaigi
   # Reads `_data/events.yml` and `_data/kaigis/*.yml` from disk and hands
@@ -30,6 +31,24 @@ module RegionalRubyKaigi
     # `_data/kaigis/` itself — this — can compare the two.
     def self.name_mismatches(data_dir: nil) = new(data_dir: data_dir).name_mismatches
 
+    # The date each of `filenames` (plain Strings, no Jekyll object
+    # involved — NormalizedKaigiGenerator, via RegionalRubyKaigi.
+    # normalize_kaigis, passes site.data["kaigis"].keys) was first added to
+    # git history, keyed by filename. A filename not found under
+    # `_data/kaigis/` — or with no git history — is simply absent from the
+    # result, same as GitAddedOn.for returning nil.
+    def self.added_on_by_filename(filenames, data_dir: nil) = new(data_dir: data_dir).added_on_by_filename(filenames)
+
+    # The `{name => Date}` map `_data/events_added_on.yml` holds — worked
+    # out by hand once (see that file's own header) for events.yml entries
+    # whose real added_on can't be derived the way GitAddedOn derives
+    # kaigis' (events.yml is one shared, ever-edited file; per-entry git
+    # history there reflects bulk imports and reorderings, not any one
+    # kaigi's — see Normalizer). Missing file, or a name missing from it,
+    # both come back absent rather than raising; Normalizer falls back to
+    # start_on either way.
+    def self.events_added_on(data_dir: nil) = new(data_dir: data_dir).events_added_on
+
     def initialize(data_dir: nil)
       @data_dir = data_dir || DEFAULT_DATA_DIR
     end
@@ -41,7 +60,7 @@ module RegionalRubyKaigi
 
       kaigis = kaigi_files.each_with_object({}) { |file, hash| hash[file[:filename]] = file[:entry] }
 
-      Normalizer.merge(events: events, kaigis: kaigis)
+      Normalizer.merge(events: events, kaigis: kaigis, events_added_on: events_added_on)
     rescue Psych::Exception => e
       raise InvalidData, "#{@data_dir}: YAMLを読み込めません: #{e.message}"
     end
@@ -55,6 +74,19 @@ module RegionalRubyKaigi
       end
     rescue Psych::Exception => e
       raise InvalidData, "#{@data_dir}: YAMLを読み込めません: #{e.message}"
+    end
+
+    def added_on_by_filename(filenames)
+      kaigi_files
+        .select { |file| filenames.include?(file[:filename]) }
+        .to_h { |file| [file[:filename], GitAddedOn.for(file[:filepath])] }
+    end
+
+    def events_added_on
+      filepath = File.join(@data_dir, "events_added_on.yml")
+      return {} unless File.exist?(filepath)
+
+      read_yaml_file(filepath) || {}
     end
 
     private

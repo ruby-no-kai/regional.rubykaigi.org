@@ -1,0 +1,18 @@
+---
+# The date each `_data/events.yml` entry below (name => date) was first
+# added to git history — computed once by walking `git log -p` over
+# `_data/events.yml` and finding the commit where `- name: <name>` first
+# appears as an added line. Entries with a start_on in 2025 or earlier
+# don't need this precision (their held-on date is used instead); this
+# only needs to cover entries with a 2026-or-later start_on. Updated by
+# running script/update_events_added_on.rb by hand.
+fukuoka05: 2025-09-06
+hokuriku02: 2026-07-22
+izumo01: 2025-10-23
+kansai09: 2025-10-23
+matsue12: 2025-10-23
+nagoya05: 2025-10-23
+okrk03: 2026-06-15
+sekigahara01: 2025-12-26
+sendai03: 2026-03-03
+tokyo13: 2025-12-23
