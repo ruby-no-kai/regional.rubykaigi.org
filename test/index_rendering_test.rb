@@ -8,8 +8,10 @@ require_relative "../lib/regional_ruby_kaigi/loader"
 class IndexRenderingTest < Minitest::Test
   ROOT = File.expand_path("..", __dir__)
 
-  def self.rendered_html
-    @rendered_html ||= Dir.mktmpdir("regional-rubykaigi-site") do |destination|
+  def self.rendered_html(at: nil)
+    @rendered_html ||= {}
+    cache_key = at&.iso8601 || :now
+    @rendered_html[cache_key] ||= Dir.mktmpdir("regional-rubykaigi-site") do |destination|
       # Load gems from the Gemfile's :jekyll_plugins group first, exactly as
       # `exe/jekyll` does before building a site. Skipping this would build
       # against a different plugin/safe-mode configuration than `bundle exec
@@ -20,11 +22,13 @@ class IndexRenderingTest < Minitest::Test
       # everything under `_plugins/`).
       Dir.chdir(ROOT) { Jekyll::PluginManager.require_from_bundler }
 
-      config = Jekyll.configuration(
+      options = {
         "source" => ROOT,
         "destination" => destination,
         "quiet" => true
-      )
+      }
+      options["time"] = at.iso8601 if at
+      config = Jekyll.configuration(options)
       Jekyll::Site.new(config).process
       File.read(File.join(destination, "index.html"))
     end
@@ -59,6 +63,17 @@ class IndexRenderingTest < Minitest::Test
   def test_includes_explicit_x_card_metadata
     assert_includes @html, '<meta name="twitter:card" content="summary_large_image">'
     assert_match %r{<meta name="twitter:image" content="https://regional\.rubykaigi\.org/images/og/regional-rubykaigi\.png\?v=(?:latest|[0-9a-f]{12})">}, @html
+  end
+
+  # 2026-11-08 15:30 UTC is already 2026-11-09 in Japan. This catches a
+  # regression where the build's UTC date left an event from the previous day
+  # in the "これからの開催" list just after midnight JST.
+  def test_upcoming_events_use_the_configured_japan_timezone
+    html = self.class.rendered_html(at: Time.utc(2026, 11, 8, 15, 30))
+    upcoming = html[/<section class="upcoming-events".*?<\/section>/m]
+
+    refute_includes upcoming, "大江戸Ruby会議11"
+    assert_includes upcoming, "北陸Ruby会議02"
   end
 
   # The three ways the rendered page counts events — the "これまでの開催"
