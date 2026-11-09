@@ -1,3 +1,5 @@
+timezone: Asia/Tokyo
+
 exclude:
   - AGENTS.md
   - CONTRIBUTING.md
